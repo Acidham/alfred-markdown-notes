@@ -1,4 +1,9 @@
-# Alfred Markdown Notes
+---
+Created: 03.02.2019
+Tags: #Draft #Alfred #Help
+---
+
+# MD Notes Help for Alfred
 
 Markdown Notes help to manage Markdown files in a directory with powerful full text search (supports & and |), tag search or in search for todos ( `- [ ]` or `* [ ]`) . It also allows to quickly create new notes based on custom templates. 
 

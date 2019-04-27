@@ -1,0 +1,1 @@
+**Path to Notes** (`path_to_notes`): The path where you store your markdown files. The path needs to be relative to your home directory e.g. your notes are stored in `/Users/yourname/Dropbox/Notes` path to add to the configuration will look like `/Dropbox/Notes`
