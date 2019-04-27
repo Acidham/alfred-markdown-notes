@@ -1,6 +1,6 @@
 # Alfred Markdown Notes
 
-Markdown Notes help to manage Markdown files in a directory with powerful full text search (supports & and |), tag search or in search for todos ( `- [ ]` or `* [ ]`) . It also allows to quickly create new notes based on custom templates. 
+Markdown Notes help to manage Markdown files in a directory with powerful full text search (supports & and |), tag search or search for todos ( `- [ ]` or `* [ ]`) . It also allows to quickly create new notes based on custom templates. 
 
 > [Typora](https://typora.io/) is set up in Alfred Workflow as preferred Markdown editor but it is possible to use another MD Editor or Text Editor if required. To use another Editor it is required to define the Editor in the worklow steps at the end of the WF. 
 
@@ -32,8 +32,6 @@ pip install markdown2
 ```bash
 pip install evernote
 ```
-
-[https://github.com/dropbox/dropbox-sdk-python
 
 ## Features
 
