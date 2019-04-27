@@ -124,4 +124,4 @@ To fetch an URL use `mdf` and enter the target URL.
 
 ### Export to Evernote
 
-MD Notes can export Notes to Evernote including Images and Tags. Once Note is shown, via `mds` choose `ALT` modifier key and Alfred shows the option ot Export to Evernote.
+MD Notes can export Notes to Evernote including Images and Tags. Once Note is shown, via `mds`, choose `ALT` modifier key and Alfred shows the option ot Export to Evernote.
