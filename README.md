@@ -33,6 +33,10 @@ pip install markdown2
 pip install evernote
 ```
 
+### Optional: QLMarkdown
+
+To use quicklook for Markdown files there is a QLMarkdown plugin available on git: [https://github.com/toland/qlmarkdown](https://github.com/toland/qlmarkdown)
+
 ## Features
 
 ### Full Text Search
@@ -122,4 +126,4 @@ To fetch an URL use `mdf` and enter the target URL.
 
 ### Export to Evernote
 
-MD Notes can export Notes to Evernote including Images and Tags. Once Note is shown, via `mds`, choose `ALT` modifier key and Alfred shows the option ot Export to Evernote.
+MD Notes can export Notes to Evernote including Images and Tags. Once Note is shown, via `mds` choose `ALT` modifier key and Alfred shows the option ot Export to Evernote.

@@ -38,6 +38,10 @@ pip install markdown2
 pip install evernote
 ```
 
+### Optional: QLMarkdown
+
+To use quicklook for Markdown files there is a QLMarkdown plugin available on git: [https://github.com/toland/qlmarkdown](https://github.com/toland/qlmarkdown)
+
 ## Features
 
 ### Full Text Search
