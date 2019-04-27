@@ -5,12 +5,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Alfred
-*.plist
-*.png
-*.jpg
-*.jpeg
-
 # C extensions
 *.so
 
