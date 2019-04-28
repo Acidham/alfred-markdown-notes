@@ -1,1 +1,1 @@
-**Default Template** (`default_template`): The file of your default Template. Before you can use templates you need to create the template.md e.g. `Template.md`
+**Default Template** (`default_template`): The filename of the template default that will be used when creating new Notes e.g. `Template.md`
