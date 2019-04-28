@@ -87,11 +87,11 @@ Type `mdc` followed by a title to create a new MD Note with title. The default T
 ### Create new MD Notes from Template
 
 Type `mdc` and you get a list of all Templates in your folder: 
-**Note**: Templates are Notes tagged with `#Template`or whatever you defined as the template tag. 
+**Note**: Templates are Notes tagged with `#Template` or whatever you defined as the template tag. 
 
-#### YAML Fonter
+#### YAML Fronter
 
-MD Notes uses YAML Fonter when searching in Tags. Therefore it is required to add YAML Fonter to the top of the notes, with the following format:
+MD Notes uses YAML Fronter when searching in Tags. Therefore it is required to add YAML Fronter to the top of the notes, with the following format:
 
 ```
 ---
@@ -101,7 +101,7 @@ Tags: #mytag
 
 ### Working with Templates
 
-Templates are a great way to quickly create a MD Note based on a Markdown template file. The Template files are created and stored in the same way than normal notes and must contain the Template tag (see [Configuration](#Configuration)) in the YAML Fonter section (see [YAML Fonter](#YAML%20Fonter)).
+Templates are a great way to quickly create a MD Note based on a Markdown template file. The Template files are created and stored in the same way than normal notes and must contain the Template tag (see [Configuration](#Configuration)) in the YAML Fronter section (see [YAML Fronter](#YAML%20Fonter)).
 
 There are two way to create a file based on a template:
 
