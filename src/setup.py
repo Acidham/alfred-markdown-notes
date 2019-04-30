@@ -67,6 +67,7 @@ action_key_value = Tools.getEnv('action_key_value')
 [action, key, value] = action_key_value.split('|') if action_key_value != str() else [str(),str(),str()]
 wf_dir = os.getcwd()
 query = Tools.getArgv(1)
+
 wf = Alfred.Items()
 
 if action == str():
