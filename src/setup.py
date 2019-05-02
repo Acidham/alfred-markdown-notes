@@ -5,16 +5,12 @@ import Alfred
 from Alfred import Tools as Tools
 from Alfred import Plist as Plist
 
+def get_variables():
+    config = Plist()
+    return config.getConfig()
 
-action_key_value = Tools.getEnv('action_key_value')
-[action, key, value] = action_key_value.split('|') if action_key_value != str() else [str(),str(),str()]
-wf_dir = os.getcwd()
-query = Tools.getArgv(1)
-config = Plist()
-variables = config.getConfig()
-
-wf = Alfred.Items()
-if action == str():
+def print_config():
+    variables = get_variables()
     for k, v in variables.items():
         wf.setItem(
             title=k,
@@ -28,7 +24,9 @@ if action == str():
             'image'
         )
         wf.addItem()
-elif action == 'selection':
+
+def print_selection(key,query):
+    variables = get_variables()
     if key in variables:
         v = variables[key]
         isValid = False if query == str() else True
@@ -50,7 +48,9 @@ elif action == 'selection':
             valid=False
         )
         wf.addItem()
-else:
+
+def write_config(key,value):
+    config = Plist()
     config.setVariable(key, value)
     wf.setItem(
         title="Proceed?",
@@ -62,4 +62,19 @@ else:
         'image'
     )
     wf.addItem()
+
+action_key_value = Tools.getEnv('action_key_value')
+[action, key, value] = action_key_value.split('|') if action_key_value != str() else [str(),str(),str()]
+wf_dir = os.getcwd()
+query = Tools.getArgv(1)
+
+wf = Alfred.Items()
+
+if action == str():
+    print_config()
+elif action == 'selection':
+    print_selection(key,query)
+else:
+    write_config(key,value)
+
 wf.write()

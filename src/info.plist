@@ -946,27 +946,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>MD Link copied to clipboard</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>EAEF0CF6-8AEA-4B7D-8EAB-80FC16EDDAAC</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -986,6 +965,27 @@ fi</string>
 			<string>E821ABDF-E08D-4BAE-83F0-4F24F4AB7B8C</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>MD Link copied to clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>EAEF0CF6-8AEA-4B7D-8EAB-80FC16EDDAAC</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1226,27 +1226,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Cannot fetch URL</string>
-				<key>title</key>
-				<string>ERROR</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>E3B5F19A-B7EC-4984-A3CA-D626DB05ADF5</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>inputstring</key>
 				<string>{query}</string>
 				<key>matchcasesensitive</key>
@@ -1304,6 +1283,27 @@ fi</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>E6223AE8-EC41-40DA-88AC-8476D6F73ED1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Cannot fetch URL</string>
+				<key>title</key>
+				<string>ERROR</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E3B5F19A-B7EC-4984-A3CA-D626DB05ADF5</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1501,6 +1501,8 @@ fi</string>
 		<dict>
 			<key>colorindex</key>
 			<integer>6</integer>
+			<key>note</key>
+			<string>File Action to get URL Scheme</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
@@ -1517,10 +1519,12 @@ fi</string>
 		<dict>
 			<key>colorindex</key>
 			<integer>6</integer>
+			<key>note</key>
+			<string>File Action to delete notes when multiple files selectes. One file also works</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
-			<integer>60</integer>
+			<integer>10</integer>
 		</dict>
 		<key>4615C40D-B87C-43D2-AF02-871819B0F9CB</key>
 		<dict>
@@ -1555,6 +1559,8 @@ fi</string>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
+			<key>note</key>
+			<string>Upload the asset to internal target folder and copy md link to clipboard</string>
 			<key>xpos</key>
 			<integer>230</integer>
 			<key>ypos</key>
@@ -1571,6 +1577,8 @@ fi</string>
 		</dict>
 		<key>5FA571C6-6183-44C9-B18F-2D4C73A0C48F</key>
 		<dict>
+			<key>note</key>
+			<string>Shows,Select and change config</string>
 			<key>xpos</key>
 			<integer>230</integer>
 			<key>ypos</key>
@@ -1716,6 +1724,8 @@ fi</string>
 		</dict>
 		<key>C316AE82-592A-4D24-95D1-D889B41122DB</key>
 		<dict>
+			<key>note</key>
+			<string>File Action to upload Asset and provide MD Link to it</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
@@ -1725,6 +1735,8 @@ fi</string>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
+			<key>note</key>
+			<string>Generates the MD Link</string>
 			<key>xpos</key>
 			<integer>230</integer>
 			<key>ypos</key>
@@ -1760,7 +1772,7 @@ fi</string>
 			<key>xpos</key>
 			<integer>1080</integer>
 			<key>ypos</key>
-			<integer>1220</integer>
+			<integer>1390</integer>
 		</dict>
 		<key>E6223AE8-EC41-40DA-88AC-8476D6F73ED1</key>
 		<dict>
@@ -1789,12 +1801,14 @@ fi</string>
 			<key>xpos</key>
 			<integer>1080</integer>
 			<key>ypos</key>
-			<integer>820</integer>
+			<integer>830</integer>
 		</dict>
 		<key>EEAFA237-F675-43C1-9EB8-A1AE88C34E75</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>6</integer>
+			<key>note</key>
+			<string>File Action to get MD Note Link</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
@@ -1839,7 +1853,7 @@ fi</string>
 		<string>evernote_auth_token</string>
 	</array>
 	<key>version</key>
-	<string>0.9</string>
+	<string>0.95</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>
