@@ -77,7 +77,7 @@ def parseFilename(f):
     return tmp.encode('utf-8')
 
 
-def writeMarkdown(md_content,md_path):
+def writeMarkdown(md_content, md_path):
     with open(md_path, "w+") as f:
         f.write(md_content.encode('utf-8'))
 
@@ -88,7 +88,7 @@ p = mn.getNotesPath()
 argv = Tools.getArgv(1)
 url = argv if argv.startswith('http://') or argv.startswith('https://') else str()
 
-# TODO: When HTML is not fetchable the URL will be used. 
+# TODO: When HTML is not fetchable, the URL will be used. 
 # Fix formatting from <url> to markdown url [title](url)
 
 if url:
@@ -100,5 +100,5 @@ if url:
     if file_name == str():
         file_name = Tools.strJoin('WebClip from ', today_time)
     fPath = mn.strJoin(p, file_name, ext)
-    writeMarkdown(md,fPath)
+    writeMarkdown(md, fPath)
     sys.stdout.write(fPath)

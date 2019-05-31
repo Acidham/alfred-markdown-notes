@@ -5,9 +5,11 @@ import Alfred
 from Alfred import Tools as Tools
 from Alfred import Plist as Plist
 
+
 def get_variables():
     config = Plist()
     return config.getConfig()
+
 
 def print_config():
     variables = get_variables()
@@ -25,15 +27,16 @@ def print_config():
         )
         wf.addItem()
 
-def print_selection(key,query):
+
+def print_selection(key, query):
     variables = get_variables()
     if key in variables:
         v = variables[key]
         isValid = False if query == str() else True
         wf.setItem(
-            title='Change %s: %s' % (key,v),
+            title='Change %s: %s' % (key, v),
             subtitle='Add new value for %s and press enter. Press Shift for Help.' % key,
-            arg='set|%s|%s' % (key,query),
+            arg='set|%s|%s' % (key, query),
             valid=isValid,
             quicklookurl='file://' + wf_dir + '/docs/' + key + ".md"
         )
@@ -49,7 +52,8 @@ def print_selection(key,query):
         )
         wf.addItem()
 
-def write_config(key,value):
+
+def write_config(key, value):
     config = Plist()
     config.setVariable(key, value)
     wf.setItem(
@@ -64,7 +68,7 @@ def write_config(key,value):
     wf.addItem()
 
 action_key_value = Tools.getEnv('action_key_value')
-[action, key, value] = action_key_value.split('|') if action_key_value != str() else [str(),str(),str()]
+[action, key, value] = action_key_value.split('|') if action_key_value != str() else [str(), str(), str()]
 wf_dir = os.getcwd()
 query = Tools.getArgv(1)
 
@@ -73,8 +77,8 @@ wf = Alfred.Items()
 if action == str():
     print_config()
 elif action == 'selection':
-    print_selection(key,query)
+    print_selection(key, query)
 else:
-    write_config(key,value)
+    write_config(key, value)
 
 wf.write()

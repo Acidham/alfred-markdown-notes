@@ -103,17 +103,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>DEEFD093-C1FE-40B4-B02E-AA50CFF9D327</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>F577D8D2-B839-411A-839B-880D88E4F045</string>
+				<string>DB11D78A-2543-48A3-B195-09CC58045785</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -308,6 +298,52 @@
 				<false/>
 			</dict>
 		</array>
+		<key>898E9FE0-5165-4530-98E9-9497DDF6DA0D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>01EBC50C-380F-4FA3-B537-D755B7134966</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8BFF5D9F-F5E7-4CC8-AC7D-C3DAA406DA19</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8BFF5D9F-F5E7-4CC8-AC7D-C3DAA406DA19</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0615CE75-2C53-400F-BD6E-FC6A98EE6F0A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>9276011F-3CDA-4F4A-A7BB-6A36B761C53A</key>
 		<array>
 			<dict>
@@ -386,11 +422,23 @@
 				<false/>
 			</dict>
 		</array>
-		<key>DEEFD093-C1FE-40B4-B02E-AA50CFF9D327</key>
+		<key>DB11D78A-2543-48A3-B195-09CC58045785</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>30E2F874-FC82-4DF3-9991-38F5337D9CAB</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E3B5F19A-B7EC-4984-A3CA-D626DB05ADF5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -443,19 +491,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>CCE98113-EE5F-4540-B377-3C9A9DA1AC6D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>F577D8D2-B839-411A-839B-880D88E4F045</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E3B5F19A-B7EC-4984-A3CA-D626DB05ADF5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -610,6 +645,7 @@ sys.stdout.write(output)</string>
 				<key>filetypes</key>
 				<array>
 					<string>net.daringfireball.markdown</string>
+					<string>net.ia.markdown</string>
 				</array>
 				<key>name</key>
 				<string>MD Link to Note</string>
@@ -856,6 +892,8 @@ fi</string>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -894,7 +932,7 @@ fi</string>
 			<key>uid</key>
 			<string>E1E655F3-B8EB-4324-8B9D-25D3AC743045</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -903,6 +941,8 @@ fi</string>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -941,7 +981,7 @@ fi</string>
 			<key>uid</key>
 			<string>8354F261-D7A0-4848-8312-9EC40100DFA6</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1002,7 +1042,7 @@ fi</string>
 			<key>uid</key>
 			<string>9276011F-3CDA-4F4A-A7BB-6A36B761C53A</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1031,6 +1071,8 @@ fi</string>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -1069,7 +1111,7 @@ fi</string>
 			<key>uid</key>
 			<string>661CD8F0-9481-4FCF-9A96-73A2FF1FCFD4</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1150,6 +1192,8 @@ fi</string>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -1188,7 +1232,7 @@ fi</string>
 			<key>uid</key>
 			<string>F8CB74BA-4C13-4621-BC60-E50650C85A9D</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1226,21 +1270,108 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>inputstring</key>
-				<string>{query}</string>
-				<key>matchcasesensitive</key>
-				<true/>
-				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
+				<key>browser</key>
 				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
+			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>DEEFD093-C1FE-40B4-B02E-AA50CFF9D327</string>
+			<string>01EBC50C-380F-4FA3-B537-D755B7134966</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>mdb</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>url_search.py</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search Bookmarks in MD Notes</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>898E9FE0-5165-4530-98E9-9497DDF6DA0D</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>URL copied to Clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>0615CE75-2C53-400F-BD6E-FC6A98EE6F0A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>8BFF5D9F-F5E7-4CC8-AC7D-C3DAA406DA19</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1310,19 +1441,30 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>inputstring</key>
-				<string>{query}</string>
-				<key>matchcasesensitive</key>
-				<true/>
-				<key>matchmode</key>
-				<integer>0</integer>
-				<key>matchstring</key>
-				<string></string>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>1</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>fetch successful</string>
+						<key>uid</key>
+						<string>30E2F874-FC82-4DF3-9991-38F5337D9CAB</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>not successful</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>F577D8D2-B839-411A-839B-880D88E4F045</string>
+			<string>DB11D78A-2543-48A3-B195-09CC58045785</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1369,6 +1511,8 @@ fi</string>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -1408,7 +1552,7 @@ fi</string>
 			<key>uid</key>
 			<string>5FA571C6-6183-44C9-B18F-2D4C73A0C48F</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1470,7 +1614,7 @@ fi</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
-			<integer>1670</integer>
+			<integer>1940</integer>
 		</dict>
 		<key>01B01E1C-F114-4C29-9C0C-2881FA84A5D1</key>
 		<dict>
@@ -1481,14 +1625,28 @@ fi</string>
 			<key>xpos</key>
 			<integer>230</integer>
 			<key>ypos</key>
-			<integer>1500</integer>
+			<integer>1790</integer>
+		</dict>
+		<key>01EBC50C-380F-4FA3-B537-D755B7134966</key>
+		<dict>
+			<key>xpos</key>
+			<integer>810</integer>
+			<key>ypos</key>
+			<integer>1350</integer>
 		</dict>
 		<key>02CE4D76-2078-45FE-9A13-8B1D487EEF58</key>
 		<dict>
 			<key>xpos</key>
 			<integer>160</integer>
 			<key>ypos</key>
-			<integer>1700</integer>
+			<integer>1970</integer>
+		</dict>
+		<key>0615CE75-2C53-400F-BD6E-FC6A98EE6F0A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1035</integer>
+			<key>ypos</key>
+			<integer>1490</integer>
 		</dict>
 		<key>1AB175B4-0986-4F49-A20D-4AF004DC9158</key>
 		<dict>
@@ -1513,7 +1671,7 @@ fi</string>
 			<key>xpos</key>
 			<integer>410</integer>
 			<key>ypos</key>
-			<integer>1500</integer>
+			<integer>1790</integer>
 		</dict>
 		<key>454BC87F-9E2E-4C7B-ABFA-2E7709D59244</key>
 		<dict>
@@ -1553,7 +1711,7 @@ fi</string>
 			<key>xpos</key>
 			<integer>410</integer>
 			<key>ypos</key>
-			<integer>1340</integer>
+			<integer>1630</integer>
 		</dict>
 		<key>4C847DCB-008B-4241-A1C4-35B3895092F7</key>
 		<dict>
@@ -1582,7 +1740,7 @@ fi</string>
 			<key>xpos</key>
 			<integer>230</integer>
 			<key>ypos</key>
-			<integer>1670</integer>
+			<integer>1940</integer>
 		</dict>
 		<key>616E1777-6C1F-406D-B16B-697EA6E8DDA0</key>
 		<dict>
@@ -1650,6 +1808,20 @@ fi</string>
 			<integer>10</integer>
 			<key>ypos</key>
 			<integer>500</integer>
+		</dict>
+		<key>898E9FE0-5165-4530-98E9-9497DDF6DA0D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>410</integer>
+			<key>ypos</key>
+			<integer>1355</integer>
+		</dict>
+		<key>8BFF5D9F-F5E7-4CC8-AC7D-C3DAA406DA19</key>
+		<dict>
+			<key>xpos</key>
+			<integer>810</integer>
+			<key>ypos</key>
+			<integer>1490</integer>
 		</dict>
 		<key>9276011F-3CDA-4F4A-A7BB-6A36B761C53A</key>
 		<dict>
@@ -1742,12 +1914,12 @@ fi</string>
 			<key>ypos</key>
 			<integer>190</integer>
 		</dict>
-		<key>DEEFD093-C1FE-40B4-B02E-AA50CFF9D327</key>
+		<key>DB11D78A-2543-48A3-B195-09CC58045785</key>
 		<dict>
 			<key>xpos</key>
-			<integer>640</integer>
+			<integer>565</integer>
 			<key>ypos</key>
-			<integer>1310</integer>
+			<integer>1650</integer>
 		</dict>
 		<key>E1E655F3-B8EB-4324-8B9D-25D3AC743045</key>
 		<dict>
@@ -1765,14 +1937,14 @@ fi</string>
 			<key>xpos</key>
 			<integer>410</integer>
 			<key>ypos</key>
-			<integer>1670</integer>
+			<integer>1940</integer>
 		</dict>
 		<key>E3B5F19A-B7EC-4984-A3CA-D626DB05ADF5</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1080</integer>
 			<key>ypos</key>
-			<integer>1390</integer>
+			<integer>1640</integer>
 		</dict>
 		<key>E6223AE8-EC41-40DA-88AC-8476D6F73ED1</key>
 		<dict>
@@ -1783,7 +1955,7 @@ fi</string>
 			<key>xpos</key>
 			<integer>230</integer>
 			<key>ypos</key>
-			<integer>1340</integer>
+			<integer>1630</integer>
 		</dict>
 		<key>E821ABDF-E08D-4BAE-83F0-4F24F4AB7B8C</key>
 		<dict>
@@ -1799,7 +1971,7 @@ fi</string>
 		<key>EAEF0CF6-8AEA-4B7D-8EAB-80FC16EDDAAC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1080</integer>
+			<integer>1035</integer>
 			<key>ypos</key>
 			<integer>830</integer>
 		</dict>
@@ -1813,13 +1985,6 @@ fi</string>
 			<integer>10</integer>
 			<key>ypos</key>
 			<integer>190</integer>
-		</dict>
-		<key>F577D8D2-B839-411A-839B-880D88E4F045</key>
-		<dict>
-			<key>xpos</key>
-			<integer>640</integer>
-			<key>ypos</key>
-			<integer>1420</integer>
 		</dict>
 		<key>F8CB74BA-4C13-4621-BC60-E50650C85A9D</key>
 		<dict>
@@ -1835,6 +2000,8 @@ fi</string>
 	</dict>
 	<key>variables</key>
 	<dict>
+		<key>bookmark_tag</key>
+		<string>url</string>
 		<key>default_template</key>
 		<string>Template.md</string>
 		<key>evernote_auth_token</key>
@@ -1853,7 +2020,7 @@ fi</string>
 		<string>evernote_auth_token</string>
 	</array>
 	<key>version</key>
-	<string>0.95</string>
+	<string>1.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>

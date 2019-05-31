@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
+import datetime
 import os
 import re
-import datetime
 import urllib
-from collections import Counter
-from collections import OrderedDict
+from collections import Counter, OrderedDict
 
 from Alfred import Tools
 
@@ -64,10 +63,27 @@ class Search(object):
                     new_list.append(f)
         return new_list
 
+    def url_search(self, search_terms):
+        notes = self.searchInFiles(search_terms, 'and')
+        note_list = list()
+        if notes:
+            for f in notes:
+                note_title = f['title']
+                note_path = f['path']
+                content = self._getFileContent(f['path'])
+                matches = re.findall(r'\[(.*)\]\((https?.*)\)', content)
+                link_list = list()
+                for m in matches:
+                    url_title = m[0]
+                    url = m[1]
+                    link_list.append({'url_title': url_title, 'url': url})
+                note_list.append({'title': note_title, 'path': note_path, 'links': link_list})
+        return note_list
+
     def getNoteTitle(self, path):
         content = self._getFileContent(path)
         title = self._chop(os.path.basename(path), self.extension)
-        obj = re.search(r'^#{1}\s{1}(.*)', content,re.MULTILINE)
+        obj = re.search(r'^#{1}\s{1}(.*)', content, re.MULTILINE)
         if obj is not None:
             title = obj.group(1) if len(re.findall(r'\{.*\}', obj.group(1))) == 0 else title
         return title
@@ -123,7 +139,7 @@ class Search(object):
             return sorted_file_list
 
     def tagSearch(self, tag, sort_by='tag', reverse=False):
-        i = {'tag':0,'count':1}
+        i = {'tag': 0, 'count': 1}
         matches = list()
         sorted_file_list = self.getFilesListSorted()
         regex = re.compile(r'#{1}(\w+)\s?', re.I) if tag == '' else re.compile(r'#{1}(' + tag + '\w*)\s?', re.I)
@@ -172,7 +188,7 @@ class Search(object):
             content = str()
         return content
 
-    def isNoteTagged(self,file_path, tag):
+    def isNoteTagged(self, file_path, tag):
         match = False
         with open(file_path, 'r') as c:
             lines = c.readlines()[0:5]
@@ -192,4 +208,3 @@ class Search(object):
     def getUrlScheme(f):
         url_scheme = Tools.getEnv('url_scheme')
         return Tools.strJoin(url_scheme, urllib.pathname2url(f))
-

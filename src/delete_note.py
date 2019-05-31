@@ -1,13 +1,14 @@
 #!/usr/bin/python
 
+import os
+import re
+import shutil
 import sys
 import urllib
 
-from Alfred import Tools as Tools
-import os
-import shutil
 import MyNotes
-import re
+from Alfred import Tools as Tools
+
 
 def rmDir(path, ignore_errors=True):
     if os.path.exists(path):
@@ -43,7 +44,6 @@ mn = MyNotes.Search()
 
 # Load Env variables
 ext = mn.getNotesExtension()
-#p = mn.getNotesPath().encode('utf-8')
 files_to_delete = sys.argv[1:]
 
 return_text = str()
@@ -51,8 +51,6 @@ for query in files_to_delete:
     file_path, last_query = getFileQuery(query)
     if os.path.isfile(file_path) and file_path.endswith(ext):
         file_name = os.path.basename(file_path)
-
-
         # Search for links to other assets and delete each file
         parent = mn.getNotesPath()
         assetfile_links = getAssetsLinks(parent, file_path)
@@ -66,7 +64,8 @@ for query in files_to_delete:
         remove_ext = len(ext)
         assets_path = Tools.strJoin(file_path[:-remove_ext], ".assets")
         assets_path_legacy = Tools.strJoin(file_path[:-remove_ext])
-        is_asset_deleted = rmDir(assets_path) or rmDir(assets_path_legacy) or is_assetfile_deleted
+        is_asset_deleted = rmDir(assets_path) or rmDir(
+            assets_path_legacy) or is_assetfile_deleted
 
         # Finally delete the MD File
         is_file_deleted = rmFile(file_path)
@@ -77,7 +76,8 @@ for query in files_to_delete:
             return_text += '\n- Assets DELETED' if is_asset_deleted else str()
 
 if len(files_to_delete) > 1:
-    return_text = "%s files deleted" % len(files_to_delete)
+    return_text = "%s Notes and coresponding Assets deleted" % len(
+        files_to_delete)
 
 Tools.notify('MD Note deleted!', return_text)
 
