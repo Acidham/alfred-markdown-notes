@@ -1,25 +1,23 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import binascii
+import hashlib
+import logging
 import mimetypes
 import os
-import hashlib
 import re
 import sys
-import MyNotes
-from Alfred import Tools as Tools
+import urllib
 
-from evernote.api.client import EvernoteClient
 import evernote.edam.type.ttypes as Types
 import evernote.edam.userstore.constants as UserStoreConstants
-from evernote.edam.error.ttypes import EDAMUserException
-from evernote.edam.error.ttypes import EDAMSystemException
-from evernote.edam.error.ttypes import EDAMNotFoundException
-from evernote.edam.error.ttypes import EDAMErrorCode
-
 import markdown2
-import logging
-import urllib
+from evernote.api.client import EvernoteClient
+from evernote.edam.error.ttypes import (EDAMErrorCode, EDAMNotFoundException,
+                                        EDAMSystemException, EDAMUserException)
+
+import MyNotes
+from Alfred import Tools as Tools
 
 
 class EvernoteUpload(object):
@@ -34,7 +32,7 @@ class EvernoteUpload(object):
     def _connect_to_evernote(self, dev_token):
         user = None
         try:
-            self.client = EvernoteClient(token=dev_token,sandbox=False)
+            self.client = EvernoteClient(token=dev_token, sandbox=False)
             self.user_store = self.client.get_user_store()
             user = self.user_store.getUser()
             self.user_id = user.id
@@ -42,16 +40,17 @@ class EvernoteUpload(object):
         except EDAMUserException as e:
             err = e.errorCode
             print("Error attempting to authenticate to Evernote: %s - %s" % (
-            EDAMErrorCode._VALUES_TO_NAMES[err], e.parameter))
+                EDAMErrorCode._VALUES_TO_NAMES[err], e.parameter))
             return False
         except EDAMSystemException as e:
             err = e.errorCode
             print("Error attempting to authenticate to Evernote: %s - %s" % (
-            EDAMErrorCode._VALUES_TO_NAMES[err], e.message))
+                EDAMErrorCode._VALUES_TO_NAMES[err], e.message))
             sys.exit(-1)
 
         if user:
-            self.console_log("Authenticated to evernote as user %s" % user.username)
+            self.console_log(
+                "Authenticated to evernote as user %s" % user.username)
             return True
         else:
             return False
@@ -134,14 +133,15 @@ class EvernoteUpload(object):
         note.tagNames = tag_list
         for md_link, hash_hex in file_hash_dict.items():
             en_link = '<en-media type="image/png" hash="' + hash_hex + '"/>'
-            md_content = self._exhange_image_links(md_content, md_link,  en_link)
+            md_content = self._exhange_image_links(
+                md_content, md_link, en_link)
 
         enml = markdown2.markdown(md_content).encode('utf-8')
         note.content += self.remove_invalid_urls(enml)
         note.content += '</en-note>'
         return note
 
-    def upload_to_notebook(self, filename, notebookname,stack=None):
+    def upload_to_notebook(self, filename, notebookname, stack=None):
         # Check if the evernote notebook exists
         self.console_log("Checking for notebook named %s" % notebookname)
         notebook = self._check_and_make_notebook(notebookname, stack)
@@ -157,13 +157,13 @@ class EvernoteUpload(object):
         guid = created_note.guid
         return self.get_note_app_link(guid)
 
-    def _get_md_content(self,file_path):
+    def _get_md_content(self, file_path):
         content = str()
-        with open(file_path,'r') as f:
+        with open(file_path, 'r') as f:
             content = f.read()
         return content.decode('utf-8')
 
-    def _remove_yaml_fronter(self,c):
+    def _remove_yaml_fronter(self, c):
         return self._delete_all_tags(c)
 
     def _get_images_in_md(self, md_content):
@@ -180,18 +180,18 @@ class EvernoteUpload(object):
     def _exhange_image_links(self, md_content, md_link, en_link):
         return re.sub(r'!\[.*\]\(' + md_link + '\)', en_link, md_content)
 
-    def _url_decode(self,url):
+    def _url_decode(self, url):
         # TODO: to test
         return urllib.url2pathname(url.encode('utf8'))
 
-    def _url_encode(self,url):
+    def _url_encode(self, url):
         # TODO: to test
         return urllib.pathname2url(url.encode('utf8'))
 
-    def _delete_all_tags(self,md_content):
-        return re.sub(r'---.*---', '', md_content,flags=re.DOTALL)
+    def _delete_all_tags(self, md_content):
+        return re.sub(r'---.*---', '', md_content, flags=re.DOTALL)
 
-    def get_note_app_link(self,guid):
+    def get_note_app_link(self, guid):
         """
         Get Note link to display note in Evernote client
         :param note_guid: int
@@ -199,16 +199,18 @@ class EvernoteUpload(object):
         """
         url = str()
         if guid is not '':
-            url = "evernote:///view/%s/%s/%s/%s/" % (self.user_id, self.shared_id, guid, guid)
+            url = "evernote:///view/%s/%s/%s/%s/" % (
+                self.user_id, self.shared_id, guid, guid)
         return url
 
     def get_en_url(self, guid):
         url = str()
         if guid is not '':
-            url = 'https://www.evernote.com/shard/%s/nl/%s/%s' % (self.shared_id, self.user_id, guid)
+            url = 'https://www.evernote.com/shard/%s/nl/%s/%s' % (
+                self.shared_id, self.user_id, guid)
         return url
 
-    def _get_tag_list(self,s):
+    def _get_tag_list(self, s):
         tag_line = re.findall(r'\bTags\b.*', s)
         all_tags = list()
         for t in tag_line:
@@ -249,13 +251,15 @@ auth_token = Tools.getEnv('evernote_auth_token')
 f_path = Tools.getArgv(1)
 # f_path = '/Users/jjung/Documents/Notes/test evernote import.md'
 if auth_token == str():
-    Tools.notify('Evernote authentication error', 'Set Evernote AuthToken in worfklow configuration!')
+    Tools.notify('Evernote authentication error',
+                 'Set Evernote AuthToken in worfklow configuration!')
     sys.exit("Error")
 elif f_path != str():
     p = EvernoteUpload(auth_token)
     note_app_link = p.upload_to_notebook(f_path, 'Inbox')
     if note_app_link is not str():
-        Tools.notify('Upload in progress', 'The Note will be opened once uploaded!')
+        Tools.notify('Upload in progress',
+                     'The Note will be opened once uploaded!')
         sys.stdout.write(note_app_link)
     else:
         Tools.notify("Something went wrong")

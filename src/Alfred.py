@@ -1,8 +1,9 @@
 import json
+import os
 import sys
 import time
-import os
 from plistlib import readPlist, writePlist
+
 
 """
 Alfred Script Filter generator class
@@ -49,10 +50,10 @@ class Items(object):
 
     def getItem(self, d_type=""):
         """get current item definition for validation
-        
+
         Args:
             d_type (str, optional): defines returned object format "JSON" if it needs to be readable . Defaults to "".
-        
+
         Returns:
             str: JSON represenation of an item
         """
@@ -64,13 +65,13 @@ class Items(object):
     def getItems(self, response_type="json"):
         """get the final items data for which represents
         the script filter output
-        
+
         Args:
             response_type (str, optional): "dict"|"json". Defaults to "json".
-        
+
         Raises:
             ValueError: If key is not "dict"|"json"
-        
+
         Returns:
             str: returns the item representing script filter output
         """
@@ -87,7 +88,7 @@ class Items(object):
     def setIcon(self, m_path, m_type=""):
         """Set the icon of an item.
         Needs to be called before itemAdd
-        
+
         Args:
             m_path (str): Path to the icon
             m_type (str, optional): "icon"|"fileicon". Defaults to "".
@@ -99,11 +100,11 @@ class Items(object):
         :param path: str
         :param m_type: str
         :return: icon dict
-        
+
         Args:
             path (str): Path to the icon file
             m_type (str, optional): "image"|"fileicon". Defaults to "".
-        
+
         Returns:
             dict: icon and type
         """
@@ -115,7 +116,7 @@ class Items(object):
 
     def addMod(self, key, arg, subtitle, valid=True, icon_path="", icon_type=""):
         """Add a mod to an item
-        
+
         Args:
             key (str): "alt"|"cmd"|"shift"|"fn"|"ctrl
             arg (str): Value of Mod arg
@@ -123,7 +124,7 @@ class Items(object):
             valid (bool, optional): Arg valid or not. Defaults to True.
             icon_path (str, optional): Path to the icon relative to WF dir. Defaults to "".
             icon_type (str, optional): "image"|"fileicon". Defaults to "".
-        
+
         Raises:
             ValueError: if key is not in list
         """
@@ -146,7 +147,7 @@ class Items(object):
 
     def updateItem(self, id, key, value):
         """Update an Alfred script filter item key with a new value      
-        
+
         Args:
             id (int): list indes
             key (str): key which needs to be updated
@@ -159,7 +160,7 @@ class Items(object):
 
     def write(self, response_type='json'):
         """generate Script Filter Output and write back to stdout
-        
+
         Args:
             response_type (str, optional): json or dict as output format. Defaults to 'json'.
         """
@@ -169,7 +170,7 @@ class Items(object):
 
 class Tools(object):
     """Alfred Tools, helpful methos when dealing with Scripts in Alfred
-    
+
     Args:
         object (obj): Object class
     """
@@ -188,10 +189,10 @@ class Tools(object):
     @staticmethod
     def getArgv(i):
         """Get argument values from input in Alfred or empty if not available
-        
+
         Args:
             i (int): index of argument
-        
+
         Returns:
             response_type (str) -- argv string or None
         """
@@ -204,11 +205,11 @@ class Tools(object):
     @staticmethod
     def getDateStr(float_time, format='%d.%m.%Y'):
         """Format float time to string
-        
+
         Args:
             float_time (float): Time in float 
             format (str, optional): format string. Defaults to '%d.%m.%Y'.
-        
+
         Returns:
             str: Formatted Date String
         """
@@ -222,12 +223,12 @@ class Tools(object):
     @staticmethod
     def sortListDict(list_dict, key, reverse=True):
         """Sort List with Dictionary based on given key in Dict
-        
+
         Args:
             list_dict (list(dict)): List which contains unsorted dictionaries
             key (str): name of the key of the dict
             reverse (bool, optional): Reverse order. Defaults to True.
-        
+
         Returns:
             list(dict): sorted list of dictionaries
         """
@@ -236,12 +237,12 @@ class Tools(object):
     @staticmethod
     def sortListTuple(list_tuple, el, reverse=True):
         """Sort List with Tubles based on a given element in Tuple
-        
+
         Args:
             list_tuple (list(tuble)): Sort List with Tubles based on a given element in Tuple
             el (int): which element
             reverse (bool, optional): Reverse order. Defaults to True.
-        
+
         Returns:
             list(tuble) -- sorted list with tubles
         """
@@ -262,7 +263,7 @@ class Tools(object):
     @staticmethod
     def strJoin(*args):
         """Joins a list of strings
-        
+
         Arguments:
             *args (list): List which contains strings 
         Returns:
@@ -273,11 +274,11 @@ class Tools(object):
     @staticmethod
     def chop(theString, ext):
         """Cuts a string from the end and return the remaining
-        
+
         Args:
             theString (str): The String to cut
             ext (str): String which needs to be removed
-        
+
         Returns:
             [type]: [description]
         """
@@ -288,7 +289,7 @@ class Tools(object):
     @staticmethod
     def getEnvironment():
         """Get all environment variablse as a dict
-        
+
         Returns:
             dict: Dict with env variables e.g. {"env1": "value"}
         """

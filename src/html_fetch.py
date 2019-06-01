@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*-
 
 import datetime
-import html2text  # https://github.com/aaronsw/html2text
+import HTMLParser
+import re
+import sys
 import urllib2
+
+import html2text  # https://github.com/aaronsw/html2text
+
 import MyNotes
 from Alfred import Tools
-import sys
-import re
-import HTMLParser
 
 
 class Markdown(object):
@@ -17,14 +19,16 @@ class Markdown(object):
         self.url = url
         self.html = self.fetchHtml()
         self.md = self.fetchMd()
-        self.mdPageUrl = u"[%s](%s)" % (url.decode('utf-8'), url.decode('utf-8'))
+        self.mdPageUrl = u"[%s](%s)" % (
+            url.decode('utf-8'), url.decode('utf-8'))
 
     def fetchHtml(self):
         try:
             response = urllib2.urlopen(self.url)
             response = response.read().decode('utf-8')
         except:
-            response = "<html><body><a href=\"" + self.url + "\">" + self.url + "</a></body></html>"
+            response = "<html><body><a href=\"" + self.url + \
+                "\">" + self.url + "</a></body></html>"
             pass
         return response
 
@@ -41,7 +45,8 @@ class Markdown(object):
         return self.html
 
     def getTitle(self):
-        res = re.findall(r'<title>[\n\t\s]*(.+)[\n\t\s]*</title>', self.html, re.MULTILINE)
+        res = re.findall(
+            r'<title>[\n\t\s]*(.+)[\n\t\s]*</title>', self.html, re.MULTILINE)
         return self.htmlDecode(''.join(res))
 
     @staticmethod
@@ -65,8 +70,8 @@ class Markdown(object):
 
     @staticmethod
     def getTodayDate(fmt="%d.%m.%Y"):
-            now = datetime.datetime.now()
-            return now.strftime(fmt)
+        now = datetime.datetime.now()
+        return now.strftime(fmt)
 
 
 def parseFilename(f):
@@ -86,9 +91,10 @@ mn = MyNotes.Search()
 ext = mn.getNotesExtension()
 p = mn.getNotesPath()
 argv = Tools.getArgv(1)
-url = argv if argv.startswith('http://') or argv.startswith('https://') else str()
+url = argv if argv.startswith(
+    'http://') or argv.startswith('https://') else str()
 
-# TODO: When HTML is not fetchable, the URL will be used. 
+# TODO: When HTML is not fetchable, the URL will be used.
 # Fix formatting from <url> to markdown url [title](url)
 
 if url:

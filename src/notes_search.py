@@ -1,9 +1,10 @@
 #!/usr/bin/python
 
 import urllib
+
+import MyNotes
 from Alfred import Items as Items
 from Alfred import Tools as Tools
-import MyNotes
 
 
 def get_search_config(q):
@@ -66,7 +67,7 @@ if len(search_terms) > 0:
         # Mod for CMD - get markdown link to Note
         wf.addMod(
             key='cmd',
-            arg='[%s](%s)' % (f['filename'],md_path),
+            arg='[%s](%s)' % (f['filename'], md_path),
             subtitle='Copy Markdown Link to Clipboard',
             valid=True,
             icon_path='icons/link.png',

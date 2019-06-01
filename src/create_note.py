@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
-from Alfred import Tools
+
 import MyNotes
+from Alfred import Tools
 
 
 def parseFilename(f):
@@ -35,7 +36,7 @@ def readTemplate(file_path, **kwargs):
             content = f.read()
     else:
         content = fallback_content()
-    content = content.replace(template_tag,'')
+    content = content.replace(template_tag, '')
     for k, v in kwargs.iteritems():
         content = content.replace('{' + k + '}', v)
     return content
@@ -61,19 +62,20 @@ def getTemplate():
 def getTargetFilePath(file_name):
     file_path = Tools.strJoin(p, file_name, ext)
     if os.path.isfile(file_path):
-        new_file_name = Tools.strJoin(file_name, ' ', MyNotes.Search.getTodayDate("%d.%m.%Y %H.%M"))
+        new_file_name = Tools.strJoin(
+            file_name, ' ', MyNotes.Search.getTodayDate("%d.%m.%Y %H.%M"))
         file_path = Tools.strJoin(p, new_file_name, ext)
     return file_path
 
 
 # Replacement map for Filename when new file created
 CHAR_REPLACEMENT_MAP = {
-        '/': '-',
-        '\\': '-',
-        ':': '-',
-        '|': '-',
-        ',': ''
-    }
+    '/': '-',
+    '\\': '-',
+    ':': '-',
+    '|': '-',
+    ',': ''
+}
 
 # create MD search object
 md = MyNotes.Search()
@@ -96,4 +98,3 @@ if query:
         file_content = readTemplate(md_template, date=today, title=query)
         f.write(file_content)
     sys.stdout.write(fPath)
-
