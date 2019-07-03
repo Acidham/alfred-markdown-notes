@@ -200,7 +200,7 @@ class Search(object):
         return match
 
     @staticmethod
-    def getTodayDate(fmt="%d.%m.%Y"):
+    def getTodayDate(fmt=Tools.getEnv('default_date_format')):
         now = datetime.datetime.now()
         return now.strftime(fmt)
 
