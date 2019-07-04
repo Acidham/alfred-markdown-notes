@@ -146,7 +146,7 @@ class Search(object):
         for f in sorted_file_list:
             content = self._getFileContent(f['path'])
             if content != str():
-                match_obj = re.search(r'\bTags:.*', content)
+                match_obj = re.search(r'\bTags:.*', content, re.IGNORECASE)
                 if match_obj:
                     r = match_obj.group(0)
                     results = re.findall(regex, r)
@@ -193,14 +193,14 @@ class Search(object):
         with open(file_path, 'r') as c:
             lines = c.readlines()[0:5]
         for l in lines:
-            match_obj = re.search(r'Tags:.*' + tag, l)
+            match_obj = re.search(r'Tags:.*' + tag, l, re.IGNORECASE)
             if match_obj:
                 match = True
                 break
         return match
 
     @staticmethod
-    def getTodayDate(fmt="%d.%m.%Y"):
+    def getTodayDate(fmt=Tools.getEnv('default_date_format')):
         now = datetime.datetime.now()
         return now.strftime(fmt)
 

@@ -2014,6 +2014,8 @@ fi</string>
 		<string>#Template</string>
 		<key>url_scheme</key>
 		<string>x-marked://open/?file=</string>
+		<key>default_date_format</key>
+		<string>%d.%m.%Y</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
