@@ -120,6 +120,13 @@ class Search(object):
         file_list = list()
         try:
             file_list = os.listdir(self.path)
+            # TODO: Enhancement Implement subdir scanning
+            """
+            for root, dirs, files in os.walk(self.path, topdown=False):
+                for name in files:
+                    if name.endswith(".md"):
+                        file_list.append(name)
+            """
         except OSError as e:
             err = e.errno
             pass
@@ -142,7 +149,8 @@ class Search(object):
         i = {'tag': 0, 'count': 1}
         matches = list()
         sorted_file_list = self.getFilesListSorted()
-        regex = re.compile(r'#{1}(\w+)\s?', re.I) if tag == '' else re.compile(r'#{1}(' + tag + '\w*)\s?', re.I)
+        regex = re.compile(
+            r'#{1}(\w+)\s?', re.I) if tag == '' else re.compile(r'#{1}(' + tag + '\w*)\s?', re.I)
         for f in sorted_file_list:
             content = self._getFileContent(f['path'])
             if content != str():
@@ -154,7 +162,8 @@ class Search(object):
 
         counted_matches = Counter([v.lower() for v in matches])
         # Sorted by match counter x[1] if sort by key (tag name) is required change to x[0]
-        sorted_matches = OrderedDict(sorted(counted_matches.items(), key=lambda x: x[i[sort_by]], reverse=reverse))
+        sorted_matches = OrderedDict(
+            sorted(counted_matches.items(), key=lambda x: x[i[sort_by]], reverse=reverse))
 
         return sorted_matches
 
@@ -200,11 +209,20 @@ class Search(object):
         return match
 
     @staticmethod
-    def getTodayDate(fmt=Tools.getEnv('default_date_format')):
+    def getTodayDate(fmt="%d.%m.%Y"):
         now = datetime.datetime.now()
         return now.strftime(fmt)
 
     @staticmethod
     def getUrlScheme(f):
+        """
+        Gets the URL Scheme setup in Alfred Preferences
+
+        Args:
+            f(str): md file to add at the end of url scheme
+
+        Returns:
+            str: URL scheme
+        """
         url_scheme = Tools.getEnv('url_scheme')
         return Tools.strJoin(url_scheme, urllib.pathname2url(f))

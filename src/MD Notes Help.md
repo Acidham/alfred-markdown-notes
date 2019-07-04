@@ -18,6 +18,7 @@ To get MD Notes to work properly it is required to define some environment varia
 Variables marked with * are required for running MD Notes properly, the others are optional and can be ignored.
 
 * **Path to Notes** *  (`path_to_notes`): The path where markdown files store will be stored. The path needs to be relative to your home directory e.g. your notes are stored in `/Users/yourname/Dropbox/Notes` then the path to add to the configuration will look like `/Dropbox/Notes`
+* **Default Date Format** (`default_date_format`): Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
 * **Default Template** * (`default_template`): The file that will be used as default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates)) 
 * **Extension** * (`ext`): The md files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
 **Note:** The files must be type text files.

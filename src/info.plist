@@ -2002,6 +2002,8 @@ fi</string>
 	<dict>
 		<key>bookmark_tag</key>
 		<string>url</string>
+		<key>default_date_format</key>
+		<string>%d.%m.%Y</string>
 		<key>default_template</key>
 		<string>Template.md</string>
 		<key>evernote_auth_token</key>
@@ -2014,15 +2016,13 @@ fi</string>
 		<string>#Template</string>
 		<key>url_scheme</key>
 		<string>x-marked://open/?file=</string>
-		<key>default_date_format</key>
-		<string>%d.%m.%Y</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
 		<string>evernote_auth_token</string>
 	</array>
 	<key>version</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>

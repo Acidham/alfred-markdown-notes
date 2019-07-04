@@ -14,6 +14,7 @@ Variables marked with * are required for running MD Notes properly, the others a
 
 * **Path to Notes** *  (`path_to_notes`): The path where markdown files store will be stored. The path needs to be relative to your home directory e.g. your notes are stored in `/Users/yourname/Dropbox/Notes` then the path to add to the configuration will look like `/Dropbox/Notes`
 * **Default Template** * (`default_template`): The file that will be used as default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates)) 
+* **Default Date Format** (`default_date_format`): Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
 * **Extension** * (`ext`): The md files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
 **Note:** The files must be type text files.
 * **URL scheme** (`url_scheme`): I figured out that some web application like Todoist are using web interface where, due to OS resctrictions, file paths cannot be opened. To work around this URL scheme can be configured to open the note in markdown editor or viewer, e.g. Marked or iA Writer. Add URL Scheme like `x-writer://create?file=` and after `file=` will be enhanced with the MD Note path when executed. 
