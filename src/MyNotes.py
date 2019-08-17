@@ -209,6 +209,28 @@ class Search(object):
         return match
 
     @staticmethod
+    def get_search_config(q):
+        """
+        Returns search config tuple
+
+        Args:
+            q (string): Search Query e.g. Searchterm1&Searchtem2
+
+        Returns:
+            tuple: Search Terms and operator
+        """
+        if '&' in q:
+            s_terms = q.split('&')
+            s_type = 'and'
+        elif '|' in q:
+            s_terms = q.split('|')
+            s_type = 'or'
+        else:
+            s_terms = [q]
+            s_type = 'or'
+        return s_terms, s_type
+
+    @staticmethod
     def getTodayDate(fmt="%d.%m.%Y"):
         now = datetime.datetime.now()
         return now.strftime(fmt)

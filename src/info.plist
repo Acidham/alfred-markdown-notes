@@ -47,11 +47,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>1D74BE3C-E564-491F-BE91-2890B1D302A2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9E3AE8B4-F748-4DBC-8414-9A0C7A9A2DB1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>24200E68-1A74-4809-A7CC-735EC8CBB865</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>E821ABDF-E08D-4BAE-83F0-4F24F4AB7B8C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>2F777EDC-8764-4AE9-AFC2-65D224BB01DE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EC25E532-D409-47A8-8F38-AC96D4BBADBD</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -125,19 +151,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>55A4F6E7-D65A-4964-AA7C-31646E1434EA</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>661CD8F0-9481-4FCF-9A96-73A2FF1FCFD4</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>5FA571C6-6183-44C9-B18F-2D4C73A0C48F</key>
 		<array>
 			<dict>
@@ -168,29 +181,9 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>692D2BDC-A47B-4EF3-9721-1FE449A7C804</string>
-				<key>modifiers</key>
-				<integer>262144</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>9276011F-3CDA-4F4A-A7BB-6A36B761C53A</string>
+				<string>2F777EDC-8764-4AE9-AFC2-65D224BB01DE</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>BC3595BC-FFD4-4DBA-BF99-567B48EE838F</string>
-				<key>modifiers</key>
-				<integer>8388608</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -207,11 +200,24 @@
 				<false/>
 			</dict>
 		</array>
-		<key>692D2BDC-A47B-4EF3-9721-1FE449A7C804</key>
+		<key>73F51F35-8DE7-4E97-A18D-ADA7046EB4A7</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>97AB16F3-8F11-4C02-9CB4-28EC6C61C226</string>
+				<string>BC3595BC-FFD4-4DBA-BF99-567B48EE838F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7EF41C6D-4E2F-4BED-B733-B3538C647263</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>839D1ABB-44FF-4FE6-8B72-42E4A9E4AA04</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -226,19 +232,9 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>9E3AE8B4-F748-4DBC-8414-9A0C7A9A2DB1</string>
+				<string>2F777EDC-8764-4AE9-AFC2-65D224BB01DE</string>
 				<key>modifiers</key>
-				<integer>524288</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>A1994305-42C8-4C6A-BB26-0D822F6B021A</string>
-				<key>modifiers</key>
-				<integer>262144</integer>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -256,27 +252,20 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>9276011F-3CDA-4F4A-A7BB-6A36B761C53A</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>BC3595BC-FFD4-4DBA-BF99-567B48EE838F</string>
-				<key>modifiers</key>
-				<integer>8388608</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>839D1ABB-44FF-4FE6-8B72-42E4A9E4AA04</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CB5511DF-1026-4D97-995C-7636BD756719</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -312,9 +301,9 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>01EBC50C-380F-4FA3-B537-D755B7134966</string>
+				<string>8BFF5D9F-F5E7-4CC8-AC7D-C3DAA406DA19</string>
 				<key>modifiers</key>
-				<integer>0</integer>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -322,9 +311,9 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>8BFF5D9F-F5E7-4CC8-AC7D-C3DAA406DA19</string>
+				<string>01EBC50C-380F-4FA3-B537-D755B7134966</string>
 				<key>modifiers</key>
-				<integer>524288</integer>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -344,6 +333,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>8F8F1A2F-E9D7-4EF4-B3C9-3BE1B75DEBFB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9CFA7349-15E0-4F12-8E6D-251360FC1EAC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>9276011F-3CDA-4F4A-A7BB-6A36B761C53A</key>
 		<array>
 			<dict>
@@ -353,6 +355,57 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9CFA7349-15E0-4F12-8E6D-251360FC1EAC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D74BE3C-E564-491F-BE91-2890B1D302A2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>1F96C803-7A3A-41F9-B9B4-3AF856E665B0</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7EF41C6D-4E2F-4BED-B733-B3538C647263</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3961D0C5-8015-4EDE-8753-F201EB4B11C1</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F92C44A1-5C7A-4863-9FC1-F0188FF998E3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>6D724BD9-BEF7-4D28-8DCC-A594E968CD3E</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>73F51F35-8DE7-4E97-A18D-ADA7046EB4A7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>03A97A98-84AF-47FA-BD7A-F5BD9090159F</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -401,6 +454,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>4C847DCB-008B-4241-A1C4-35B3895092F7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CB5511DF-1026-4D97-995C-7636BD756719</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A1994305-42C8-4C6A-BB26-0D822F6B021A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -486,6 +552,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>EC25E532-D409-47A8-8F38-AC96D4BBADBD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F993108F-7C6F-4AF3-90D3-14A1CBAAEBBE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>EEAFA237-F675-43C1-9EB8-A1AE88C34E75</key>
 		<array>
 			<dict>
@@ -512,6 +591,32 @@
 				<false/>
 			</dict>
 		</array>
+		<key>F92C44A1-5C7A-4863-9FC1-F0188FF998E3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9276011F-3CDA-4F4A-A7BB-6A36B761C53A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F993108F-7C6F-4AF3-90D3-14A1CBAAEBBE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8F8F1A2F-E9D7-4EF4-B3C9-3BE1B75DEBFB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Acidham</string>
@@ -526,20 +631,34 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<true/>
-				<key>filetypes</key>
-				<array>
-					<string>net.daringfireball.markdown</string>
-					<string>net.ia.markdown</string>
-				</array>
-				<key>name</key>
-				<string>Delete MD Notes</string>
+				<key>argument</key>
+				<string>{var:action2}</string>
+				<key>variables</key>
+				<dict/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>454BC87F-9E2E-4C7B-ABFA-2E7709D59244</string>
+			<string>1D74BE3C-E564-491F-BE91-2890B1D302A2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string>com.evernote.Evernote</string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>1AB175B4-0986-4F49-A20D-4AF004DC9158</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -569,25 +688,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string>com.evernote.Evernote</string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>1AB175B4-0986-4F49-A20D-4AF004DC9158</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>inputstring</key>
 				<string>{query}</string>
 				<key>matchcasesensitive</key>
@@ -607,53 +707,328 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>import sys
-from  urllib import pathname2url
-import os
-
-query = sys.argv[1]
-
-file_name = os.path.basename(query)
-
-output = '['+file_name+'](' + pathname2url(query) + ')'
-
-sys.stdout.write(output)</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>get_md_link.py</string>
-				<key>type</key>
-				<integer>8</integer>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action1}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>evernote</string>
+						<key>outputlabel</key>
+						<string>evernote</string>
+						<key>uid</key>
+						<string>1F96C803-7A3A-41F9-B9B4-3AF856E665B0</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action1}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>delete</string>
+						<key>outputlabel</key>
+						<string>delete</string>
+						<key>uid</key>
+						<string>3961D0C5-8015-4EDE-8753-F201EB4B11C1</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action1}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>link</string>
+						<key>outputlabel</key>
+						<string>link</string>
+						<key>uid</key>
+						<string>6D724BD9-BEF7-4D28-8DCC-A594E968CD3E</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action1}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>marked</string>
+						<key>outputlabel</key>
+						<string>marked</string>
+						<key>uid</key>
+						<string>03A97A98-84AF-47FA-BD7A-F5BD9090159F</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>CCE98113-EE5F-4540-B377-3C9A9DA1AC6D</string>
+			<string>9CFA7349-15E0-4F12-8E6D-251360FC1EAC</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>net.daringfireball.markdown</string>
-					<string>net.ia.markdown</string>
-				</array>
-				<key>name</key>
-				<string>MD Link to Note</string>
+				<key>argument</key>
+				<string>{var:path_query1}|{var:path_query2}</string>
+				<key>variables</key>
+				<dict/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>EEAFA237-F675-43C1-9EB8-A1AE88C34E75</string>
+			<string>CB5511DF-1026-4D97-995C-7636BD756719</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>delimiter</key>
+				<string>&gt;</string>
+				<key>trimarguments</key>
+				<true/>
+				<key>variableprefix</key>
+				<string>path_query</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.split</string>
+			<key>uid</key>
+			<string>839D1ABB-44FF-4FE6-8B72-42E4A9E4AA04</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:action2}</string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>7EF41C6D-4E2F-4BED-B733-B3538C647263</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>search_actions.py</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F993108F-7C6F-4AF3-90D3-14A1CBAAEBBE</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>delimiter</key>
+				<string>|</string>
+				<key>trimarguments</key>
+				<true/>
+				<key>variableprefix</key>
+				<string>action</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.split</string>
+			<key>uid</key>
+			<string>8F8F1A2F-E9D7-4EF4-B3C9-3BE1B75DEBFB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>EC25E532-D409-47A8-8F38-AC96D4BBADBD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>delimiter</key>
+				<string>&gt;</string>
+				<key>trimarguments</key>
+				<true/>
+				<key>variableprefix</key>
+				<string>path_query</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.split</string>
+			<key>uid</key>
+			<string>2F777EDC-8764-4AE9-AFC2-65D224BB01DE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>mds</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>python notes_search.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>notes_search.py</string>
+				<key>subtext</key>
+				<string>Search for {query}</string>
+				<key>title</key>
+				<string>Search in MD Notes</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8354F261-D7A0-4848-8312-9EC40100DFA6</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>md#</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>python tag_search.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>tag_search.py</string>
+				<key>subtext</key>
+				<string>Markdown Notes Tag Search</string>
+				<key>title</key>
+				<string>MD Notes Tag Search</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E1E655F3-B8EB-4324-8B9D-25D3AC743045</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:action2}</string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>F92C44A1-5C7A-4863-9FC1-F0188FF998E3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -702,17 +1077,28 @@ sys.stdout.write(output)</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array/>
-				<key>name</key>
-				<string>Upload Asset for MD Notes</string>
+				<key>argument</key>
+				<string>{var:action2}</string>
+				<key>variables</key>
+				<dict/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>C316AE82-592A-4D24-95D1-D889B41122DB</string>
+			<string>73F51F35-8DE7-4E97-A18D-ADA7046EB4A7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>*snote</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>88BD02F5-4A73-4701-98D0-450B1F338238</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -724,33 +1110,10 @@ sys.stdout.write(output)</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>python asset_upload.py "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>4C847DCB-008B-4241-A1C4-35B3895092F7</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
 				<string># THESE VARIABLES MUST BE SET. SEE THE ONEUPDATER README FOR AN EXPLANATION OF EACH.
 readonly remote_info_plist="https://raw.githubusercontent.com/Acidham/alfred-markdown-notes/master/src/info.plist"
-readonly workflow_url="https://raw.githubusercontent.com/Acidham/alfred-markdown-notes/master/Markdown%20Notes.alfredworkflow"
-readonly download_type='direct'
+readonly workflow_url="Acidham/alfred-markdown-notes"
+readonly download_type='github_release'
 readonly frequency_check='4'
 
 # FROM HERE ON, CODE SHOULD BE LEFT UNTOUCHED!
@@ -833,197 +1196,20 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>*snote</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>88BD02F5-4A73-4701-98D0-450B1F338238</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>*mdtodo</string>
-				<key>passinputasargument</key>
+				<key>acceptsmulti</key>
 				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
+				<key>filetypes</key>
+				<array>
+					<string>net.daringfireball.markdown</string>
+					<string>net.ia.markdown</string>
+				</array>
+				<key>name</key>
+				<string>Delete MD Notes</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
+			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
-			<string>97AB16F3-8F11-4C02-9CB4-28EC6C61C226</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>python delete_note.py "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string>delete_note.py</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>692D2BDC-A47B-4EF3-9721-1FE449A7C804</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>md#</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>python tag_search.py "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>tag_search.py</string>
-				<key>subtext</key>
-				<string>Markdown Notes Tag Search</string>
-				<key>title</key>
-				<string>MD Notes Tag Search</string>
-				<key>type</key>
-				<integer>8</integer>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>E1E655F3-B8EB-4324-8B9D-25D3AC743045</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>mds</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>python notes_search.py "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>notes_search.py</string>
-				<key>subtext</key>
-				<string>Search for {query}</string>
-				<key>title</key>
-				<string>Search in MD Notes</string>
-				<key>type</key>
-				<integer>8</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>8354F261-D7A0-4848-8312-9EC40100DFA6</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>url_scheme.py</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>E821ABDF-E08D-4BAE-83F0-4F24F4AB7B8C</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>MD Link copied to clipboard</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>EAEF0CF6-8AEA-4B7D-8EAB-80FC16EDDAAC</string>
+			<string>454BC87F-9E2E-4C7B-ABFA-2E7709D59244</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1047,20 +1233,21 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
+				<key>lastpathcomponent</key>
 				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>net.daringfireball.markdown</string>
-					<string>net.ia.markdown</string>
-				</array>
-				<key>name</key>
-				<string>Copy URL Scheme MD Link</string>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>MD Link copied to clipboard</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>24200E68-1A74-4809-A7CC-735EC8CBB865</string>
+			<string>EAEF0CF6-8AEA-4B7D-8EAB-80FC16EDDAAC</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1131,13 +1318,85 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>*mdtodo</string>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>net.daringfireball.markdown</string>
+					<string>net.ia.markdown</string>
+				</array>
+				<key>name</key>
+				<string>MD Link to Note</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
+			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
-			<string>55A4F6E7-D65A-4964-AA7C-31646E1434EA</string>
+			<string>EEAFA237-F675-43C1-9EB8-A1AE88C34E75</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys
+from  urllib import pathname2url
+import os
+
+query = sys.argv[1]
+
+file_name = os.path.basename(query)
+
+output = '['+file_name+'](' + pathname2url(query) + ')'
+
+sys.stdout.write(output)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>get_md_link.py</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CCE98113-EE5F-4540-B377-3C9A9DA1AC6D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string>/Applications/Typora.app</string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Upload Asset for MD Notes</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>C316AE82-592A-4D24-95D1-D889B41122DB</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1149,39 +1408,61 @@ fi</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>python create_note.py "{query}"</string>
+				<string>python asset_upload.py "{query}"</string>
 				<key>scriptargtype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>scriptfile</key>
-				<string>create_note.py</string>
+				<string></string>
 				<key>type</key>
-				<integer>8</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>49185B13-47A9-4B6A-9FF3-7423A9E173EB</string>
+			<string>4C847DCB-008B-4241-A1C4-35B3895092F7</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
 				<integer>0</integer>
-				<key>keyword</key>
-				<string>mdc</string>
-				<key>subtext</key>
-				<string>Enter a title for the Markdown Note</string>
-				<key>text</key>
-				<string>Create New MD Note</string>
-				<key>withspace</key>
-				<true/>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>url_scheme.py</string>
+				<key>type</key>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>C277BA58-113D-4741-A306-9A1AAAE9EA61</string>
+			<string>E821ABDF-E08D-4BAE-83F0-4F24F4AB7B8C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>net.daringfireball.markdown</string>
+					<string>net.ia.markdown</string>
+				</array>
+				<key>name</key>
+				<string>Copy URL Scheme MD Link</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>24200E68-1A74-4809-A7CC-735EC8CBB865</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1237,17 +1518,46 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
-				<string>/Applications/Typora.app</string>
-				<key>sourcefile</key>
-				<string></string>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>mdc</string>
+				<key>subtext</key>
+				<string>Enter a title for the Markdown Note</string>
+				<key>text</key>
+				<string>Create New MD Note</string>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</string>
+			<string>C277BA58-113D-4741-A306-9A1AAAE9EA61</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>python create_note.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>create_note.py</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>49185B13-47A9-4B6A-9FF3-7423A9E173EB</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1264,6 +1574,44 @@ fi</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>616E1777-6C1F-406D-B16B-697EA6E8DDA0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>8BFF5D9F-F5E7-4CC8-AC7D-C3DAA406DA19</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>URL copied to Clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>0615CE75-2C53-400F-BD6E-FC6A98EE6F0A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1332,44 +1680,6 @@ fi</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>898E9FE0-5165-4530-98E9-9497DDF6DA0D</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>URL copied to Clipboard</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>0615CE75-2C53-400F-BD6E-FC6A98EE6F0A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>8BFF5D9F-F5E7-4CC8-AC7D-C3DAA406DA19</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -1471,6 +1781,21 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string>MD Notes Help.md</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>4053BF64-C6EB-4285-890E-290E72D132EB</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -1492,17 +1817,34 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string>MD Notes Help.md</string>
+				<key>externaltriggerid</key>
+				<string>*config</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
+			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
-			<string>4053BF64-C6EB-4285-890E-290E72D132EB</string>
+			<string>E34E9B2D-0135-4046-8931-7B35A3371FAE</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>*config</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>00C9EAC8-45E3-4C4C-B1CB-D9B5503ADB1F</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1557,38 +1899,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>*config</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>E34E9B2D-0135-4046-8931-7B35A3371FAE</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
-				<string>*config</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>00C9EAC8-45E3-4C4C-B1CB-D9B5503ADB1F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>variables</key>
@@ -1612,9 +1922,9 @@ fi</string>
 		<key>00C9EAC8-45E3-4C4C-B1CB-D9B5503ADB1F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>20</integer>
 			<key>ypos</key>
-			<integer>1940</integer>
+			<integer>1900</integer>
 		</dict>
 		<key>01B01E1C-F114-4C29-9C0C-2881FA84A5D1</key>
 		<dict>
@@ -1623,37 +1933,44 @@ fi</string>
 			<key>note</key>
 			<string>Shows MD Help</string>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>240</integer>
 			<key>ypos</key>
-			<integer>1790</integer>
+			<integer>1750</integer>
 		</dict>
 		<key>01EBC50C-380F-4FA3-B537-D755B7134966</key>
 		<dict>
 			<key>xpos</key>
-			<integer>810</integer>
+			<integer>1165</integer>
 			<key>ypos</key>
-			<integer>1350</integer>
+			<integer>1425</integer>
 		</dict>
 		<key>02CE4D76-2078-45FE-9A13-8B1D487EEF58</key>
 		<dict>
 			<key>xpos</key>
-			<integer>160</integer>
+			<integer>170</integer>
 			<key>ypos</key>
-			<integer>1970</integer>
+			<integer>1930</integer>
 		</dict>
 		<key>0615CE75-2C53-400F-BD6E-FC6A98EE6F0A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1035</integer>
+			<integer>1430</integer>
 			<key>ypos</key>
-			<integer>1490</integer>
+			<integer>1285</integer>
 		</dict>
 		<key>1AB175B4-0986-4F49-A20D-4AF004DC9158</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1080</integer>
+			<integer>1440</integer>
 			<key>ypos</key>
-			<integer>90</integer>
+			<integer>10</integer>
+		</dict>
+		<key>1D74BE3C-E564-491F-BE91-2890B1D302A2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>895</integer>
+			<key>ypos</key>
+			<integer>10</integer>
 		</dict>
 		<key>24200E68-1A74-4809-A7CC-735EC8CBB865</key>
 		<dict>
@@ -1662,16 +1979,23 @@ fi</string>
 			<key>note</key>
 			<string>File Action to get URL Scheme</string>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>20</integer>
 			<key>ypos</key>
-			<integer>830</integer>
+			<integer>1065</integer>
+		</dict>
+		<key>2F777EDC-8764-4AE9-AFC2-65D224BB01DE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>445</integer>
+			<key>ypos</key>
+			<integer>120</integer>
 		</dict>
 		<key>4053BF64-C6EB-4285-890E-290E72D132EB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>410</integer>
+			<integer>420</integer>
 			<key>ypos</key>
-			<integer>1790</integer>
+			<integer>1750</integer>
 		</dict>
 		<key>454BC87F-9E2E-4C7B-ABFA-2E7709D59244</key>
 		<dict>
@@ -1680,16 +2004,16 @@ fi</string>
 			<key>note</key>
 			<string>File Action to delete notes when multiple files selectes. One file also works</string>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>20</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>465</integer>
 		</dict>
 		<key>4615C40D-B87C-43D2-AF02-871819B0F9CB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>980</integer>
+			<integer>1340</integer>
 			<key>ypos</key>
-			<integer>120</integer>
+			<integer>40</integer>
 		</dict>
 		<key>49185B13-47A9-4B6A-9FF3-7423A9E173EB</key>
 		<dict>
@@ -1698,9 +2022,9 @@ fi</string>
 			<key>note</key>
 			<string>Create a note with template</string>
 			<key>xpos</key>
-			<integer>410</integer>
+			<integer>420</integer>
 			<key>ypos</key>
-			<integer>1170</integer>
+			<integer>1250</integer>
 		</dict>
 		<key>49A9F878-DBE6-4A7F-B6A0-FEFD5D77393A</key>
 		<dict>
@@ -1709,9 +2033,9 @@ fi</string>
 			<key>note</key>
 			<string>HTML Fetch worker</string>
 			<key>xpos</key>
-			<integer>410</integer>
+			<integer>420</integer>
 			<key>ypos</key>
-			<integer>1630</integer>
+			<integer>1590</integer>
 		</dict>
 		<key>4C847DCB-008B-4241-A1C4-35B3895092F7</key>
 		<dict>
@@ -1720,34 +2044,25 @@ fi</string>
 			<key>note</key>
 			<string>Upload the asset to internal target folder and copy md link to clipboard</string>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>240</integer>
 			<key>ypos</key>
-			<integer>340</integer>
-		</dict>
-		<key>55A4F6E7-D65A-4964-AA7C-31646E1434EA</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>12</integer>
-			<key>xpos</key>
-			<integer>10</integer>
-			<key>ypos</key>
-			<integer>1000</integer>
+			<integer>885</integer>
 		</dict>
 		<key>5FA571C6-6183-44C9-B18F-2D4C73A0C48F</key>
 		<dict>
 			<key>note</key>
 			<string>Shows,Select and change config</string>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>240</integer>
 			<key>ypos</key>
-			<integer>1940</integer>
+			<integer>1900</integer>
 		</dict>
 		<key>616E1777-6C1F-406D-B16B-697EA6E8DDA0</key>
 		<dict>
 			<key>xpos</key>
-			<integer>160</integer>
+			<integer>170</integer>
 			<key>ypos</key>
-			<integer>1200</integer>
+			<integer>1280</integer>
 		</dict>
 		<key>661CD8F0-9481-4FCF-9A96-73A2FF1FCFD4</key>
 		<dict>
@@ -1756,38 +2071,41 @@ fi</string>
 			<key>note</key>
 			<string>List or search for todos</string>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>240</integer>
 			<key>ypos</key>
-			<integer>1000</integer>
-		</dict>
-		<key>692D2BDC-A47B-4EF3-9721-1FE449A7C804</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>1</integer>
-			<key>note</key>
-			<string>Deletes a note from todo search (mdtodo)</string>
-			<key>xpos</key>
-			<integer>810</integer>
-			<key>ypos</key>
-			<integer>560</integer>
+			<integer>575</integer>
 		</dict>
 		<key>735B5B72-0876-4143-887E-D8191A48154E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>1080</integer>
+			<integer>1440</integer>
 			<key>ypos</key>
-			<integer>240</integer>
+			<integer>160</integer>
+		</dict>
+		<key>73F51F35-8DE7-4E97-A18D-ADA7046EB4A7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>895</integer>
+			<key>ypos</key>
+			<integer>195</integer>
+		</dict>
+		<key>7EF41C6D-4E2F-4BED-B733-B3538C647263</key>
+		<dict>
+			<key>xpos</key>
+			<integer>895</integer>
+			<key>ypos</key>
+			<integer>75</integer>
 		</dict>
 		<key>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</key>
 		<dict>
 			<key>note</key>
 			<string>Open in Typora</string>
 			<key>xpos</key>
-			<integer>810</integer>
-			<key>ypos</key>
 			<integer>1170</integer>
+			<key>ypos</key>
+			<integer>835</integer>
 		</dict>
 		<key>8354F261-D7A0-4848-8312-9EC40100DFA6</key>
 		<dict>
@@ -1796,50 +2114,55 @@ fi</string>
 			<key>note</key>
 			<string>Search Note, Delete with CMD</string>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>240</integer>
 			<key>ypos</key>
-			<integer>620</integer>
+			<integer>125</integer>
+		</dict>
+		<key>839D1ABB-44FF-4FE6-8B72-42E4A9E4AA04</key>
+		<dict>
+			<key>xpos</key>
+			<integer>980</integer>
+			<key>ypos</key>
+			<integer>75</integer>
 		</dict>
 		<key>88BD02F5-4A73-4701-98D0-450B1F338238</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>20</integer>
 			<key>ypos</key>
-			<integer>500</integer>
+			<integer>325</integer>
 		</dict>
 		<key>898E9FE0-5165-4530-98E9-9497DDF6DA0D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>410</integer>
+			<integer>240</integer>
 			<key>ypos</key>
-			<integer>1355</integer>
+			<integer>1440</integer>
 		</dict>
 		<key>8BFF5D9F-F5E7-4CC8-AC7D-C3DAA406DA19</key>
 		<dict>
 			<key>xpos</key>
-			<integer>810</integer>
+			<integer>1170</integer>
 			<key>ypos</key>
-			<integer>1490</integer>
+			<integer>1285</integer>
+		</dict>
+		<key>8F8F1A2F-E9D7-4EF4-B3C9-3BE1B75DEBFB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>720</integer>
+			<key>ypos</key>
+			<integer>115</integer>
 		</dict>
 		<key>9276011F-3CDA-4F4A-A7BB-6A36B761C53A</key>
 		<dict>
 			<key>note</key>
 			<string>Copy MD link to clipboard</string>
 			<key>xpos</key>
-			<integer>810</integer>
+			<integer>1170</integer>
 			<key>ypos</key>
-			<integer>830</integer>
-		</dict>
-		<key>97AB16F3-8F11-4C02-9CB4-28EC6C61C226</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>12</integer>
-			<key>xpos</key>
-			<integer>1080</integer>
-			<key>ypos</key>
-			<integer>560</integer>
+			<integer>495</integer>
 		</dict>
 		<key>9AFF9D4E-AFFE-4DC2-A1EA-8E795277A5A6</key>
 		<dict>
@@ -1848,9 +2171,16 @@ fi</string>
 			<key>note</key>
 			<string>OneUpdater</string>
 			<key>xpos</key>
-			<integer>810</integer>
+			<integer>1170</integer>
 			<key>ypos</key>
-			<integer>410</integer>
+			<integer>345</integer>
+		</dict>
+		<key>9CFA7349-15E0-4F12-8E6D-251360FC1EAC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>780</integer>
+			<key>ypos</key>
+			<integer>60</integer>
 		</dict>
 		<key>9E3AE8B4-F748-4DBC-8414-9A0C7A9A2DB1</key>
 		<dict>
@@ -1859,9 +2189,9 @@ fi</string>
 			<key>note</key>
 			<string>Import MD Note to Evernote</string>
 			<key>xpos</key>
-			<integer>810</integer>
+			<integer>1170</integer>
 			<key>ypos</key>
-			<integer>90</integer>
+			<integer>10</integer>
 		</dict>
 		<key>A1994305-42C8-4C6A-BB26-0D822F6B021A</key>
 		<dict>
@@ -1870,18 +2200,18 @@ fi</string>
 			<key>note</key>
 			<string>Deletes a note from Search Note (snote)</string>
 			<key>xpos</key>
-			<integer>810</integer>
+			<integer>1170</integer>
 			<key>ypos</key>
-			<integer>240</integer>
+			<integer>160</integer>
 		</dict>
 		<key>BC3595BC-FFD4-4DBA-BF99-567B48EE838F</key>
 		<dict>
 			<key>note</key>
 			<string>Open in Mardown Viewer</string>
 			<key>xpos</key>
-			<integer>810</integer>
+			<integer>1170</integer>
 			<key>ypos</key>
-			<integer>1000</integer>
+			<integer>665</integer>
 		</dict>
 		<key>C277BA58-113D-4741-A306-9A1AAAE9EA61</key>
 		<dict>
@@ -1890,18 +2220,25 @@ fi</string>
 			<key>note</key>
 			<string>Create note, input title</string>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>240</integer>
 			<key>ypos</key>
-			<integer>1170</integer>
+			<integer>1250</integer>
 		</dict>
 		<key>C316AE82-592A-4D24-95D1-D889B41122DB</key>
 		<dict>
 			<key>note</key>
 			<string>File Action to upload Asset and provide MD Link to it</string>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>20</integer>
 			<key>ypos</key>
-			<integer>340</integer>
+			<integer>885</integer>
+		</dict>
+		<key>CB5511DF-1026-4D97-995C-7636BD756719</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1055</integer>
+			<key>ypos</key>
+			<integer>75</integer>
 		</dict>
 		<key>CCE98113-EE5F-4540-B377-3C9A9DA1AC6D</key>
 		<dict>
@@ -1910,16 +2247,16 @@ fi</string>
 			<key>note</key>
 			<string>Generates the MD Link</string>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>240</integer>
 			<key>ypos</key>
-			<integer>190</integer>
+			<integer>735</integer>
 		</dict>
 		<key>DB11D78A-2543-48A3-B195-09CC58045785</key>
 		<dict>
 			<key>xpos</key>
-			<integer>565</integer>
+			<integer>575</integer>
 			<key>ypos</key>
-			<integer>1650</integer>
+			<integer>1610</integer>
 		</dict>
 		<key>E1E655F3-B8EB-4324-8B9D-25D3AC743045</key>
 		<dict>
@@ -1928,23 +2265,23 @@ fi</string>
 			<key>note</key>
 			<string>List all tags or search for tags</string>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>20</integer>
 			<key>ypos</key>
-			<integer>620</integer>
+			<integer>130</integer>
 		</dict>
 		<key>E34E9B2D-0135-4046-8931-7B35A3371FAE</key>
 		<dict>
 			<key>xpos</key>
-			<integer>410</integer>
+			<integer>420</integer>
 			<key>ypos</key>
-			<integer>1940</integer>
+			<integer>1900</integer>
 		</dict>
 		<key>E3B5F19A-B7EC-4984-A3CA-D626DB05ADF5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1080</integer>
+			<integer>1385</integer>
 			<key>ypos</key>
-			<integer>1640</integer>
+			<integer>1605</integer>
 		</dict>
 		<key>E6223AE8-EC41-40DA-88AC-8476D6F73ED1</key>
 		<dict>
@@ -1953,9 +2290,9 @@ fi</string>
 			<key>note</key>
 			<string>MD Fetch to get HTML into MD Note</string>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>240</integer>
 			<key>ypos</key>
-			<integer>1630</integer>
+			<integer>1590</integer>
 		</dict>
 		<key>E821ABDF-E08D-4BAE-83F0-4F24F4AB7B8C</key>
 		<dict>
@@ -1964,16 +2301,23 @@ fi</string>
 			<key>note</key>
 			<string>Get Url Scheme MD Link</string>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>240</integer>
 			<key>ypos</key>
-			<integer>830</integer>
+			<integer>1065</integer>
 		</dict>
 		<key>EAEF0CF6-8AEA-4B7D-8EAB-80FC16EDDAAC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1035</integer>
+			<integer>1435</integer>
 			<key>ypos</key>
-			<integer>830</integer>
+			<integer>495</integer>
+		</dict>
+		<key>EC25E532-D409-47A8-8F38-AC96D4BBADBD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>505</integer>
+			<key>ypos</key>
+			<integer>120</integer>
 		</dict>
 		<key>EEAFA237-F675-43C1-9EB8-A1AE88C34E75</key>
 		<dict>
@@ -1982,9 +2326,9 @@ fi</string>
 			<key>note</key>
 			<string>File Action to get MD Note Link</string>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>20</integer>
 			<key>ypos</key>
-			<integer>190</integer>
+			<integer>735</integer>
 		</dict>
 		<key>F8CB74BA-4C13-4621-BC60-E50650C85A9D</key>
 		<dict>
@@ -1993,9 +2337,23 @@ fi</string>
 			<key>note</key>
 			<string>Template Selector for new Notes</string>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>20</integer>
 			<key>ypos</key>
-			<integer>1170</integer>
+			<integer>1250</integer>
+		</dict>
+		<key>F92C44A1-5C7A-4863-9FC1-F0188FF998E3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>895</integer>
+			<key>ypos</key>
+			<integer>130</integer>
+		</dict>
+		<key>F993108F-7C6F-4AF3-90D3-14A1CBAAEBBE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>570</integer>
+			<key>ypos</key>
+			<integer>90</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -2022,7 +2380,7 @@ fi</string>
 		<string>evernote_auth_token</string>
 	</array>
 	<key>version</key>
-	<string>1.2</string>
+	<string>1.4</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>

@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
+import MyNotes
 from Alfred import Items as Items
 from Alfred import Tools as Tools
-import MyNotes
 
 # create MD search object
 md = MyNotes.Search()
@@ -25,7 +25,7 @@ if bool(tag_results):
     for tag, counter in tag_results.items():
         wf.setItem(
             title='%s' % tag,
-            subtitle="%s Hit(s)" % counter,
+            subtitle="{0} Hit(s)".format(counter),
             valid=True,
             arg='#%s' % tag
         )
