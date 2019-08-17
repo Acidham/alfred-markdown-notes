@@ -4,6 +4,11 @@ Markdown Notes help to manage Markdown files in a directory with powerful full t
 
 > [Typora](https://typora.io/) is set up in Alfred Workflow as preferred Markdown editor but it is possible to use another MD Editor or Text Editor if required. To use another Editor it is required to define the Editor in the worklow steps at the end of the WF. 
 
+## Installation
+
+1. Download [Alfred Markdown Notes](https://github.com/Acidham/alfred-markdown-notes/releases/latest)
+2. Double click downloaded file to install
+
 ## Configuration
 
 To get MD Notes to work properly it is required to define some environment variables by using the setup wizard `.mdconfig` or change the settings in Alfred Workflow Preferences: `[X]` top right corner.
@@ -13,12 +18,13 @@ To get MD Notes to work properly it is required to define some environment varia
 Variables marked with * are required for running MD Notes properly, the others are optional and can be ignored.
 
 * **Path to Notes** *  (`path_to_notes`): The path where markdown files store will be stored. The path needs to be relative to your home directory e.g. your notes are stored in `/Users/yourname/Dropbox/Notes` then the path to add to the configuration will look like `/Dropbox/Notes`
-* **Default Template** * (`default_template`): The file that will be used as default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates)) 
 * **Default Date Format** (`default_date_format`): Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
+* **Default Template** * (`default_template`): The file that will be used as default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates)) 
 * **Extension** * (`ext`): The md files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
 **Note:** The files must be type text files.
 * **URL scheme** (`url_scheme`): I figured out that some web application like Todoist are using web interface where, due to OS resctrictions, file paths cannot be opened. To work around this URL scheme can be configured to open the note in markdown editor or viewer, e.g. Marked or iA Writer. Add URL Scheme like `x-writer://create?file=` and after `file=` will be enhanced with the MD Note path when executed. 
 * **Template Tag** (`template_tag`): The template tag defines which `#Tagname`) defines a Template. Once you created a template just add template tag name to the MD Note and it will be recognized when you create a new MD Note from Template (see [Create new MD Notes from Template](#Create%20new%20MD%20Notes%20from%20Template))
+* **Bookmark Tag** (`bookmark_tag`): Name of the tag which marks Notes containing URL/Bookmarks.
 * **Evernote Auth Token** (`evernote_auth_token`): The AuthToken for your Evernote Account. Please ensure to get non Sandbox token: [Authenticating with the Evernote Cloud API using Dev Tokens](https://dev.evernote.com/doc/articles/dev_tokens.php)
 
 ### Required Python Packages
@@ -57,12 +63,13 @@ With the Alfred search results from `mds` and `mdt` you can perform additional a
 
 * Pressing `Shift`you can quicklook the file. 
   *Tip*: To quicklook markdown files formatted you can install [QLMarkdown](https://github.com/toland/qlmarkdown) 
-* Pressing `CMD` will copy the Markdown file link for pasting into another app or markdown file
-* Pressing `ALT` export formatted note to Evernote. (Not available in `mdt`)
-	**Note:** Tags will be exported to Evernote as well. 
-* Pressing `CTRL` will delete the file and all associated assets such as images or other file types. 
-* Pressing `FN` will open the Note in Marked 2 or any other defined Markdown Editor/Viewer
-  **Note:** The Markdown Editor can be changed in Alfred Preferences → Workflow
+* With Pressing `CMD` you can open the action menu. The following actions are available:
+  * **Markdown Link**: Copy markdown link of the note to the clipboard for pasting into another app or markdown file
+  * **Delete Note**: Delete the file and all associated assets such as images or other file types. 
+  * **Evernote**: Export Note to Evernote including images and tags
+  * **Marked 2**: Opens the Note in Marked 2 
+      **Note:** The Markdown Editor can be changed in Alfred Preferences → Workflow
+  * **URL Scheme**: Generate MD link for URL Scheme and copy to the clipboard e.g. `[My Notes](x-writer://open?path=/Users/joe/Documents/Notes/doc.md)`
 * It is possible to perform addtional actions to one or more Notes by proceeding with File Actions (press `tab` on a note): 
   * **Delete MD Notes**: Same as `CTRL` modifier key but also works on multiple files
   * **Copy URL Scheme MD Link**: Generate MD link for URL Scheme e.g. `[My Notes](x-writer://open?path=/Users/joe/Documents/Notes/doc.md)`
@@ -83,7 +90,7 @@ Type `mdc` followed by a title to create a new MD Note with title. The default T
 ### Create new MD Notes from Template
 
 Type `mdc` and you get a list of all Templates in your folder: 
-**Note**: Templates are Notes tagged with `#Template`or whatever you defined as the template tag. 
+**Note**: Templates are Notes tagged with `#Template` or whatever you defined as the template tag. 
 
 #### YAML Fronter
 
@@ -97,7 +104,7 @@ Tags: #mytag
 
 ### Working with Templates
 
-Templates are a great way to quickly create a MD Note based on a Markdown template file. The Template files are created and stored in the same way than normal notes and must contain the Template tag (see [Configuration](#Configuration)) in the YAML Fronter section (see [YAML Fronter](#YAML%20Fronter)).
+Templates are a great way to quickly create a MD Note based on a Markdown template file. The Template files are created and stored in the same way than normal notes and must contain the Template tag (see [Configuration](#Configuration)) in the YAML Fronter section (see [YAML Fronter](#YAML%20Fonter)).
 
 There are two way to create a file based on a template:
 

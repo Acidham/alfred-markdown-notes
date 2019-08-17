@@ -32,6 +32,12 @@ ACTIONS = [
         "subtitle": "Open Preview in Markde 2",
         "arg": "{0}|{1}".format("marked", note_path),
         "icon": "icons/marked.png"
+    },
+    {
+        "title": "Url Scheme",
+        "subtitle": "Copy Url Scheme as Markdown Link to Clipboard",
+        "arg": "{0}|{1}".format("urlscheme", note_path),
+        "icon": "icons/link.png"
     }
 ]
 

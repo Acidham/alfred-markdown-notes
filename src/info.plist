@@ -151,6 +151,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>5739EC91-287F-41C7-8DD5-71C3772036CD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E821ABDF-E08D-4BAE-83F0-4F24F4AB7B8C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>5FA571C6-6183-44C9-B18F-2D4C73A0C48F</key>
 		<array>
 			<dict>
@@ -409,6 +422,18 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D5001574-5650-42E7-84FC-A51EAA4CE8D1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>1B17EF3D-7C92-4BD1-BCC3-C88806025AA7</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>9E3AE8B4-F748-4DBC-8414-9A0C7A9A2DB1</key>
 		<array>
@@ -480,6 +505,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>9276011F-3CDA-4F4A-A7BB-6A36B761C53A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D5001574-5650-42E7-84FC-A51EAA4CE8D1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A35A4CC5-F476-4228-8687-881419DA8B60</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -764,6 +802,20 @@
 						<string>marked</string>
 						<key>uid</key>
 						<string>03A97A98-84AF-47FA-BD7A-F5BD9090159F</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action1}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>urlscheme</string>
+						<key>outputlabel</key>
+						<string>urlscheme</string>
+						<key>uid</key>
+						<string>1B17EF3D-7C92-4BD1-BCC3-C88806025AA7</string>
 					</dict>
 				</array>
 				<key>elselabel</key>
@@ -1092,6 +1144,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string>{var:action2}</string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>D5001574-5650-42E7-84FC-A51EAA4CE8D1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>triggerid</key>
 				<string>*snote</string>
 			</dict>
@@ -1099,6 +1166,25 @@
 			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
 			<string>88BD02F5-4A73-4701-98D0-450B1F338238</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>*urlscheme</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>A35A4CC5-F476-4228-8687-881419DA8B60</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1469,6 +1555,57 @@ sys.stdout.write(output)</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>triggerid</key>
+				<string>*urlscheme</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>5739EC91-287F-41C7-8DD5-71C3772036CD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>8BFF5D9F-F5E7-4CC8-AC7D-C3DAA406DA19</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>URL copied to Clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>0615CE75-2C53-400F-BD6E-FC6A98EE6F0A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -1574,44 +1711,6 @@ sys.stdout.write(output)</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>616E1777-6C1F-406D-B16B-697EA6E8DDA0</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>8BFF5D9F-F5E7-4CC8-AC7D-C3DAA406DA19</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>URL copied to Clipboard</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>0615CE75-2C53-400F-BD6E-FC6A98EE6F0A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1968,7 +2067,7 @@ sys.stdout.write(output)</string>
 		<key>1D74BE3C-E564-491F-BE91-2890B1D302A2</key>
 		<dict>
 			<key>xpos</key>
-			<integer>895</integer>
+			<integer>915</integer>
 			<key>ypos</key>
 			<integer>10</integer>
 		</dict>
@@ -2024,7 +2123,7 @@ sys.stdout.write(output)</string>
 			<key>xpos</key>
 			<integer>420</integer>
 			<key>ypos</key>
-			<integer>1250</integer>
+			<integer>1305</integer>
 		</dict>
 		<key>49A9F878-DBE6-4A7F-B6A0-FEFD5D77393A</key>
 		<dict>
@@ -2048,6 +2147,13 @@ sys.stdout.write(output)</string>
 			<key>ypos</key>
 			<integer>885</integer>
 		</dict>
+		<key>5739EC91-287F-41C7-8DD5-71C3772036CD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>25</integer>
+			<key>ypos</key>
+			<integer>1190</integer>
+		</dict>
 		<key>5FA571C6-6183-44C9-B18F-2D4C73A0C48F</key>
 		<dict>
 			<key>note</key>
@@ -2062,7 +2168,7 @@ sys.stdout.write(output)</string>
 			<key>xpos</key>
 			<integer>170</integer>
 			<key>ypos</key>
-			<integer>1280</integer>
+			<integer>1335</integer>
 		</dict>
 		<key>661CD8F0-9481-4FCF-9A96-73A2FF1FCFD4</key>
 		<dict>
@@ -2087,14 +2193,14 @@ sys.stdout.write(output)</string>
 		<key>73F51F35-8DE7-4E97-A18D-ADA7046EB4A7</key>
 		<dict>
 			<key>xpos</key>
-			<integer>895</integer>
+			<integer>915</integer>
 			<key>ypos</key>
 			<integer>195</integer>
 		</dict>
 		<key>7EF41C6D-4E2F-4BED-B733-B3538C647263</key>
 		<dict>
 			<key>xpos</key>
-			<integer>895</integer>
+			<integer>915</integer>
 			<key>ypos</key>
 			<integer>75</integer>
 		</dict>
@@ -2171,9 +2277,9 @@ sys.stdout.write(output)</string>
 			<key>note</key>
 			<string>OneUpdater</string>
 			<key>xpos</key>
-			<integer>1170</integer>
+			<integer>785</integer>
 			<key>ypos</key>
-			<integer>345</integer>
+			<integer>370</integer>
 		</dict>
 		<key>9CFA7349-15E0-4F12-8E6D-251360FC1EAC</key>
 		<dict>
@@ -2204,6 +2310,13 @@ sys.stdout.write(output)</string>
 			<key>ypos</key>
 			<integer>160</integer>
 		</dict>
+		<key>A35A4CC5-F476-4228-8687-881419DA8B60</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1175</integer>
+			<key>ypos</key>
+			<integer>350</integer>
+		</dict>
 		<key>BC3595BC-FFD4-4DBA-BF99-567B48EE838F</key>
 		<dict>
 			<key>note</key>
@@ -2222,7 +2335,7 @@ sys.stdout.write(output)</string>
 			<key>xpos</key>
 			<integer>240</integer>
 			<key>ypos</key>
-			<integer>1250</integer>
+			<integer>1305</integer>
 		</dict>
 		<key>C316AE82-592A-4D24-95D1-D889B41122DB</key>
 		<dict>
@@ -2250,6 +2363,13 @@ sys.stdout.write(output)</string>
 			<integer>240</integer>
 			<key>ypos</key>
 			<integer>735</integer>
+		</dict>
+		<key>D5001574-5650-42E7-84FC-A51EAA4CE8D1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>915</integer>
+			<key>ypos</key>
+			<integer>265</integer>
 		</dict>
 		<key>DB11D78A-2543-48A3-B195-09CC58045785</key>
 		<dict>
@@ -2339,12 +2459,12 @@ sys.stdout.write(output)</string>
 			<key>xpos</key>
 			<integer>20</integer>
 			<key>ypos</key>
-			<integer>1250</integer>
+			<integer>1305</integer>
 		</dict>
 		<key>F92C44A1-5C7A-4863-9FC1-F0188FF998E3</key>
 		<dict>
 			<key>xpos</key>
-			<integer>895</integer>
+			<integer>915</integer>
 			<key>ypos</key>
 			<integer>130</integer>
 		</dict>
@@ -2380,7 +2500,7 @@ sys.stdout.write(output)</string>
 		<string>evernote_auth_token</string>
 	</array>
 	<key>version</key>
-	<string>1.4</string>
+	<string>1.5</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>
