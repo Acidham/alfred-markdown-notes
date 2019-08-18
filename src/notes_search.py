@@ -36,7 +36,8 @@ if len(search_terms) > 0:
         url_scheme_path = md_search.getUrlScheme(f['path'])
         wf.setItem(
             title=f['title'],
-            subtitle="Created: {0}, Modified: {1}".format(c_date, m_date),
+            subtitle=u"Created: {0}, Modified: {1} ({2} for Actions...)".format(
+                c_date, m_date, u"\u2318"),
             type='file',
             arg=f['path']
         )
@@ -44,7 +45,7 @@ if len(search_terms) > 0:
         wf.addMod(
             key="cmd",
             arg="{0}>{1}".format(f['path'], query),
-            subtitle="Actions..",
+            subtitle="Actions Menu...",
             icon_path="icons/action.png",
             icon_type="image"
         )

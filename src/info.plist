@@ -86,6 +86,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>2FA91C3B-4CED-410B-B2A6-C4BCBC9D6F41</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>735B5B72-0876-4143-887E-D8191A48154E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>454BC87F-9E2E-4C7B-ABFA-2E7709D59244</key>
 		<array>
 			<dict>
@@ -200,7 +213,7 @@
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
@@ -251,7 +264,7 @@
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
@@ -431,6 +444,18 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>1B17EF3D-7C92-4BD1-BCC3-C88806025AA7</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2FA91C3B-4CED-410B-B2A6-C4BCBC9D6F41</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>325682B6-E189-423E-A2E9-2D12608FDA53</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -726,25 +751,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>inputstring</key>
-				<string>{query}</string>
-				<key>matchcasesensitive</key>
-				<false/>
-				<key>matchmode</key>
-				<integer>2</integer>
-				<key>matchstring</key>
-				<string>^evernote.*</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
-			<key>uid</key>
-			<string>4615C40D-B87C-43D2-AF02-871819B0F9CB</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -817,6 +823,20 @@
 						<key>uid</key>
 						<string>1B17EF3D-7C92-4BD1-BCC3-C88806025AA7</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action1}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>back</string>
+						<key>outputlabel</key>
+						<string>back</string>
+						<key>uid</key>
+						<string>325682B6-E189-423E-A2E9-2D12608FDA53</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
@@ -825,6 +845,40 @@
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>9CFA7349-15E0-4F12-8E6D-251360FC1EAC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>2</integer>
+				<key>matchstring</key>
+				<string>^evernote.*</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>4615C40D-B87C-43D2-AF02-871819B0F9CB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:action2}</string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>7EF41C6D-4E2F-4BED-B733-B3538C647263</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -857,21 +911,6 @@
 			<string>alfred.workflow.utility.split</string>
 			<key>uid</key>
 			<string>839D1ABB-44FF-4FE6-8B72-42E4A9E4AA04</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{var:action2}</string>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>7EF41C6D-4E2F-4BED-B733-B3538C647263</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -936,6 +975,21 @@
 			<string>alfred.workflow.utility.split</string>
 			<key>uid</key>
 			<string>8F8F1A2F-E9D7-4EF4-B3C9-3BE1B75DEBFB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:action2}</string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>F92C44A1-5C7A-4863-9FC1-F0188FF998E3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1072,21 +1126,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{var:action2}</string>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>F92C44A1-5C7A-4863-9FC1-F0188FF998E3</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>externaltriggerid</key>
 				<string>*snote</string>
 				<key>passinputasargument</key>
@@ -1153,6 +1192,21 @@
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>D5001574-5650-42E7-84FC-A51EAA4CE8D1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:action2}</string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>2FA91C3B-4CED-410B-B2A6-C4BCBC9D6F41</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2089,6 +2143,13 @@ sys.stdout.write(output)</string>
 			<key>ypos</key>
 			<integer>120</integer>
 		</dict>
+		<key>2FA91C3B-4CED-410B-B2A6-C4BCBC9D6F41</key>
+		<dict>
+			<key>xpos</key>
+			<integer>915</integer>
+			<key>ypos</key>
+			<integer>275</integer>
+		</dict>
 		<key>4053BF64-C6EB-4285-890E-290E72D132EB</key>
 		<dict>
 			<key>xpos</key>
@@ -2195,14 +2256,14 @@ sys.stdout.write(output)</string>
 			<key>xpos</key>
 			<integer>915</integer>
 			<key>ypos</key>
-			<integer>195</integer>
+			<integer>165</integer>
 		</dict>
 		<key>7EF41C6D-4E2F-4BED-B733-B3538C647263</key>
 		<dict>
 			<key>xpos</key>
 			<integer>915</integer>
 			<key>ypos</key>
-			<integer>75</integer>
+			<integer>60</integer>
 		</dict>
 		<key>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</key>
 		<dict>
@@ -2257,7 +2318,7 @@ sys.stdout.write(output)</string>
 		<key>8F8F1A2F-E9D7-4EF4-B3C9-3BE1B75DEBFB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>720</integer>
+			<integer>730</integer>
 			<key>ypos</key>
 			<integer>115</integer>
 		</dict>
@@ -2284,9 +2345,9 @@ sys.stdout.write(output)</string>
 		<key>9CFA7349-15E0-4F12-8E6D-251360FC1EAC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>780</integer>
+			<integer>785</integer>
 			<key>ypos</key>
-			<integer>60</integer>
+			<integer>30</integer>
 		</dict>
 		<key>9E3AE8B4-F748-4DBC-8414-9A0C7A9A2DB1</key>
 		<dict>
@@ -2369,7 +2430,7 @@ sys.stdout.write(output)</string>
 			<key>xpos</key>
 			<integer>915</integer>
 			<key>ypos</key>
-			<integer>265</integer>
+			<integer>220</integer>
 		</dict>
 		<key>DB11D78A-2543-48A3-B195-09CC58045785</key>
 		<dict>
@@ -2466,12 +2527,12 @@ sys.stdout.write(output)</string>
 			<key>xpos</key>
 			<integer>915</integer>
 			<key>ypos</key>
-			<integer>130</integer>
+			<integer>115</integer>
 		</dict>
 		<key>F993108F-7C6F-4AF3-90D3-14A1CBAAEBBE</key>
 		<dict>
 			<key>xpos</key>
-			<integer>570</integer>
+			<integer>565</integer>
 			<key>ypos</key>
 			<integer>90</integer>
 		</dict>
@@ -2500,7 +2561,7 @@ sys.stdout.write(output)</string>
 		<string>evernote_auth_token</string>
 	</array>
 	<key>version</key>
-	<string>1.5</string>
+	<string>1.6</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>
