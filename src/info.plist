@@ -60,19 +60,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>24200E68-1A74-4809-A7CC-735EC8CBB865</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E821ABDF-E08D-4BAE-83F0-4F24F4AB7B8C</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>2F777EDC-8764-4AE9-AFC2-65D224BB01DE</key>
 		<array>
 			<dict>
@@ -1566,6 +1553,19 @@ sys.stdout.write(output)</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>triggerid</key>
+				<string>*urlscheme</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>5739EC91-287F-41C7-8DD5-71C3772036CD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1585,39 +1585,6 @@ sys.stdout.write(output)</string>
 			<string>E821ABDF-E08D-4BAE-83F0-4F24F4AB7B8C</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>net.daringfireball.markdown</string>
-					<string>net.ia.markdown</string>
-				</array>
-				<key>name</key>
-				<string>Copy URL Scheme MD Link</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>24200E68-1A74-4809-A7CC-735EC8CBB865</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
-				<string>*urlscheme</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>5739EC91-287F-41C7-8DD5-71C3772036CD</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2125,17 +2092,6 @@ sys.stdout.write(output)</string>
 			<key>ypos</key>
 			<integer>10</integer>
 		</dict>
-		<key>24200E68-1A74-4809-A7CC-735EC8CBB865</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>6</integer>
-			<key>note</key>
-			<string>File Action to get URL Scheme</string>
-			<key>xpos</key>
-			<integer>20</integer>
-			<key>ypos</key>
-			<integer>1065</integer>
-		</dict>
 		<key>2F777EDC-8764-4AE9-AFC2-65D224BB01DE</key>
 		<dict>
 			<key>xpos</key>
@@ -2211,9 +2167,9 @@ sys.stdout.write(output)</string>
 		<key>5739EC91-287F-41C7-8DD5-71C3772036CD</key>
 		<dict>
 			<key>xpos</key>
-			<integer>25</integer>
+			<integer>15</integer>
 			<key>ypos</key>
-			<integer>1190</integer>
+			<integer>1065</integer>
 		</dict>
 		<key>5FA571C6-6183-44C9-B18F-2D4C73A0C48F</key>
 		<dict>
@@ -2561,7 +2517,7 @@ sys.stdout.write(output)</string>
 		<string>evernote_auth_token</string>
 	</array>
 	<key>version</key>
-	<string>1.6</string>
+	<string>1.7</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>

@@ -62,17 +62,17 @@ Type `mds` keyword into Alfred and get a list of all MD files sorted by last mod
 With the Alfred search results from `mds` and `mdt` you can perform additional actions to the note:
 
 * Pressing `Shift`you can quicklook the file. 
-  *Tip*: To quicklook markdown files formatted you can install [QLMarkdown](https://github.com/toland/qlmarkdown) 
-* Pressing `CMD` will copy the Markdown file link for pasting into another app or markdown file
-* Pressing `ALT` export formatted note to Evernote. (Not available in `mdt`)
-	**Note:** Tags will be exported to Evernote as well. 
-* Pressing `CTRL` will delete the file and all associated assets such as images or other file types. 
-* Pressing `FN` will open the Note in Marked 2 or any other defined Markdown Editor/Viewer
-  **Note:** The Markdown Editor can be changed in Alfred Preferences → Workflow
+    *Tip*: To quicklook markdown files formatted you can install [QLMarkdown](https://github.com/toland/qlmarkdown) 
+* With Pressing `CMD` you can open the action menu. The following actions are available:
+    * **Markdown Link**: Copy markdown link of the note to the clipboard for pasting into another app or markdown file
+    * **Delete Note**: Delete the file and all associated assets such as images or other file types. 
+    * **Evernote**: Export Note to Evernote including images and tags
+    * **Marked 2**: Opens the Note in Marked 2 
+        **Note:** The Markdown Editor can be changed in Alfred Preferences → Workflow
+    * **URL Scheme**: Generate MD link for URL Scheme and copy to the clipboard e.g. `[My Notes](x-writer://open?path=/Users/joe/Documents/Notes/doc.md)`
 * It is possible to perform addtional actions to one or more Notes by proceeding with File Actions (press `tab` on a note): 
-  * **Delete MD Notes**: Same as `CTRL` modifier key but also works on multiple files
-  * **Copy URL Scheme MD Link**: Generate MD link for URL Scheme e.g. `[My Notes](x-writer://open?path=/Users/joe/Documents/Notes/doc.md)`
-  * **MD Link to Note**: Generates relative Link to a markdown document for referencing Notes in other Notes e.g. `[My Notes](mynote.md)` 
+    * **Delete MD Notes**: Same as `CTRL` modifier key but also works on multiple files
+    * **MD Link to Note**: Generates relative Link to a markdown document for referencing Notes in other Notes e.g. `[My Notes](mynote.md)`
 
 ### Tag Search
 

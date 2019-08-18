@@ -11,6 +11,16 @@ from Alfred import Tools as Tools
 
 
 def rmDir(path, ignore_errors=True):
+    """
+    Remove directory and it's content
+
+    Args:
+        path (string): path to specific markdown notes
+        ignore_errors (bool, optional): Ignore errors. Defaults to True.
+
+    Returns:
+        bool: True in case removal was successful otherwise False
+    """
     if os.path.exists(path):
         shutil.rmtree(path, ignore_errors)
         return not (os.path.exists(path))
@@ -19,6 +29,13 @@ def rmDir(path, ignore_errors=True):
 
 
 def rmFile(path):
+    """
+
+    Remove file of a given path if
+
+    Returns:
+        bool: True if successful other False
+    """
     path = urllib.url2pathname(path)
     if os.path.isfile(path) and os.path.exists(path):
         os.remove(path)
@@ -42,8 +59,9 @@ def getAssetsLinks(parent_path, p):
 
 mn = MyNotes.Search()
 
-# Load Env variables
+# Load extentions env variables from settings
 ext = mn.getNotesExtension()
+# Get all files which needs to be deleted from input
 files_to_delete = sys.argv[1:]
 
 return_text = str()

@@ -27,7 +27,6 @@ if len(search_terms) > 0:
     search_results_list.extend(sorted_file_list)
 
     # Write search results into WF object
-
     for f in search_results_list:
         c_date = Tools.getDateStr(f['ctime'])
         m_date = Tools.getDateStr(f['mtime'])

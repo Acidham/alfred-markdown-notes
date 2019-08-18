@@ -72,7 +72,6 @@ With the Alfred search results from `mds` and `mdt` you can perform additional a
   * **URL Scheme**: Generate MD link for URL Scheme and copy to the clipboard e.g. `[My Notes](x-writer://open?path=/Users/joe/Documents/Notes/doc.md)`
 * It is possible to perform addtional actions to one or more Notes by proceeding with File Actions (press `tab` on a note): 
   * **Delete MD Notes**: Same as `CTRL` modifier key but also works on multiple files
-  * **Copy URL Scheme MD Link**: Generate MD link for URL Scheme e.g. `[My Notes](x-writer://open?path=/Users/joe/Documents/Notes/doc.md)`
   * **MD Link to Note**: Generates relative Link to a markdown document for referencing Notes in other Notes e.g. `[My Notes](mynote.md)` 
 
 ### Tag Search
