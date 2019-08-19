@@ -21,19 +21,22 @@ Variables marked with * are required for running MD Notes properly, the others a
 * **Default Date Format** (`default_date_format`): Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
 * **Default Template** * (`default_template`): The file that will be used as default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates)) 
 * **Extension** * (`ext`): The md files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
-**Note:** The files must be type text files.
-* **URL scheme** (`url_scheme`): I figured out that some web application like Todoist are using web interface where, due to OS resctrictions, file paths cannot be opened. To work around this URL scheme can be configured to open the note in markdown editor or viewer, e.g. Marked or iA Writer. Add URL Scheme like `x-writer://create?file=` and after `file=` will be enhanced with the MD Note path when executed. 
+    **Note:** The files must be type text files.
+* **URL scheme** (`url_scheme`): (OPTIONAL) I figured out that some web application like Todoist are using web interface where, due to OS resctrictions, file paths cannot be opened. To work around this URL scheme can be configured to open the note in markdown editor or viewer, e.g. Marked or iA Writer. Add URL Scheme like `x-writer://create?file=` and after `file=` will be enhanced with the MD Note path when executed. 
 * **Template Tag** (`template_tag`): The template tag defines which `#Tagname`) defines a Template. Once you created a template just add template tag name to the MD Note and it will be recognized when you create a new MD Note from Template (see [Create new MD Notes from Template](#Create%20new%20MD%20Notes%20from%20Template))
 * **Bookmark Tag** (`bookmark_tag`): Name of the tag which marks Notes containing URL/Bookmarks.
-* **Evernote Auth Token** (`evernote_auth_token`): The AuthToken for your Evernote Account. Please ensure to get non Sandbox token: [Authenticating with the Evernote Cloud API using Dev Tokens](https://dev.evernote.com/doc/articles/dev_tokens.php)
+* **Evernote Auth Token** (`evernote_auth_token`) (OPTIONAL): The AuthToken for your Evernote Account. Please ensure to get non Sandbox token: [Authenticating with the Evernote Cloud API using Dev Tokens](https://dev.evernote.com/doc/articles/dev_tokens.php)
 
-### Required Python Packages
+### Optional Python Packages
+
+For exporting to evernote `markdown2`and `evernote` package is required plus Evernote the API Key.
 
 [https://github.com/trentm/python-markdown2](https://github.com/trentm/python-markdown2)
 
 ```bash
 pip install markdown2
 ```
+
 [https://github.com/evernote/evernote-sdk-python](https://github.com/evernote/evernote-sdk-python)
 
 ```bash
