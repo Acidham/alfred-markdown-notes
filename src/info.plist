@@ -2517,7 +2517,7 @@ sys.stdout.write(output)</string>
 		<string>evernote_auth_token</string>
 	</array>
 	<key>version</key>
-	<string>1.8</string>
+	<string>1.8.5</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>
