@@ -73,6 +73,8 @@ class Search(object):
                 content = self._getFileContent(f['path'])
                 matches = re.findall(r'\[(.*)\]\((https?.*)\)', content)
                 link_list = list()
+                # TODO: Implement url only match, links without markdown syntax
+                # url_only_matches = re.findall(r'https?://', content)
                 for m in matches:
                     url_title = m[0]
                     url = m[1]
@@ -150,11 +152,11 @@ class Search(object):
         matches = list()
         sorted_file_list = self.getFilesListSorted()
         regex = re.compile(
-            r'#{1}(\w+)\s?', re.I) if tag == '' else re.compile(r'#{1}(' + tag + '\w*)\s?', re.I)
+            r'#{1}(\w+)\s?', re.I) if tag == '' else re.compile(r'#{1}(' + tag + '\w*)\s?', re.I | re.UNICODE)
         for f in sorted_file_list:
             content = self._getFileContent(f['path'])
             if content != str():
-                match_obj = re.search(r'\bTags:.*', content, re.IGNORECASE)
+                match_obj = re.search(r'\bTags:.*', content, re.IGNORECASE | re.UNICODE)
                 if match_obj:
                     r = match_obj.group(0)
                     results = re.findall(regex, r)

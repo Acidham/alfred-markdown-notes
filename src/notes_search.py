@@ -55,9 +55,8 @@ if len(search_terms) > 0:
     if len(i) == 0:
         wf.setItem(
             title="Nothing found...",
-            subtitle="Try again",
-            valid=False
+            subtitle="Do you want to create a new note with title \"{0}\"?".format(query),
+            arg=query
         )
         wf.addItem()
-
     wf.write()

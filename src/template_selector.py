@@ -1,9 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from Alfred import Items
-from Alfred import Tools
 import MyNotes
+from Alfred import Items, Tools
 
 
 def get_template_tag():
@@ -37,7 +36,7 @@ for md_file in template_files:
             suffix = SUFFIX
         wf.setItem(
             title=md_file['filename'] + suffix,
-            subtitle="Create new file based on \"%s\"" % md_file['filename'],
+            subtitle="Create new file based on \"{0}\"".format(md_file['filename']),
             arg=Tools.strJoin(md_file['path']),
             type='file'
         )

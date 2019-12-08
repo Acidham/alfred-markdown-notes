@@ -90,12 +90,13 @@ for query in files_to_delete:
 
         # Create Notification Message
         if len(files_to_delete) == 1:
-            return_text = '- MD Note DELETED'if is_file_deleted else "Cannot delete file: %s" % file_name
+            return_text = '- MD Note DELETED'if is_file_deleted else "Cannot delete file: {0}".format(
+                file_name)
             return_text += '\n- Assets DELETED' if is_asset_deleted else str()
 
 if len(files_to_delete) > 1:
-    return_text = "%s Notes and coresponding Assets deleted" % len(
-        files_to_delete)
+    return_text = "{0} Notes and coresponding Assets deleted".format(len(
+        files_to_delete))
 
 Tools.notify('MD Note deleted!', return_text)
 

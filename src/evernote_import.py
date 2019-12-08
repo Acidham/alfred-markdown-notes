@@ -181,11 +181,9 @@ class EvernoteUpload(object):
         return re.sub(r'!\[.*\]\(' + md_link + '\)', en_link, md_content)
 
     def _url_decode(self, url):
-        # TODO: to test
         return urllib.url2pathname(url.encode('utf8'))
 
     def _url_encode(self, url):
-        # TODO: to test
         return urllib.pathname2url(url.encode('utf8'))
 
     def _delete_all_tags(self, md_content):

@@ -14,12 +14,12 @@ matches = notes.url_search(search_terms)
 alf = Items()
 if matches:
     for m in matches:
-        note_title = m['title']
-        note_path = m['path']
-        links = m['links']
+        note_title = m.get('title')
+        note_path = m.get('path')
+        links = m.get('links')
         for l in links:
-            url_title = l['url_title']
-            url = l['url']
+            url_title = l.get('url_title')
+            url = l.get('url')
             # subtitle = '%s > %s' % (url_title, url) if url_title != url else url
             subtitle = 'NOTE: {0} URL: {1}...'.format(note_title, url[:30])
             alf.setItem(

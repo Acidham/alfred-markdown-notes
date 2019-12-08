@@ -9,6 +9,12 @@ ASSETS_FOLDER = '_NoteAssets'
 
 
 def getAssetsFolder():
+    """
+    Get Assets Upload Folder from config
+    
+    Returns:
+        str: Asset Folder for md Notes
+    """
     my_notes = MyNotes.Search()
     notes_path = my_notes.getNotesPath()
     assets_path = notes_path + ASSETS_FOLDER
@@ -18,6 +24,19 @@ def getAssetsFolder():
 
 
 def copyFile(source, target):
+    """
+    Copy file to target folder
+    
+    Args:
+        source (str): Source File path
+        target (str): Target folder
+    
+    Raises:
+        ValueError: if source file does not exists
+    
+    Returns:
+        str: path to file after copied
+    """
     file_name = str()
     if os.path.isfile(source):
         copy2(source, target)
