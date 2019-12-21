@@ -2297,9 +2297,9 @@ sys.stdout.write(output)</string>
 		<key>64388804-3C22-4CB8-8A61-5E2DC6EBF4FD</key>
 		<dict>
 			<key>xpos</key>
-			<integer>30</integer>
+			<integer>20</integer>
 			<key>ypos</key>
-			<integer>1190</integer>
+			<integer>1185</integer>
 		</dict>
 		<key>661CD8F0-9481-4FCF-9A96-73A2FF1FCFD4</key>
 		<dict>
@@ -2639,7 +2639,7 @@ sys.stdout.write(output)</string>
 		<string>path_to_notes</string>
 	</array>
 	<key>version</key>
-	<string>1.8.6</string>
+	<string>1.8.7</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>

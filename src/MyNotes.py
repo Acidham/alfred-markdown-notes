@@ -24,7 +24,11 @@ class Search(object):
     @staticmethod
     def __buildNotesPath():
         user_dir = os.path.expanduser('~')
-        path = user_dir + os.getenv('path_to_notes')
+        path = os.getenv('path_to_notes')
+        if not(path.startswith('/')):
+            path = '/' + path
+        if not(path.startswith('/Users')):
+            path = user_dir + path
         if not (path.endswith('/')):
             path += '/'
         return path
