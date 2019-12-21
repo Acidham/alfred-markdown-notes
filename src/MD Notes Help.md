@@ -91,13 +91,20 @@ Type `md#` to get a list of all tags found in the Notes or search for Tags (see 
 
 Type `mdt` to get all Todos found in the MD Notes. The list is sorted  based on when Notes with the todo was created (older notes first). As well you can search for full-text search in todo and use the modify keys (see [Options](#Options))
 
-### Create new MD Notes
+### Create a MD Note
 
-Type `mdc` followed by a title to create a new MD Note with title. The default Templates will be used (see [Configuration](#Configuration))
+#### MD Note with Title
 
-### Create new MD Notes from Template
+Type `mdc` followed by a **title** to create a new MD Note with title. The default Templates will be used (see [Configuration](#Configuration))
 
-Type `mdc` and you get a list of all Templates in your folder: 
+#### Note with Title and Tags
+
+Type `mdc`followed by **title** and **tags** separated by space will create a Note with **title** and **tags**.
+
+#### MD Notes from Template
+
+Type `mdc` and you get a list of all Templates in your folder. After a template was selected the title can be entered as described above.
+
 **Note**: Templates are Notes tagged with `#Template` or whatever you defined as the template tag. 
 
 #### YAML Fronter

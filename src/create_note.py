@@ -7,6 +7,33 @@ import MyNotes
 from Alfred import Tools
 
 
+class QuerySplitter(object):
+    """
+    Split Query into title and tags
+
+    Args:
+        object (str): Query string
+    """
+
+    def __init__(self, query):
+        self.title = str()
+        self.tag_list = list()
+        self.tags = str()
+        self._split(query)
+
+    def _split(self, query):
+        term_list = query.split(' ')
+        title_list = list()
+        self.tag_list = list()
+        for t in term_list:
+            if str(t).startswith('#'):
+                self.tag_list.append(t)
+            else:
+                title_list.append(t)
+        self.title = ' '.join(title_list)
+        self.tags = ' '.join(self.tag_list)
+
+
 def parseFilename(f):
     tmp = f.decode('utf-8').strip()
     # tmp = tmp.translate(None, '.')
@@ -33,7 +60,7 @@ def fallback_content():
         "```"
 
 
-def readTemplate(file_path, **kwargs):
+def readTemplate(file_path, tags='', **kwargs):
     """
     Read template
 
@@ -54,6 +81,9 @@ def readTemplate(file_path, **kwargs):
     content = content.replace(template_tag, '')
     for k, v in kwargs.iteritems():
         content = content.replace('{' + k + '}', v)
+    tag_line = 'Tags: {0}'.format(tags)
+    if tags:
+        content = content.replace('Tags: ', tag_line)
     return content
 
 
@@ -110,8 +140,9 @@ p = md.getNotesPath()
 query = Tools.getArgv(1)
 if query.isspace():
     query = "My Note {today}".format(today=md.getTodayDate(getDefaultDate()))
+qs = QuerySplitter(query)
 md_default_template = getDefaultTemplate()
-f_name = parseFilename(query)
+f_name = parseFilename(qs.title)
 fPath = getTargetFilePath(f_name)
 # try to get template from previous Workflow or default template
 md_template = getTemplate()
@@ -119,6 +150,6 @@ md_template = getTemplate()
 if query:
     today = md.getTodayDate(getDefaultDate())
     with open(fPath, "w+") as f:
-        file_content = readTemplate(md_template, date=today, title=query)
+        file_content = readTemplate(md_template, tags=qs.tags, date=today, title=qs.title)
         f.write(file_content)
     sys.stdout.write(fPath)
