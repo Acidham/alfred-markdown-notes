@@ -51,8 +51,7 @@ if len(search_terms) > 0:
         wf.addModsToItem()
         wf.addItem()
 
-    i = wf.getItems(response_type="dict")['items']
-    if len(i) == 0:
+    if len(wf.getItems(response_type="dict")['items']) == 0:
         wf.setItem(
             title="Nothing found...",
             subtitle="Do you want to create a new note with title \"{0}\"?".format(query),

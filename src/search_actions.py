@@ -13,7 +13,7 @@ note_title = md_notes.getNoteTitle(note_path)
 # If query in notes search was empty subtitle uses following string
 back_query = "<EMPTY>" if not query else query
 
-# Actions in ScriptFilter list of dict
+# Actions in ScriptFilter menu data
 ACTIONS = [
     {
         "title": "Back",
@@ -53,7 +53,7 @@ ACTIONS = [
     {
         "title": "Delete Note",
         "subtitle": "Delete \"{0}\". This action cannot be undone!".format(note_title),
-        "arg": "{0}|{1}>{2}".format("delete", note_path, "test"),
+        "arg": "{0}|{1}>{2}".format("delete", note_path, query),
         "icon": "icons/delete.png",
         "visible": True
     },

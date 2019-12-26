@@ -72,6 +72,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>18A8C2F0-9E83-42B2-9FFA-04793FDE69AF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BAFF7A0F-AAD1-416B-9279-C500DEA630C3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>1D74BE3C-E564-491F-BE91-2890B1D302A2</key>
 		<array>
 			<dict>
@@ -85,11 +98,24 @@
 				<false/>
 			</dict>
 		</array>
+		<key>294CB549-D1EE-4AC0-BF62-B19E2DAD7162</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F993108F-7C6F-4AF3-90D3-14A1CBAAEBBE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>2F777EDC-8764-4AE9-AFC2-65D224BB01DE</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>EC25E532-D409-47A8-8F38-AC96D4BBADBD</string>
+				<string>294CB549-D1EE-4AC0-BF62-B19E2DAD7162</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -325,6 +351,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>867A6B07-A86D-464E-9AA2-F4F85D33901E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BF9DCBBB-0362-418D-845F-E891BBEA81FD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>88BD02F5-4A73-4701-98D0-450B1F338238</key>
 		<array>
 			<dict>
@@ -511,6 +550,45 @@
 				<false/>
 			</dict>
 		</array>
+		<key>BAFF7A0F-AAD1-416B-9279-C500DEA630C3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BC9416FD-DA8C-4E89-BB77-2300E23FC2AB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>18A8C2F0-9E83-42B2-9FFA-04793FDE69AF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BF9DCBBB-0362-418D-845F-E891BBEA81FD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BC9416FD-DA8C-4E89-BB77-2300E23FC2AB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>C277BA58-113D-4741-A306-9A1AAAE9EA61</key>
 		<array>
 			<dict>
@@ -632,19 +710,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>9276011F-3CDA-4F4A-A7BB-6A36B761C53A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>EC25E532-D409-47A8-8F38-AC96D4BBADBD</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>F993108F-7C6F-4AF3-90D3-14A1CBAAEBBE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1065,7 +1130,7 @@
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>EC25E532-D409-47A8-8F38-AC96D4BBADBD</string>
+			<string>294CB549-D1EE-4AC0-BF62-B19E2DAD7162</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1776,6 +1841,27 @@ sys.stdout.write(output)</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>mdc</string>
+				<key>subtext</key>
+				<string>Enter a title for the Note, optionally add tags at the after the title e.g. &lt;title&gt; #tag1 #tag2</string>
+				<key>text</key>
+				<string>Create New MD Note</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C277BA58-113D-4741-A306-9A1AAAE9EA61</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1795,27 +1881,6 @@ sys.stdout.write(output)</string>
 			<string>49185B13-47A9-4B6A-9FF3-7423A9E173EB</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>mdc</string>
-				<key>subtext</key>
-				<string>Enter a title for the Markdown Note</string>
-				<key>text</key>
-				<string>Create New MD Note</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>C277BA58-113D-4741-A306-9A1AAAE9EA61</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2134,9 +2199,113 @@ sys.stdout.write(output)</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>split_paths.py</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BF9DCBBB-0362-418D-845F-E891BBEA81FD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>net.daringfireball.markdown</string>
+				</array>
+				<key>name</key>
+				<string>Create Markdown Index</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>867A6B07-A86D-464E-9AA2-F4F85D33901E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>*indextitle</string>
+				<key>subtext</key>
+				<string>Enter new title optionally with tags e.g. title #tag</string>
+				<key>text</key>
+				<string>Enter name of the new MD file</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>18A8C2F0-9E83-42B2-9FFA-04793FDE69AF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>create_index.py</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BAFF7A0F-AAD1-416B-9279-C500DEA630C3</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>files</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>BC9416FD-DA8C-4E89-BB77-2300E23FC2AB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string>https://github.com/Acidham/alfred-markdown-notes</string>
+	<string>https://acidham.github.io/alfred-markdown-notes/</string>
 	<key>uidata</key>
 	<dict>
 		<key>00C9EAC8-45E3-4C4C-B1CB-D9B5503ADB1F</key>
@@ -2185,6 +2354,13 @@ sys.stdout.write(output)</string>
 			<key>ypos</key>
 			<integer>290</integer>
 		</dict>
+		<key>18A8C2F0-9E83-42B2-9FFA-04793FDE69AF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>420</integer>
+			<key>ypos</key>
+			<integer>2100</integer>
+		</dict>
 		<key>1AB175B4-0986-4F49-A20D-4AF004DC9158</key>
 		<dict>
 			<key>xpos</key>
@@ -2198,6 +2374,13 @@ sys.stdout.write(output)</string>
 			<integer>1095</integer>
 			<key>ypos</key>
 			<integer>35</integer>
+		</dict>
+		<key>294CB549-D1EE-4AC0-BF62-B19E2DAD7162</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<integer>120</integer>
 		</dict>
 		<key>2F777EDC-8764-4AE9-AFC2-65D224BB01DE</key>
 		<dict>
@@ -2290,9 +2473,9 @@ sys.stdout.write(output)</string>
 		<key>616E1777-6C1F-406D-B16B-697EA6E8DDA0</key>
 		<dict>
 			<key>xpos</key>
-			<integer>155</integer>
+			<integer>160</integer>
 			<key>ypos</key>
-			<integer>1340</integer>
+			<integer>1335</integer>
 		</dict>
 		<key>64388804-3C22-4CB8-8A61-5E2DC6EBF4FD</key>
 		<dict>
@@ -2361,6 +2544,15 @@ sys.stdout.write(output)</string>
 			<integer>1170</integer>
 			<key>ypos</key>
 			<integer>165</integer>
+		</dict>
+		<key>867A6B07-A86D-464E-9AA2-F4F85D33901E</key>
+		<dict>
+			<key>note</key>
+			<string>Create Markdown Index file action</string>
+			<key>xpos</key>
+			<integer>15</integer>
+			<key>ypos</key>
+			<integer>2100</integer>
 		</dict>
 		<key>88BD02F5-4A73-4701-98D0-450B1F338238</key>
 		<dict>
@@ -2455,6 +2647,15 @@ sys.stdout.write(output)</string>
 			<key>ypos</key>
 			<integer>350</integer>
 		</dict>
+		<key>BAFF7A0F-AAD1-416B-9279-C500DEA630C3</key>
+		<dict>
+			<key>note</key>
+			<string>generates the markdown index file</string>
+			<key>xpos</key>
+			<integer>600</integer>
+			<key>ypos</key>
+			<integer>2100</integer>
+		</dict>
 		<key>BC3595BC-FFD4-4DBA-BF99-567B48EE838F</key>
 		<dict>
 			<key>note</key>
@@ -2464,6 +2665,22 @@ sys.stdout.write(output)</string>
 			<key>ypos</key>
 			<integer>665</integer>
 		</dict>
+		<key>BC9416FD-DA8C-4E89-BB77-2300E23FC2AB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>360</integer>
+			<key>ypos</key>
+			<integer>2130</integer>
+		</dict>
+		<key>BF9DCBBB-0362-418D-845F-E891BBEA81FD</key>
+		<dict>
+			<key>note</key>
+			<string>split paths and write paths into string sep by |</string>
+			<key>xpos</key>
+			<integer>230</integer>
+			<key>ypos</key>
+			<integer>2100</integer>
+		</dict>
 		<key>C277BA58-113D-4741-A306-9A1AAAE9EA61</key>
 		<dict>
 			<key>colorindex</key>
@@ -2471,9 +2688,9 @@ sys.stdout.write(output)</string>
 			<key>note</key>
 			<string>Create note, input title</string>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>225</integer>
 			<key>ypos</key>
-			<integer>1310</integer>
+			<integer>1305</integer>
 		</dict>
 		<key>C316AE82-592A-4D24-95D1-D889B41122DB</key>
 		<dict>
@@ -2570,13 +2787,6 @@ sys.stdout.write(output)</string>
 			<key>ypos</key>
 			<integer>495</integer>
 		</dict>
-		<key>EC25E532-D409-47A8-8F38-AC96D4BBADBD</key>
-		<dict>
-			<key>xpos</key>
-			<integer>505</integer>
-			<key>ypos</key>
-			<integer>120</integer>
-		</dict>
 		<key>EEAFA237-F675-43C1-9EB8-A1AE88C34E75</key>
 		<dict>
 			<key>colorindex</key>
@@ -2639,7 +2849,7 @@ sys.stdout.write(output)</string>
 		<string>path_to_notes</string>
 	</array>
 	<key>version</key>
-	<string>1.9</string>
+	<string>2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>

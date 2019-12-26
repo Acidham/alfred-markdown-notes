@@ -8,11 +8,35 @@ from collections import Counter, OrderedDict
 from Alfred import Tools
 
 
-class Search(object):
+class Notes(object):
+
+    # Replacement map for Filename when new file created
+    CHAR_REPLACEMENT_MAP = {
+        '/': '-',
+        '\\': '-',
+        ':': '-',
+        '|': '-',
+        ',': ''
+    }
+
+    # Fallback Content when no Template is available
+    FALLBACK_CONTENT = "---\n" \
+        "Created: {date}\n" \
+        "Tags: \n" \
+        "---\n" \
+        "# {title}\n" \
+        "```\n" \
+        "This is the fallback Template.\n" \
+        "Create your own template, see help!\n" \
+        "```"
 
     def __init__(self):
         self.extension = self.__buildNotesExtension()
         self.path = self.__buildNotesPath()
+        self.default_template = os.getenv('default_template')
+        self.template_tag = os.getenv('template_tag')
+        self.url_scheme = os.getenv('url_scheme')
+        self.default_date_format = os.getenv('default_date_format')
 
     @staticmethod
     def __buildNotesExtension():
@@ -34,14 +58,32 @@ class Search(object):
         return path
 
     @staticmethod
-    def strJoin(*args):
-        return str().join(args)
+    def getTodayDate(fmt="%d.%m.%Y"):
+        now = datetime.datetime.now()
+        return now.strftime(fmt)
+
+    def getDefaultDate(self):
+        """
+        Read default date format from environment variable
+        :return: default date format file name or default format
+        """
+        return "%d.%m.%Y %H.%M" if self.default_date_format == str() else self.default_date_format
 
     def getNotesPath(self):
         return self.path
 
     def getNotesExtension(self):
         return self.extension
+
+    @staticmethod
+    def strJoin(*args):
+        return str().join(args)
+
+
+class Search(Notes):
+
+    def __init__(self):
+        super(Search, self).__init__()
 
     def __OR(self, search_terms, content):
         restring = '|'.join(search_terms)
@@ -156,7 +198,7 @@ class Search(object):
         matches = list()
         sorted_file_list = self.getFilesListSorted()
         regex = re.compile(
-            r'#{1}(\w+)\s?', re.I) if tag == '' else re.compile(r'#{1}(' + tag + '\w*)\s?', re.I | re.UNICODE)
+            r'#{1}(\w+)\s?', re.I) if tag == '' else re.compile(r'#{1}(' + tag + r'\w*)\s?', re.I | re.UNICODE)
         for f in sorted_file_list:
             content = self._getFileContent(f['path'])
             if content != str():
@@ -236,13 +278,7 @@ class Search(object):
             s_type = 'or'
         return s_terms, s_type
 
-    @staticmethod
-    def getTodayDate(fmt="%d.%m.%Y"):
-        now = datetime.datetime.now()
-        return now.strftime(fmt)
-
-    @staticmethod
-    def getUrlScheme(f):
+    def getUrlScheme(self, f):
         """
         Gets the URL Scheme setup in Alfred Preferences
 
@@ -252,5 +288,98 @@ class Search(object):
         Returns:
             str: URL scheme
         """
-        url_scheme = Tools.getEnv('url_scheme')
-        return Tools.strJoin(url_scheme, urllib.pathname2url(f))
+        return self.strJoin(self.url_scheme, urllib.pathname2url(f))
+
+
+class NewNote(Notes):
+
+    def __init__(self, note_title, template_path=str(), tags=str(), content=str()):
+        super(NewNote, self).__init__()
+        self.tags = tags
+        self.content = content
+        self.note_title = note_title
+        self.note_path = self.getTargetFilePath(self.parseFilename(note_title))
+        # TODO: use only name instead of full path
+        self.template_path = self.getTemplate(template_path)
+
+    def getTargetFilePath(self, file_name):
+        """
+
+        construct markdown file path
+
+
+        Returns:
+            str: markdown file path
+        """
+        file_path = Tools.strJoin(self.path, file_name, self.extension)
+        if os.path.isfile(file_path):
+            new_file_name = Tools.strJoin(
+                file_name, ' ', self.getTodayDate('%d_%m_%Y %H_%M_%S'))
+            file_path = Tools.strJoin(self.path, new_file_name, self.extension)
+        return file_path
+
+    def getDefaultTemplate(self):
+        """
+        Read default template setting from environment variable
+        :return: default template file name
+        """
+        return 'template.md' if self.default_template == str() else self.default_template
+
+    def getTemplate(self, template_path):
+        """
+
+        Get template path from previous wf step, reads env variable
+
+        Returns:
+            str: path to template.md
+        """
+        notes_path = self.path
+        default_template = self.getDefaultTemplate()
+        return Tools.strJoin(notes_path, default_template) if template_path == str() else template_path
+
+    def readTemplate(self, **kwargs):
+        """
+        Read template mardkown file and fill placeholder defined in template
+        with data provides as kwargs
+
+        Args:
+            file_path (str): Path to Template file
+
+        Returns:
+            str: Content
+        """
+        if '#' not in self.template_tag or self.template_tag == str():
+            template_tag = '#Template'
+        if os.path.exists(self.template_path):
+            with open(self.template_path, "r") as f:
+                content = f.read()
+        else:
+            content = self.FALLBACK_CONTENT
+        content = content.replace(self.template_tag, '')
+        for k, v in kwargs.iteritems():
+            content = content.replace('{' + k + '}', v)
+        tag_line = 'Tags: {0}'.format(self.tags)
+        if self.tags:
+            content = content.replace('Tags: ', tag_line)
+        return content
+
+    def parseFilename(self, f):
+        """
+        Replace special characters in filename of md file
+
+        Returns:
+            str: filename
+        """
+        tmp = f.decode('utf-8').strip()
+        for k, v in self.CHAR_REPLACEMENT_MAP.items():
+            tmp = tmp.replace(k, v)
+        return tmp.encode('utf-8')
+
+    def create_note(self):
+        with open(self.note_path, "w+") as f:
+            default_date = self.getDefaultDate()
+            file_content = self.readTemplate(
+                date=self.getTodayDate(default_date), title=self.note_title)
+            file_content = file_content + '\n' + self.content if self.content else file_content
+            f.write(file_content)
+        return(self.note_path)

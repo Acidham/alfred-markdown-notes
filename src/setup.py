@@ -2,8 +2,8 @@
 import os
 
 import Alfred
-from Alfred import Tools as Tools
 from Alfred import Plist as Plist
+from Alfred import Tools as Tools
 
 
 def get_variables():
@@ -28,7 +28,7 @@ def print_config():
         wf.addItem()
 
 
-def print_selection(key, query):
+def get_selection(key, query):
     variables = get_variables()
     if key in variables:
         v = variables[key]
@@ -54,6 +54,13 @@ def print_selection(key, query):
 
 
 def write_config(key, value):
+    """
+    Writes config item to plit file
+
+    Args:
+        key (str): key of key-value pair
+        value (str): value of key-value pair
+    """
     config = Plist()
     config.setVariable(key, value)
     wf.setItem(
@@ -67,8 +74,10 @@ def write_config(key, value):
     )
     wf.addItem()
 
+
 action_key_value = Tools.getEnv('action_key_value')
-[action, key, value] = action_key_value.split('|') if action_key_value != str() else [str(), str(), str()]
+[action, key, value] = action_key_value.split(
+    '|') if action_key_value != str() else [str(), str(), str()]
 wf_dir = os.getcwd()
 query = Tools.getArgv(1)
 
@@ -77,7 +86,7 @@ wf = Alfred.Items()
 if action == str():
     print_config()
 elif action == 'selection':
-    print_selection(key, query)
+    get_selection(key, query)
 else:
     write_config(key, value)
 

@@ -8,7 +8,6 @@ import sys
 import urllib2
 
 import html2text  # https://github.com/aaronsw/html2text
-
 import MyNotes
 from Alfred import Tools
 

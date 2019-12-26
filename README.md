@@ -83,9 +83,10 @@ With the Alfred search results from `mds` and `mdt` you can perform additional a
       **Note:** The Markdown Editor can be changed in Alfred Preferences → Workflow
   * **URL Scheme**: Generate MD link for URL Scheme and copy to the clipboard e.g. `[My Notes](x-writer://open?path=/Users/joe/Documents/Notes/doc.md)`
   	**Note:**: Only available when `url_scheme` was set
-* It is possible to perform addtional actions to one or more Notes by proceeding with File Actions (press `tab` on a note): 
+* It is possible to perform addtional actions to one or more Notes by proceeding with File Actions (press `TAB` or `ALT+TAB` on a note or multiple notes): 
   * **Delete MD Notes**: Same as `CTRL` modifier key but also works on multiple files
-  * **MD Link to Note**: Generates relative Link to a markdown document for referencing Notes in other Notes e.g. `[My Notes](mynote.md)` 
+  * **MD Link to Note**: Generates relative Link to a markdown document for referencing Notes in other Notes e.g. `[My Notes](mynote.md)`
+  * **Create Markdown Index**: Selected Markdown files will be linked into a new Index file e.g. to collect links to all invoices for an insurance
 
 ### Tag Search
 
