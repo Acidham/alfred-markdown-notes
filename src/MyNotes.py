@@ -2,6 +2,7 @@
 import datetime
 import os
 import re
+import sys
 import urllib
 from collections import Counter, OrderedDict
 
@@ -37,9 +38,20 @@ class Notes(object):
         self.template_tag = os.getenv('template_tag')
         self.url_scheme = os.getenv('url_scheme')
         self.default_date_format = os.getenv('default_date_format')
+        # TODO: For later change, adding it to config if necessary
+        # self.exact_match = True if os.getenv('exact_match') == 'True' else False
+        self.exact_match = True
 
     @staticmethod
     def __buildNotesExtension():
+        """
+        Get notes extension configured in workflow preference
+
+        Returns:
+
+            str: extension incl. dot e.g. .md
+
+        """
         ext = os.getenv('ext')
         if ext is None:
             ext = '.md'
@@ -47,6 +59,14 @@ class Notes(object):
 
     @staticmethod
     def __buildNotesPath():
+        """
+        Create Notes path configured in preferences
+
+        Returns:
+
+            str: home path to notes directory
+
+        """
         user_dir = os.path.expanduser('~')
         path = os.getenv('path_to_notes')
         if not(path.startswith('/')):
@@ -59,6 +79,18 @@ class Notes(object):
 
     @staticmethod
     def getTodayDate(fmt="%d.%m.%Y"):
+        """
+        Get today's date
+
+        Args:
+
+            fmt (str, optional): Date format. Defaults to "%d.%m.%Y".
+
+        Returns:
+
+            str: formatted today's date
+
+        """
         now = datetime.datetime.now()
         return now.strftime(fmt)
 
@@ -70,6 +102,14 @@ class Notes(object):
         return "%d.%m.%Y %H.%M" if self.default_date_format == str() else self.default_date_format
 
     def getNotesPath(self):
+        """
+        Get path to notes home directory
+
+        Returns:
+
+            str: Path to notes home
+
+        """
         return self.path
 
     def getNotesExtension(self):
@@ -81,35 +121,101 @@ class Notes(object):
 
 
 class Search(Notes):
+    """
+    Search in Notes
+
+    Args:
+
+        -
+
+
+    Returns:
+
+        (object): a Search object
+
+    """
 
     def __init__(self):
         super(Search, self).__init__()
 
-    def __OR(self, search_terms, content):
-        restring = '|'.join(search_terms)
-        regexp = re.compile(r'(%s)+' % restring, re.I)
-        return True if len(re.findall(regexp, content)) > 0 else False
-
-    def __AND(self, search_terms, content):
-        length = 1
-        for i in search_terms:
-            i = '.' if i == '' else i
-            regexp = re.compile(r'%s+' % i, re.I)
-            length *= len(re.findall(regexp, content))
-        return True if length > 0 else False
+    def _match(self, search_terms, content, operator):
+        content = content.lower()
+        content = content.replace('[', '')
+        content = content.replace(']', ' ')
+        # TODO: Improve search and replace
+        # TODO: Add %20 replacement
+        regex = re.compile(r'[^a-zA-Z0-9# ]')
+        content = regex.sub('', content)
+        word_list = content.split(' ')
+        word_list = [self._chop(w, '#') for w in word_list]
+        search_terms = [s.lower() for s in search_terms]
+        match = False
+        matches = list()
+        for st in search_terms:
+            search_str = st.replace('*', str())
+            # search if search term contains a whitespace
+            if ' ' in st:
+                regexp = re.compile(r'({0})'.format(st), re.I)
+                match = True if len(re.findall(regexp, content)) > 0 else False
+            # search if wildcard search in the end
+            elif st.endswith('*'):
+                match_list = [x for x in word_list if x.startswith(search_str)]
+                match = True if len(match_list) > 0 else False
+            # search if wildcard search in front
+            elif st.startswith('*'):
+                match_list = [x for x in word_list if x.endswith(search_str)]
+                match = True if len(match_list) > 0 else False
+            # search if exact match is true
+            elif self.exact_match:
+                match_list = [x for x in word_list if search_str == x]
+                match = True if len(match_list) > 0 else False
+            # search with exact match is false
+            else:
+                match = True if search_str in str(word_list) else False
+            matches.append(match)
+        match = all(matches) if operator == 'AND' else any(matches)
+        return match
 
     def searchInFiles(self, search_terms, search_type):
+        """
+        Search with search terms in all markdown files
+
+        Args:
+
+            search_terms (list): Search terms in a list
+
+            search_type (str): OR or AND search
+
+
+        Returns:
+
+            list: list of files matches the search
+
+        """
         file_list = self.getFilesListSorted()
         new_list = list()
         if file_list is not None:
             for f in file_list:
                 content = self._getFileContent(f['path'])
-                if content != str() and (search_type == 'and' and self.__AND(search_terms, content)) or (
-                        search_type == 'or' and self.__OR(search_terms, content)):
+                if content != str() and (search_type == 'and' and self._match(search_terms, content, 'AND')) or (
+                        search_type == 'or' and self._match(search_terms, content, 'OR')):
                     new_list.append(f)
         return new_list
 
     def url_search(self, search_terms):
+        """
+        Search Notes with bookmarks (URLs)
+
+        Args:
+
+            search_terms (list): Search terms in a list
+
+
+        Returns:
+
+            list: List of Notes found
+
+        """
         notes = self.searchInFiles(search_terms, 'and')
         note_list = list()
         if notes:
@@ -129,6 +235,17 @@ class Search(Notes):
         return note_list
 
     def getNoteTitle(self, path):
+        """
+        Get the title of a note
+
+        Args:
+
+            path (str): Full path to note
+
+        Returns:
+
+            str: Title of the now
+        """
         content = self._getFileContent(path)
         title = self._chop(os.path.basename(path), self.extension)
         obj = re.search(r'^#{1}\s{1}(.*)', content, re.MULTILINE)
@@ -145,9 +262,16 @@ class Search(Notes):
     def getFileMeta(self, path, item):
         """
         Get file meta data of given file
-        :param path: file path
-        :param item: meta data name
-        :return: item str()
+
+        Args:
+
+            path (str): file path
+
+            item (str): meta data name
+
+        Returns: 
+
+            item str(): Metadata of the file
         """
         os.stat_float_times(True)
         file_stats = os.stat(path)
@@ -161,8 +285,14 @@ class Search(Notes):
     def getFilesListSorted(self, reverse=True):
         """
         Get list of files in directory as dict
-        :param reverse: bool
-        :return: list(dict())
+
+        Args:
+
+            reverse (boolean): True to sort reverse
+
+        Returns:
+
+            list(dict): sorted dict with file meta information
         """
         err = 0
         file_list = list()
@@ -194,6 +324,22 @@ class Search(Notes):
             return sorted_file_list
 
     def tagSearch(self, tag, sort_by='tag', reverse=False):
+        """
+        Search for notes with tag
+
+        Args:
+
+            tag (str): tag to search for in a note
+
+            sort_by (str, optional): Sort results by. Defaults to 'tag'.
+
+            reverse (bool, optional): Sort reverse. Defaults to False.
+
+        Returns:
+
+            list(dict): results list with dicts
+
+        """
         i = {'tag': 0, 'count': 1}
         matches = list()
         sorted_file_list = self.getFilesListSorted()
@@ -246,6 +392,19 @@ class Search(Notes):
         return content
 
     def isNoteTagged(self, file_path, tag):
+        """
+        Is the note tagged with tag?
+
+        Args:
+
+            file_path (str): path to note
+
+            tag (str): tag to search for
+
+        Returns:
+
+            boolean: True if note is tagged otherwise false
+        """
         match = False
         with open(file_path, 'r') as c:
             lines = c.readlines()[0:5]
@@ -262,9 +421,11 @@ class Search(Notes):
         Returns search config tuple
 
         Args:
+
             q (string): Search Query e.g. Searchterm1&Searchtem2
 
         Returns:
+
             tuple: Search Terms and operator
         """
         if '&' in q:
@@ -283,15 +444,31 @@ class Search(Notes):
         Gets the URL Scheme setup in Alfred Preferences
 
         Args:
+
             f(str): md file to add at the end of url scheme
 
         Returns:
+
             str: URL scheme
         """
         return self.strJoin(self.url_scheme, urllib.pathname2url(f))
 
 
 class NewNote(Notes):
+    """
+    Creates a new note with title, template and tags
+
+    Args:
+
+        note_title (str): Title of the Note
+
+        template_path (str): Path to the template used
+
+        tags (str): Tag line with format: #tag1 #tag2
+
+        content (str): Addtional content after Headline
+
+    """
 
     def __init__(self, note_title, template_path=str(), tags=str(), content=str()):
         super(NewNote, self).__init__()
@@ -314,7 +491,7 @@ class NewNote(Notes):
         file_path = Tools.strJoin(self.path, file_name, self.extension)
         if os.path.isfile(file_path):
             new_file_name = Tools.strJoin(
-                file_name, ' ', self.getTodayDate('%d_%m_%Y %H_%M_%S'))
+                file_name, ' ', self.getTodayDate('%d-%m-%Y %H-%M-%S'))
             file_path = Tools.strJoin(self.path, new_file_name, self.extension)
         return file_path
 
@@ -376,10 +553,19 @@ class NewNote(Notes):
         return tmp.encode('utf-8')
 
     def create_note(self):
-        with open(self.note_path, "w+") as f:
-            default_date = self.getDefaultDate()
-            file_content = self.readTemplate(
-                date=self.getTodayDate(default_date), title=self.note_title)
-            file_content = file_content + '\n' + self.content if self.content else file_content
-            f.write(file_content)
-        return(self.note_path)
+        """
+        Creates the markdown note
+
+        Returns:
+            str: full path to notes
+        """
+        try:
+            with open(self.note_path, "w+") as f:
+                default_date = self.getDefaultDate()
+                file_content = self.readTemplate(
+                    date=self.getTodayDate(default_date), title=self.note_title)
+                file_content = file_content + '\n' + self.content if self.content else file_content
+                f.write(file_content)
+            return self.note_path
+        except Exception as e:
+            sys.stderr.write(e)

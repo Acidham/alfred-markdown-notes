@@ -3,18 +3,18 @@
 import os
 import sys
 
-import MyNotes
 from Alfred import Tools
+from MyNotes import NewNote
 from QuerySplitter import QuerySplitter
 
 query = Tools.getArgv(1)
 # Read template path from previous wf step in case template ws choosen
 template = Tools.getEnv('template_path')
 if query.isspace():
-    query = "My Note {today}".format(today=MyNotes.getTodayDate(fmt='%d_%m_%Y %H_%M_%S'))
+    query = "My Note {today}".format(today=NewNote.getTodayDate(fmt='%d-%m-%Y %H-%M-%S'))
 qs = QuerySplitter(query)
 
 if query:
-    Note = MyNotes.NewNote(qs.title, template_path=template, tags=qs.tags)
+    Note = NewNote(qs.title, template_path=template, tags=qs.tags)
     fPath = Note.create_note()
     sys.stdout.write(fPath)

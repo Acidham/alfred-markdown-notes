@@ -1,9 +1,7 @@
 #!/usr/bin/python
 import os
 
-import Alfred
-from Alfred import Plist as Plist
-from Alfred import Tools as Tools
+from Alfred import Items, Plist, Tools
 
 
 def get_variables():
@@ -81,7 +79,7 @@ action_key_value = Tools.getEnv('action_key_value')
 wf_dir = os.getcwd()
 query = Tools.getArgv(1)
 
-wf = Alfred.Items()
+wf = Items()
 
 if action == str():
     print_config()

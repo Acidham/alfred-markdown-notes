@@ -8,8 +8,8 @@ import sys
 import urllib2
 
 import html2text  # https://github.com/aaronsw/html2text
-import MyNotes
 from Alfred import Tools
+from MyNotes import Search
 
 
 class Markdown(object):
@@ -86,7 +86,7 @@ def writeMarkdown(md_content, md_path):
         f.write(md_content.encode('utf-8'))
 
 
-mn = MyNotes.Search()
+mn = Search()
 ext = mn.getNotesExtension()
 p = mn.getNotesPath()
 argv = Tools.getArgv(1)

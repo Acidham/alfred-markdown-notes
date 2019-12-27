@@ -3,7 +3,7 @@ import sys
 import urllib
 from shutil import copy2
 
-import MyNotes
+from MyNotes import Search
 
 ASSETS_FOLDER = '_NoteAssets'
 
@@ -11,11 +11,11 @@ ASSETS_FOLDER = '_NoteAssets'
 def getAssetsFolder():
     """
     Get Assets Upload Folder from config
-    
+
     Returns:
         str: Asset Folder for md Notes
     """
-    my_notes = MyNotes.Search()
+    my_notes = Search()
     notes_path = my_notes.getNotesPath()
     assets_path = notes_path + ASSETS_FOLDER
     if not(os.path.exists(assets_path)):
@@ -26,14 +26,14 @@ def getAssetsFolder():
 def copyFile(source, target):
     """
     Copy file to target folder
-    
+
     Args:
         source (str): Source File path
         target (str): Target folder
-    
+
     Raises:
         ValueError: if source file does not exists
-    
+
     Returns:
         str: path to file after copied
     """

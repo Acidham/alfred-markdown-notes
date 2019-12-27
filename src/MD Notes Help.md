@@ -58,13 +58,16 @@ To use quicklook for Markdown files there is a QLMarkdown plugin available on gi
 ### Full Text Search
 
 Type `mds` keyword into Alfred and get a list of all MD files sorted by last modified date. After `mds` keyword you can type a search term and text will be searched instantly. 
+The search runs with exact match and with partial match by using wildcards `*` before or after the search term
 
 #### Syntax
 
-* `Hello Alfred` search for exact match of the two words in MD Notes
-* `Hello&Alfred` search for Notes withthe two words in the the text 
-* `Hello|Alfred` search wether `Hello` or `Alfred` in MD Notes
-* *Tip:* You can type `#Tag` to search for Notes with specific Tag in text and using & and | in the same way than with text search.
+* `Hello Alfred` searches for exact match of the phrase
+* `Hello&Alfred` search for Notes containing the two words somewhere in the text 
+* `Hello|Alfred` search for `Hello` or `Alfred` somwhere in the text
+* `Book` match exact word in the text
+* `Book*` machtes `Bookstore` and `Booking`
+* *Tip:* You can type `#Tag` in `mds` to search for Notes with specific Tag in text and using & and | in the same way than with text search.
 
 #### Options
 

@@ -983,7 +983,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string></string>
+				<string>Searching...</string>
 				<key>script</key>
 				<string>python notes_search.py "{query}"</string>
 				<key>scriptargtype</key>
@@ -2849,7 +2849,7 @@ sys.stdout.write(output)</string>
 		<string>path_to_notes</string>
 	</array>
 	<key>version</key>
-	<string>2.0</string>
+	<string>2.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>

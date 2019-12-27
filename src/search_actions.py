@@ -1,13 +1,13 @@
 #!/usr/bin/python
 
-import MyNotes
 from Alfred import Items, Tools
+from MyNotes import Search
 
 # Get NotePath as path_query env variable
 note_path = Tools.getEnv("path_query1")
 # Get query used in search markdown notes as path_query env variable
 query = Tools.getEnv("path_query2")
-md_notes = MyNotes.Search()
+md_notes = Search()
 # Get NoteTitle for specific note
 note_title = md_notes.getNoteTitle(note_path)
 # If query in notes search was empty subtitle uses following string

@@ -1,11 +1,11 @@
 #!/usr/bin/python
 
-import MyNotes
 from Alfred import Items as Items
 from Alfred import Tools as Tools
+from MyNotes import Search
 
 # create MD search object
-md = MyNotes.Search()
+md = Search()
 
 # Get environment variables
 ext = md.getNotesExtension()

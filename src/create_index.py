@@ -9,6 +9,13 @@ from QuerySplitter import QuerySplitter
 
 
 def get_mdfiles_list_content():
+    """
+    Get markdown links in unordered markdown list
+    
+    Returns:
+        str: Markdown unordered list 
+    
+    """
     ns = Search()
     output = list()
     files = os.getenv('files').split('|')

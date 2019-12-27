@@ -6,8 +6,8 @@ import shutil
 import sys
 import urllib
 
-import MyNotes
 from Alfred import Tools as Tools
+from MyNotes import Search
 
 
 def rmDir(path, ignore_errors=True):
@@ -57,7 +57,7 @@ def getAssetsLinks(parent_path, p):
     return [parent_path + m for m in matches if is_in_notes(m)]
 
 
-mn = MyNotes.Search()
+mn = Search()
 
 # Load extentions env variables from settings
 ext = mn.getNotesExtension()
