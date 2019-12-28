@@ -12,9 +12,10 @@ def get_variables():
 def print_config():
     variables = get_variables()
     for k, v in variables.items():
+        v_subtitle = '<EMPTY>' if v == str() else v
         wf.setItem(
             title=k,
-            subtitle='Value: ' + v + ' , press Shift for Help.',
+            subtitle='Value: ' + v_subtitle + ' , press SHIFT for Help.',
             arg='selection|%s|%s' % (k, v),
             quicklookurl='file://' + wf_dir + '/docs/' + k + ".md"
         )
@@ -33,7 +34,8 @@ def get_selection(key, query):
         isValid = False if query == str() else True
         wf.setItem(
             title='Change %s: %s' % (key, v),
-            subtitle='Add new value for %s and press enter. Press Shift for Help.' % key,
+            subtitle=u'Add new value for "{0}" and press enter. SHIFT for Help, \u2318 to delete value'.format(
+                key),
             arg='set|%s|%s' % (key, query),
             valid=isValid,
             quicklookurl='file://' + wf_dir + '/docs/' + key + ".md"
@@ -42,6 +44,12 @@ def get_selection(key, query):
             'icons/edit.png',
             'image'
         )
+        wf.addMod(
+            key='cmd',
+            subtitle='Delete Value',
+            arg='set|{0}|'.format(key)
+        )
+        wf.addModsToItem()
         wf.addItem()
     else:
         wf.setItem(
@@ -53,7 +61,7 @@ def get_selection(key, query):
 
 def write_config(key, value):
     """
-    Writes config item to plit file
+    Writes config item to plist file
 
     Args:
         key (str): key of key-value pair
@@ -61,9 +69,10 @@ def write_config(key, value):
     """
     config = Plist()
     config.setVariable(key, value)
+    value = '<EMPTY>' if value == str() else value
     wf.setItem(
         title="Proceed?",
-        subtitle='%s changed to: %s' % (key, value),
+        subtitle='%s will be changed to: %s' % (key, value),
         arg=''
     )
     wf.setIcon(

@@ -17,7 +17,8 @@ class Notes(object):
         '\\': '-',
         ':': '-',
         '|': '-',
-        ',': ''
+        ',': '',
+        '#': '-'
     }
 
     # Fallback Content when no Template is available
@@ -113,21 +114,36 @@ class Notes(object):
         return self.path
 
     def getNotesExtension(self):
+        """
+        Get notes extension from .env
+
+        Returns:
+
+            str: File extension for md files
+
+        """
         return self.extension
 
     @staticmethod
     def strJoin(*args):
+        """
+        Join multiple strings
+
+        Arguments: 
+
+            *args (str): strings to join
+
+        Returns:
+
+            (str): joined string
+
+        """
         return str().join(args)
 
 
 class Search(Notes):
     """
     Search in Notes
-
-    Args:
-
-        -
-
 
     Returns:
 
@@ -139,6 +155,23 @@ class Search(Notes):
         super(Search, self).__init__()
 
     def _match(self, search_terms, content, operator):
+        """
+        Find matches of search_terms list with OR or AND
+
+        Args:
+
+            search_terms (list): Search terms
+
+            content (str): Text to search
+
+            operator (str): 'OR' or 'AND'
+
+
+        Returns:
+
+            bool: True if search terms matches
+
+        """
         content = content.lower()
         content = content.replace('[', '')
         content = content.replace(']', ' ')
@@ -176,7 +209,7 @@ class Search(Notes):
         match = all(matches) if operator == 'AND' else any(matches)
         return match
 
-    def searchInFiles(self, search_terms, search_type):
+    def notes_search(self, search_terms, search_type):
         """
         Search with search terms in all markdown files
 
@@ -210,13 +243,12 @@ class Search(Notes):
 
             search_terms (list): Search terms in a list
 
-
         Returns:
 
             list: List of Notes found
 
         """
-        notes = self.searchInFiles(search_terms, 'and')
+        notes = self.notes_search(search_terms, 'and')
         note_list = list()
         if notes:
             for f in notes:
@@ -358,10 +390,21 @@ class Search(Notes):
         # Sorted by match counter x[1] if sort by key (tag name) is required change to x[0]
         sorted_matches = OrderedDict(
             sorted(counted_matches.items(), key=lambda x: x[i[sort_by]], reverse=reverse))
-
         return sorted_matches
 
     def todoSearch(self, todo):
+        """
+        Search for todos in md notes
+
+        Args:
+
+            todo (str): Search string
+
+        Returns:
+
+            list(dict): returns matches as list with dict
+
+        """
         matches = list()
         sorted_file_list = self.getFilesListSorted()
         regex = re.compile(r'[-|\*] {1}\[ \] {1}(.+)', re.I) if todo == '' else re.compile(
@@ -434,6 +477,9 @@ class Search(Notes):
         elif '|' in q:
             s_terms = q.split('|')
             s_type = 'or'
+        elif q == str():
+            s_terms = list()
+            s_type = 'or'
         else:
             s_terms = [q]
             s_type = 'or'
@@ -475,7 +521,7 @@ class NewNote(Notes):
         self.tags = tags
         self.content = content
         self.note_title = note_title
-        self.note_path = self.getTargetFilePath(self.parseFilename(note_title))
+        self.note_path = self.getTargetFilePath(self.normalize_filename(note_title))
         # TODO: use only name instead of full path
         self.template_path = self.getTemplate(template_path)
 
@@ -540,7 +586,7 @@ class NewNote(Notes):
             content = content.replace('Tags: ', tag_line)
         return content
 
-    def parseFilename(self, f):
+    def normalize_filename(self, f):
         """
         Replace special characters in filename of md file
 
