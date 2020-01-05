@@ -164,7 +164,7 @@ class Notes(object):
         return str().join(args)
 
     @staticmethod
-    def strReplace(text, replace_map):
+    def strReplace(text, replace_map, lowercase=True):
         """
         Replace in text from a replacement map 
 
@@ -182,7 +182,7 @@ class Notes(object):
         """
         for k in replace_map.keys():
             text = text.replace(k, replace_map[k])
-        return text.lower()
+        return text.lower() if lowercase else text
 
 
 class Search(Notes):
@@ -639,7 +639,7 @@ class NewNote(Notes):
             str: filename
         """
         self.CHAR_REPLACEMENT_MAP.update(self.UMLAUT_REPL_MAP)
-        return self.strReplace(f, self.CHAR_REPLACEMENT_MAP)
+        return self.strReplace(f, self.CHAR_REPLACEMENT_MAP, lowercase=False)
 
     def create_note(self):
         """
