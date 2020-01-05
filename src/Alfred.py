@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 import json
 import os
 import sys
@@ -242,8 +244,10 @@ class Tools(object):
 
             response_type (str) -- argv string or None
         """
+        reload(sys)
+        sys.setdefaultencoding('utf-8')
         try:
-            return sys.argv[i]
+            return sys.argv[i].encode('utf-8')
         except IndexError:
             return str()
             pass

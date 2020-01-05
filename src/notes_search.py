@@ -1,5 +1,7 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
+import sys
 import urllib
 
 from Alfred import Items as Items
@@ -10,9 +12,10 @@ from MyNotes import Search
 md_search = Search()
 
 # Load Env variables
-ext = md_search.getNotesExtension()
-p = md_search.getNotesPath()
 query = Tools.getArgv(1)
+# TODO: For testing, delete 3 lines
+#query = "Äsch".encode('utf-8')
+# sys.stderr.write(query)
 
 # Get Search config with AND and OR
 search_terms, search_type = md_search.get_search_config(query)
@@ -20,28 +23,20 @@ search_terms, search_type = md_search.get_search_config(query)
 # create WF object
 wf = Items()
 
-# run search with search term(s)
-
-search_results_list = list()
 # exec search if search terms were entered
 if len(search_terms) > 0:
     sorted_file_list = md_search.notes_search(search_terms, search_type)
 # get full list of file in case no search was entered
 else:
     sorted_file_list = md_search.getFilesListSorted()
-search_results_list.extend(sorted_file_list)
-
 # Write search results into WF object
-for f in search_results_list:
+for f in sorted_file_list:
     c_date = Tools.getDateStr(f['ctime'])
     m_date = Tools.getDateStr(f['mtime'])
-    # md_path = urllib.pathname2url(f['filename'])
-    md_path = f['filename'].replace(' ', '%20')
-    url_scheme_path = md_search.getUrlScheme(f['path'])
     wf.setItem(
         title=f['title'],
-        subtitle=u"Created: {0}, Modified: {1} ({2} for Actions...)".format(
-            c_date, m_date, u"\u2318"),
+        subtitle=u"Created: {0}, Modified: {1} ({2} \u2192 Actions, {3} \u2192 Quicklook)".format(
+            c_date, m_date, u'\u2318', u'\u21E7'),
         type='file',
         arg=f['path']
     )
@@ -49,7 +44,7 @@ for f in search_results_list:
     wf.addMod(
         key="cmd",
         arg="{0}>{1}".format(f['path'], query),
-        subtitle="Actions Menu...",
+        subtitle="Enter Actions Menu for the Note...",
         icon_path="icons/action.png",
         icon_type="image"
     )

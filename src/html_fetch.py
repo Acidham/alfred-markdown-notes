@@ -2,29 +2,33 @@
 # -*- coding: utf-8 -*-
 
 import datetime
+import html
 import HTMLParser
+import os
 import re
+import subprocess
 import sys
 import urllib2
 
-import html2text  # https://github.com/aaronsw/html2text
 from Alfred import Tools
 from MyNotes import Search
 
 
 class Markdown(object):
 
+    PANDOC = '/usr/local/bin/pandoc -f html -t markdown_strict --strip-comments --atx-headers '
+
     def __init__(self, url):
         self.url = url
-        self.html = self.fetchHtml()
-        self.md = self.fetchMd()
-        self.mdPageUrl = u"[%s](%s)" % (
-            url.decode('utf-8'), url.decode('utf-8'))
+        self.html = self._fetchHtml()
+        self.md = self._fetchMd()
+        # self.mdPageUrl = u"[{0}]({0})".format(url)
+        self.mdPageUrl = u"[{0}]({0})".format(url.decode('utf-8'))
 
-    def fetchHtml(self):
+    def _fetchHtml(self):
         try:
-            response = urllib2.urlopen(self.url)
-            response = response.read().decode('utf-8')
+            r = urllib2.urlopen(self.url)
+            response = r.read().decode('utf-8')
         except:
             response = "<html><body><a href=\"" + self.url + \
                 "\">" + self.url + "</a></body></html>"
@@ -34,11 +38,19 @@ class Markdown(object):
     def getMdUrl(self):
         return self.mdPageUrl
 
-    def fetchMd(self):
-        return html2text.html2text(self.fetchHtml())
+    def _fetchMd(self):
+        try:
+            cmd = '{0} {1}'.format(self.PANDOC, self.url)
+            md = os.popen(cmd)
+            # sys.stdout.write(md.read())
+            resp = md.read()
+        except:
+            resp = "[{0}]({0})".format(self.url)
+            pass
+        return resp
 
     def getMd(self):
-        return self.md
+        return self.md.decode('utf-8')
 
     def getHtml(self):
         return self.html
@@ -46,24 +58,26 @@ class Markdown(object):
     def getTitle(self):
         res = re.findall(
             r'<title>[\n\t\s]*(.+)[\n\t\s]*</title>', self.html, re.MULTILINE)
-        return self.htmlDecode(''.join(res))
+        return self._htmlDecode(''.join(res))
 
     @staticmethod
-    def htmlDecode(string):
+    def _htmlDecode(string):
         string = urllib2.unquote(string)
+        # string = urllib.parse.unquote(string)
+        # return string
         return HTMLParser.HTMLParser().unescape(string).encode('utf-8')
 
-    def markdownHeader(self):
+    def _markdownHeader(self):
         today = self.getTodayDate(fmt="%d.%m.%Y")
         return "---\n" \
                "Created: {date}\n" \
-               "Tags: #WebClip #URL\n" \
+               "Tags: #WebClip\n" \
                "---\n".format(date=today)
 
     def getMarkdownContent(self):
-        out = self.markdownHeader()
+        out = self._markdownHeader()
         out += self.getMd()
-        out += "\n---\n"
+        out += u'\n---\n'
         out += self.getMdUrl()
         return out
 
@@ -76,14 +90,17 @@ class Markdown(object):
 def parseFilename(f):
     to_replace = ['/', '\\', ':', '|']
     tmp = f.decode('utf-8').strip()
+    # tmp = f.strip()
     for i in to_replace:
         tmp = tmp.replace(i, '-')
+    # return tmp
     return tmp.encode('utf-8')
 
 
 def writeMarkdown(md_content, md_path):
     with open(md_path, "w+") as f:
         f.write(md_content.encode('utf-8'))
+        # f.write(md_content)
 
 
 mn = Search()
@@ -97,6 +114,7 @@ url = argv if argv.startswith(
 # Fix formatting from <url> to markdown url [title](url)
 
 if url:
+    Tools.notify('Fetch URL...', 'The Note will be opened after the import...')
     markdown = Markdown(url)
     today = markdown.getTodayDate(fmt="%d.%m.%Y")
     today_time = markdown.getTodayDate(fmt="%d-%m-%Y %H-%M")

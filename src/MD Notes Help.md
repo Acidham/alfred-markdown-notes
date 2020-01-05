@@ -26,12 +26,22 @@ Examples:
   * `/Volumes/usb` →  will not work!
 
 * **Default Date Format** (`default_date_format`): Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
+
 * **Default Template** * (`default_template`): The file that will be used as default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates)) 
+
 * **Extension** * (`ext`): The md files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
   **Note:** The files must be type text files.
+  
+* **Exact Match** (`exact_match`): Defines if the search should match the exact search term (`True`) or the string (`False`) in markdown notes. 
+
+  **Note:** When exact match is set to `True` it is possible to enhance the search term with wildcards
+
 * **URL scheme** (`url_scheme`): (OPTIONAL) I figured out that some web application like Todoist are using web interface where, due to OS resctrictions, file paths cannot be opened. To work around this URL scheme can be configured to open the note in markdown editor or viewer, e.g. Marked or iA Writer. Add URL Scheme like `x-writer://create?file=` and after `file=` will be enhanced with the MD Note path when executed. 
+
 * **Template Tag** (`template_tag`): The template tag defines which `#Tagname`) defines a Template. Once you created a template just add template tag name to the MD Note and it will be recognized when you create a new MD Note from Template (see [Create new MD Notes from Template](#Create%20new%20MD%20Notes%20from%20Template))
+
 * **Bookmark Tag** (`bookmark_tag`): Name of the tag which marks Notes containing URL/Bookmarks.
+
 * **Evernote Auth Token** (`evernote_auth_token`) (OPTIONAL): The AuthToken for your Evernote Account. Please ensure to get non Sandbox token: [Authenticating with the Evernote Cloud API using Dev Tokens](https://dev.evernote.com/doc/articles/dev_tokens.php)
 
 ### Optional Python Packages
@@ -90,6 +100,8 @@ With the Alfred search results from `mds` and `mdt` you can perform additional a
 ### Tag Search
 
 Type `md#` to get a list of all tags found in the Notes or search for Tags (see [Options](#Options) as well)
+
+The tag search can also be used to search for already existing Tags to paste it into a markdown note. By pressing `CMD` and `Enter` the tag will be pasted into frontmost app. 
 
 ### Search in Todos
 
@@ -150,6 +162,8 @@ MD Notes provides the possibility to fetch pages from an URL and store it in a n
 In case the page cannot be fetched MD Notes create a note and add the URL into the note.
 
 To fetch an URL use `mdf` and enter the target URL.
+
+**Note:** To import HTML content [Pandoc](https://pandoc.org/installing.html) is required. If Pandoc is not installed the note will only contain the URL to the Page.
 
 ### Export to Evernote
 

@@ -7,7 +7,9 @@ from Alfred import Tools
 from MyNotes import NewNote
 from QuerySplitter import QuerySplitter
 
-query = Tools.getArgv(1)
+reload(sys)
+sys.setdefaultencoding('utf-8')
+query = Tools.getArgv(1).encode('utf-8')
 # Read template path from previous wf step in case template ws choosen
 template = Tools.getEnv('template_path')
 if query.isspace():

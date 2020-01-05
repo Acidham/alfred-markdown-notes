@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 import datetime
 import os
@@ -5,11 +6,35 @@ import re
 import sys
 import urllib
 from collections import Counter, OrderedDict
+from unicodedata import normalize
 
 from Alfred import Tools
 
 
 class Notes(object):
+
+    REPL_MAP = {
+        '[': '',
+        ']': ' ',
+        '(': '',
+        ')': ' ',
+        '\n': ' '
+    }
+
+    UMLAUT_REPL_MAP = {
+        '\xc3\xa4': 'ae',
+        '\xc3\xb6': 'oe',
+        '\xc3\xbc': 'ue',
+        '\xc3\x84': 'Ae',
+        '\xc3\x96': 'Oe',
+        '\xc3\x9c': 'Ue',
+        '\xc3\x9f': 'ss',
+        '\xc3\xa5': 'as',  # å
+        u'ö': 'ae',
+        u'ö': 'oe',
+        u'ü': 'ue',
+        '\xcc\x88': 'e'
+    }
 
     # Replacement map for Filename when new file created
     CHAR_REPLACEMENT_MAP = {
@@ -39,9 +64,7 @@ class Notes(object):
         self.template_tag = os.getenv('template_tag')
         self.url_scheme = os.getenv('url_scheme')
         self.default_date_format = os.getenv('default_date_format')
-        # TODO: For later change, adding it to config if necessary
-        # self.exact_match = True if os.getenv('exact_match') == 'True' else False
-        self.exact_match = True
+        self.exact_match = True if os.getenv('exact_match') == 'True' else False
 
     @staticmethod
     def __buildNotesExtension():
@@ -140,6 +163,27 @@ class Notes(object):
         """
         return str().join(args)
 
+    @staticmethod
+    def strReplace(text, replace_map):
+        """
+        Replace in text from a replacement map 
+
+        Args:
+
+            text (str): The string which needs to be processed
+
+            replace_map (dict): dict with search:replace
+
+
+        Returns:
+
+            str : String with replacements 
+
+        """
+        for k in replace_map.keys():
+            text = text.replace(k, replace_map[k])
+        return text.lower()
+
 
 class Search(Notes):
     """
@@ -173,17 +217,15 @@ class Search(Notes):
 
         """
         content = content.lower()
-        content = content.replace('[', '')
-        content = content.replace(']', ' ')
-        # TODO: Improve search and replace
-        # TODO: Add %20 replacement
-        regex = re.compile(r'[^a-zA-Z0-9# ]')
-        content = regex.sub('', content)
+        content = self.strReplace(content, self.REPL_MAP)
         word_list = content.split(' ')
         word_list = [self._chop(w, '#') for w in word_list]
+        # TODO: Error output to Alfred for Testing
+        #sys.stderr.write("terms: " + str(search_terms) + '\n')
         search_terms = [s.lower() for s in search_terms]
         match = False
         matches = list()
+
         for st in search_terms:
             search_str = st.replace('*', str())
             # search if search term contains a whitespace
@@ -226,10 +268,12 @@ class Search(Notes):
 
         """
         file_list = self.getFilesListSorted()
+        search_terms = [normalize('NFD', s.decode('utf-8')) for s in search_terms]
         new_list = list()
         if file_list is not None:
             for f in file_list:
                 content = self._getFileContent(f['path'])
+                content = normalize('NFD', content.decode('utf-8'))
                 if content != str() and (search_type == 'and' and self._match(search_terms, content, 'AND')) or (
                         search_type == 'or' and self._match(search_terms, content, 'OR')):
                     new_list.append(f)
@@ -276,7 +320,7 @@ class Search(Notes):
 
         Returns:
 
-            str: Title of the now
+            str: Title of the note
         """
         content = self._getFileContent(path)
         title = self._chop(os.path.basename(path), self.extension)
@@ -407,6 +451,7 @@ class Search(Notes):
         """
         matches = list()
         sorted_file_list = self.getFilesListSorted()
+        # TODO: improve search matching special chracters
         regex = re.compile(r'[-|\*] {1}\[ \] {1}(.+)', re.I) if todo == '' else re.compile(
             r'[-|\*] {1}\[ \] {1}(.*' + todo + '.+)', re.I)
         for f in sorted_file_list:
@@ -593,10 +638,8 @@ class NewNote(Notes):
         Returns:
             str: filename
         """
-        tmp = f.decode('utf-8').strip()
-        for k, v in self.CHAR_REPLACEMENT_MAP.items():
-            tmp = tmp.replace(k, v)
-        return tmp.encode('utf-8')
+        self.CHAR_REPLACEMENT_MAP.update(self.UMLAUT_REPL_MAP)
+        return self.strReplace(f, self.CHAR_REPLACEMENT_MAP)
 
     def create_note(self):
         """

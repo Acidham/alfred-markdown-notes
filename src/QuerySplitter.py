@@ -1,3 +1,4 @@
+#!/usr/bin/python
 class QuerySplitter(object):
     """
     Split Query into title and tags

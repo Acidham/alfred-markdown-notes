@@ -15,7 +15,7 @@ def print_config():
         v_subtitle = '<EMPTY>' if v == str() else v
         wf.setItem(
             title=k,
-            subtitle='Value: ' + v_subtitle + ' , press SHIFT for Help.',
+            subtitle='Value: ' + v_subtitle + u' , \u21E7 for Help.',
             arg='selection|%s|%s' % (k, v),
             quicklookurl='file://' + wf_dir + '/docs/' + k + ".md"
         )

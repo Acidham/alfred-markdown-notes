@@ -1,14 +1,24 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# TODO: For testing, delete
+#import sys
 
 from Alfred import Items, Tools
 from MyNotes import Search
 
 query = Tools.getArgv(1)
-bookmark_tag = '#' + Tools.getEnv('bookmark_tag')
+# TODO: for testing, Delete 3 lines
+# reload(sys)
+# sys.setdefaultencoding('utf-8')
+#query = 'Hädcount'.encode('utf-8')
+bmt = Tools.getEnv('bookmark_tag')
+bookmark_tag = bmt if bmt.startswith('#') else '#' + bmt
 
-search_terms = [bookmark_tag, query] if query else [bookmark_tag]
+search_terms = '{0}&{1}'.format(bookmark_tag, query) if query else bookmark_tag
 
 notes = Search()
+search_terms, _ = notes.get_search_config(search_terms)
 matches = notes.url_search(search_terms)
 
 alf = Items()

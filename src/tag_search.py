@@ -1,4 +1,7 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import sys
 
 from Alfred import Items as Items
 from Alfred import Tools as Tools
@@ -25,11 +28,19 @@ if bool(tag_results):
     for tag, counter in tag_results.items():
         wf.setItem(
             title='%s' % tag,
-            subtitle="{0} Hit(s)".format(counter),
+            subtitle=u"{0} Hit(s), (\u2318 to paste tag into frontmost app)".format(counter),
             valid=True,
-            arg='#%s' % tag
+            arg='#{0}'.format(tag)
         )
         wf.setIcon('icons/hashtag.png', 'image')
+        wf.addMod(
+            key='cmd',
+            arg='#{0} '.format(tag),
+            subtitle='Paste Tag into frontmost app',
+            icon_path='icons/paste.png',
+            icon_type='image'
+        )
+        wf.addModsToItem()
         wf.addItem()
 else:
     wf.setItem(

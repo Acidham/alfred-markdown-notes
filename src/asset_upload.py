@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import os
 import sys
 import urllib
@@ -52,6 +53,6 @@ target_folder = getAssetsFolder()
 asset_file = copyFile(source_file, target_folder)
 
 file_url = urllib.pathname2url(asset_file)
-md_link = "[%s](%s)" % (os.path.basename(asset_file), file_url)
+md_link = '[{0}]({1})'.format(os.path.basename(asset_file), file_url)
 
 sys.stdout.write(md_link)
