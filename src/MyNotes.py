@@ -579,6 +579,7 @@ class NewNote(Notes):
         Returns:
             str: markdown file path
         """
+        file_name = file_name.rstrip().lstrip()
         file_path = Tools.strJoin(self.path, file_name, self.extension)
         if os.path.isfile(file_path):
             new_file_name = Tools.strJoin(
