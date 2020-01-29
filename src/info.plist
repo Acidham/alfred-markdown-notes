@@ -2874,6 +2874,8 @@ sys.stdout.write(output)</string>
 		<string>.md</string>
 		<key>path_to_notes</key>
 		<string></string>
+		<key>search_yaml_tags_only</key>
+		<string>True</string>
 		<key>template_tag</key>
 		<string>#Template</string>
 		<key>url_scheme</key>
@@ -2885,7 +2887,7 @@ sys.stdout.write(output)</string>
 		<string>path_to_notes</string>
 	</array>
 	<key>version</key>
-	<string>2.2.1</string>
+	<string>2.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>

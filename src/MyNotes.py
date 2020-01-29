@@ -63,6 +63,7 @@ class Notes(object):
         self.default_template = os.getenv('default_template')
         self.template_tag = os.getenv('template_tag')
         self.url_scheme = os.getenv('url_scheme')
+        self.search_yaml_tags_only = True if os.getenv('search_yaml_tags_only') == 'True' else False
         self.default_date_format = os.getenv('default_date_format')
         self.exact_match = True if os.getenv('exact_match') == 'True' else False
 
@@ -424,10 +425,14 @@ class Search(Notes):
         for f in sorted_file_list:
             content = self._getFileContent(f['path'])
             if content != str():
-                match_obj = re.search(r'\bTags:.*', content, re.IGNORECASE | re.UNICODE)
-                if match_obj:
-                    r = match_obj.group(0)
-                    results = re.findall(regex, r)
+                if self.search_yaml_tags_only:
+                    match_obj = re.search(r'\bTags:.*', content, re.IGNORECASE | re.UNICODE)
+                    if match_obj:
+                        r = match_obj.group(0)
+                        results = re.findall(regex, r)
+                        matches.extend(results)
+                else:
+                    results = re.findall(regex, content)
                     matches.extend(results)
 
         counted_matches = Counter([v.lower() for v in matches])

@@ -32,6 +32,13 @@ Examples:
 * **Extension** * (`ext`): The md files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
   **Note:** The files must be type text files.
   
+* **Search in Tags in YMF only** * (`search_yaml_tags_only`)
+  
+  Tags can be used in YAML front matter (`Tags: #mytag`) or within the MD note. 
+  
+  1. When set to `True` tag search only search with YMF.
+  2. When set to `False` tags will be searched the whole MD note.  
+  
 * **Exact Match** (`exact_match`): Defines if the search should match the exact search term (`True`) or the string (`False`) in markdown notes. 
 
   **Note:** When exact match is set to `True` it is possible to enhance the search term with wildcards
