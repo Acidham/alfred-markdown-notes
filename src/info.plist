@@ -2170,7 +2170,7 @@ sys.stdout.write(output)</string>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
-				<integer>2</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>keyword</key>
@@ -2199,7 +2199,7 @@ sys.stdout.write(output)</string>
 				<key>type</key>
 				<integer>8</integer>
 				<key>withspace</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
@@ -2887,7 +2887,7 @@ sys.stdout.write(output)</string>
 		<string>path_to_notes</string>
 	</array>
 	<key>version</key>
-	<string>2.3</string>
+	<string>2.3.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>

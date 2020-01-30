@@ -9,22 +9,23 @@ def get_variables():
     return config.getConfig()
 
 
-def print_config():
+def print_config(q):
     variables = get_variables()
     for k, v in variables.items():
-        v_subtitle = '<EMPTY>' if v == str() else v
-        wf.setItem(
-            title=k,
-            subtitle='Value: ' + v_subtitle + u' , \u21E7 for Help.',
-            arg='selection|%s|%s' % (k, v),
-            quicklookurl='file://' + wf_dir + '/docs/' + k + ".md"
-        )
-        icon = 'icons/check.png' if v != str() else 'icons/question.png'
-        wf.setIcon(
-            icon,
-            'image'
-        )
-        wf.addItem()
+        if q == str() or q in k:
+            v_subtitle = '<EMPTY>' if v == str() else v
+            wf.setItem(
+                title=k,
+                subtitle='Value: ' + v_subtitle + u' , \u21E7 for Help.',
+                arg='selection|%s|%s' % (k, v),
+                quicklookurl='file://' + wf_dir + '/docs/' + k + ".md"
+            )
+            icon = 'icons/check.png' if v != str() else 'icons/question.png'
+            wf.setIcon(
+                icon,
+                'image'
+            )
+            wf.addItem()
 
 
 def get_selection(key, query):
@@ -82,6 +83,7 @@ def write_config(key, value):
     wf.addItem()
 
 
+query = Tools.getArgv(1)
 action_key_value = Tools.getEnv('action_key_value')
 [action, key, value] = action_key_value.split(
     '|') if action_key_value != str() else [str(), str(), str()]
@@ -91,7 +93,7 @@ query = Tools.getArgv(1)
 wf = Items()
 
 if action == str():
-    print_config()
+    print_config(query)
 elif action == 'selection':
     get_selection(key, query)
 else:
