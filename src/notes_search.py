@@ -29,7 +29,7 @@ for f in sorted_file_list:
     m_date = Tools.getDateStr(f['mtime'])
     wf.setItem(
         title=f['title'],
-        subtitle=u"Created: {0}, Modified: {1} ({2} \u2192 Actions, {3} \u2192 Quicklook)".format(
+        subtitle=u"Created: {0}, Modified: {1} ({2} Actions, {3} Quicklook)".format(
             c_date, m_date, u'\u2318', u'\u21E7'),
         type='file',
         arg=f['path']

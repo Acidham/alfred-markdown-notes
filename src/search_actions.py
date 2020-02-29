@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 from Alfred import Items, Tools
 from MyNotes import Search
@@ -24,14 +25,14 @@ ACTIONS = [
     },
     {
         "title": "Markdown Link",
-        "subtitle": "Copy MD Link for \"{0}\" to the Clipboard".format(note_title),
-        "arg": "{0}|[{1}]({2})".format("link", note_title, note_path),
+        "subtitle": u"Copy MD Link for \"{0}\" to the Clipboard".format(note_title),
+        "arg": u"{0}|[{1}]({2})".format("link", note_title, note_path),
         "icon": "icons/link.png",
         "visible": True
     },
     {
         "title": "Evernote",
-        "subtitle": "Export \"{0}\" to Evernote".format(note_title),
+        "subtitle": u"Export \"{0}\" to Evernote".format(note_title),
         "arg": "{0}|{1}".format("evernote", note_path),
         "icon": "icons/evernote.png",
         "visible": Tools.getEnv("evernote_auth_token")
@@ -52,7 +53,7 @@ ACTIONS = [
     },
     {
         "title": "Delete Note",
-        "subtitle": "Delete \"{0}\". This action cannot be undone!".format(note_title),
+        "subtitle": u"Delete \"{0}\". This action cannot be undone!".format(note_title),
         "arg": "{0}|{1}>{2}".format("delete", note_path, query),
         "icon": "icons/delete.png",
         "visible": True

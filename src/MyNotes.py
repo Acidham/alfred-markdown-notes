@@ -272,7 +272,8 @@ class Search(Notes):
         if file_list is not None:
             for f in file_list:
                 content = self._getFileContent(f['path'])
-                content = normalize('NFD', content.decode('utf-8'))
+                # TODO: remove 1 line when unicode test successful
+                # content = normalize('NFD', content.decode('utf-8'))
                 if content != str() and (search_type == 'and' and self._match(search_terms, content, 'AND')) or (
                         search_type == 'or' and self._match(search_terms, content, 'OR')):
                     new_list.append(f)
@@ -323,9 +324,10 @@ class Search(Notes):
         """
         content = self._getFileContent(path)
         title = self._chop(os.path.basename(path), self.extension)
-        obj = re.search(r'^#{1}\s{1}(.*)', content, re.MULTILINE)
+        obj = re.search(r'^#{1}\s{1}(.*)', content, re.MULTILINE | re.UNICODE)
         if obj is not None:
             title = obj.group(1) if len(re.findall(r'\{.*\}', obj.group(1))) == 0 else title
+        # return title.encode('ascii', 'ignore').decode('ascii')
         return title
 
     @staticmethod
@@ -424,7 +426,8 @@ class Search(Notes):
             r'#{1}(\w+)\s?', re.I) if tag == '' else re.compile(r'#{1}(' + tag + r'\w*)\s?', re.I | re.UNICODE)
         for f in sorted_file_list:
             content = self._getFileContent(f['path'])
-            content = normalize('NFD', content.decode('utf-8'))
+            # TODO: Remove 1 line after unicode test
+            # content = normalize('NFD', content.decode('utf-8'))
             if content != str():
                 if self.search_yaml_tags_only:
                     match_obj = re.search(r'\bTags:.*', content, re.IGNORECASE | re.UNICODE)
@@ -482,7 +485,7 @@ class Search(Notes):
                 content = c.read()
         else:
             content = str()
-        return content
+        return normalize('NFD', content.decode('utf-8'))
 
     def isNoteTagged(self, file_path, tag):
         """
