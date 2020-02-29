@@ -153,7 +153,7 @@ class Notes(object):
         """
         Join multiple strings
 
-        Arguments: 
+        Arguments:
 
             *args (str): strings to join
 
@@ -167,7 +167,7 @@ class Notes(object):
     @staticmethod
     def strReplace(text, replace_map, lowercase=True):
         """
-        Replace in text from a replacement map 
+        Replace in text from a replacement map
 
         Args:
 
@@ -178,7 +178,7 @@ class Notes(object):
 
         Returns:
 
-            str : String with replacements 
+            str : String with replacements
 
         """
         for k in replace_map.keys():
@@ -221,8 +221,6 @@ class Search(Notes):
         content = self.strReplace(content, self.REPL_MAP)
         word_list = content.split(' ')
         word_list = [self._chop(w, '#') for w in word_list]
-        # TODO: Error output to Alfred for Testing
-        #sys.stderr.write("terms: " + str(search_terms) + '\n')
         search_terms = [s.lower() for s in search_terms]
         match = False
         matches = list()
@@ -375,6 +373,7 @@ class Search(Notes):
         file_list = list()
         try:
             file_list = os.listdir(self.path)
+            # file_list = os.walk(self.path)
             # TODO: Enhancement Implement subdir scanning
             """
             for root, dirs, files in os.walk(self.path, topdown=False):
@@ -418,12 +417,14 @@ class Search(Notes):
 
         """
         i = {'tag': 0, 'count': 1}
+        tag = normalize('NFD', tag.decode('utf-8'))
         matches = list()
         sorted_file_list = self.getFilesListSorted()
         regex = re.compile(
             r'#{1}(\w+)\s?', re.I) if tag == '' else re.compile(r'#{1}(' + tag + r'\w*)\s?', re.I | re.UNICODE)
         for f in sorted_file_list:
             content = self._getFileContent(f['path'])
+            content = normalize('NFD', content.decode('utf-8'))
             if content != str():
                 if self.search_yaml_tags_only:
                     match_obj = re.search(r'\bTags:.*', content, re.IGNORECASE | re.UNICODE)
@@ -456,7 +457,6 @@ class Search(Notes):
         """
         matches = list()
         sorted_file_list = self.getFilesListSorted()
-        # TODO: improve search matching special chracters
         regex = re.compile(r'[-|\*] {1}\[ \] {1}(.+)', re.I) if todo == '' else re.compile(
             r'[-|\*] {1}\[ \] {1}(.*' + todo + '.+)', re.I)
         for f in sorted_file_list:

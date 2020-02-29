@@ -1,8 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import sys
-
 from Alfred import Items as Items
 from Alfred import Tools as Tools
 from MyNotes import Search

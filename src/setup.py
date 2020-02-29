@@ -98,5 +98,4 @@ elif action == 'selection':
     get_selection(key, query)
 else:
     write_config(key, value)
-
 wf.write()

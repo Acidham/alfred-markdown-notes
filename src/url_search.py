@@ -1,17 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# TODO: For testing, delete
-#import sys
-
 from Alfred import Items, Tools
 from MyNotes import Search
 
 query = Tools.getArgv(1)
-# TODO: for testing, Delete 3 lines
-# reload(sys)
-# sys.setdefaultencoding('utf-8')
-#query = 'Hädcount'.encode('utf-8')
 bmt = Tools.getEnv('bookmark_tag')
 bookmark_tag = bmt if bmt.startswith('#') else '#' + bmt
 

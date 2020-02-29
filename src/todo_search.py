@@ -1,8 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# TODO: For testing delete 1 line
-# import sys
 import urllib
 
 import MyNotes
@@ -16,10 +14,6 @@ md_search = MyNotes.Search()
 ext = md_search.getNotesExtension()
 p = md_search.getNotesPath()
 query = Tools.getArgv(1)
-# TODO: For testing, delete 3 lines
-#reload(sys)
-#sys.setdefaultencoding('utf-8')
-#query = "Hädcount".encode('utf-8')
 todos = md_search.todoSearch(query)
 
 wf = Items()

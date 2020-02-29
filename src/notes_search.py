@@ -1,9 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import sys
-import urllib
-
 from Alfred import Items as Items
 from Alfred import Tools as Tools
 from MyNotes import Search
@@ -13,9 +10,6 @@ md_search = Search()
 
 # Load Env variables
 query = Tools.getArgv(1)
-# TODO: For testing, delete 3 lines
-#query = "Äsch".encode('utf-8')
-# sys.stderr.write(query)
 
 # Get Search config with AND and OR
 search_terms, search_type = md_search.get_search_config(query)
