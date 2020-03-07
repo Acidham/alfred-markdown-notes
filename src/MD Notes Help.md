@@ -53,7 +53,7 @@ Examples:
 
 ### Optional Python Packages
 
-For exporting to evernote `markdown2`and `evernote` package is required plus Evernote the API Key.
+For exporting to evernote `markdown2`and `evernote` package is required plus Evernote and the API Key.
 
 [https://github.com/trentm/python-markdown2](https://github.com/trentm/python-markdown2)
 

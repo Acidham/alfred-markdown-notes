@@ -35,7 +35,7 @@ _Note:_ Do not delete the variables!
     **Note:** The files must be type text files.
     
 * **Search in Tags in YMF only** (`search_yaml_tags_only`)
-    
+  
     Tags can be used in YAML front matter (`Tags: #mytag`) or within the MD note. 
     
     1. When set to `True` tag search only search with YMF.
@@ -55,7 +55,7 @@ _Note:_ Do not delete the variables!
 
 ### Optional Python Packages
 
-For exporting to evernote `markdown2`and `evernote` package is required plus Evernote the API Key.
+For exporting to evernote `markdown2`and `evernote` package is required plus Evernote and the API Key.
 
 [https://github.com/trentm/python-markdown2](https://github.com/trentm/python-markdown2)
 
