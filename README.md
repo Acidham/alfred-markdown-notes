@@ -1,6 +1,6 @@
 # Alfred Markdown Notes
 
-Markdown Notes is a comprehensive Note taking tool embedded into Aflred  with powerful full text search (supports & and |), tag search and search capabilities for todos ( `- [ ]` or `* [ ]`) . With MD Notes you can quickly create new notes based on custom templates, e.g. meeting notes, bookmarks, project documentation, etc. 
+Markdown Notes is a comprehensive note taking tool embedded into Aflred with powerful full text search (supports & and |), tag search and search capabilities for todos ( `- [ ]` or `* [ ]`) . With MD Notes you can quickly create new notes based on custom templates, e.g. meeting notes, bookmarks, project documentation, etc. 
 
 MD Notes works with any mardkown editor. 
 
