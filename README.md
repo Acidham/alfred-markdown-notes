@@ -1,13 +1,15 @@
 # Alfred Markdown Notes
 
-Markdown Notes help to manage Markdown files in a directory with powerful full text search (supports & and |), tag search or search for todos ( `- [ ]` or `* [ ]`) . It also allows to quickly create new notes based on custom templates. 
+Markdown Notes is a comprehensive Note taking tool embedded into Aflred  with powerful full text search (supports & and |), tag search and search capabilities for todos ( `- [ ]` or `* [ ]`) . With MD Notes you can quickly create new notes based on custom templates, e.g. meeting notes, bookmarks, project documentation, etc. 
+
+MD Notes works with any mardkown editor. 
 
 > [Typora](https://typora.io/) is set up in Alfred Workflow as preferred Markdown editor but it is possible to use another MD Editor or Text Editor if required. To use another Editor it is required to define the Editor in the worklow steps at the end of the WF. 
 
 ## Installation
 
 1. Download [Alfred Markdown Notes](https://github.com/Acidham/alfred-markdown-notes/releases/latest)
-2. Double click downloaded file to install
+2. Double click downloaded file to install in Alfred
 
 ## Configuration
 
