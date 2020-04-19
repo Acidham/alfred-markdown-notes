@@ -42,7 +42,6 @@ for f in sorted_file_list:
         icon_path="icons/action.png",
         icon_type="image"
     )
-    wf.addModsToItem()
     wf.addItem()
 
 if len(wf.getItems(response_type="dict")['items']) == 0:

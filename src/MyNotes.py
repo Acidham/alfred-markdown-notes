@@ -1,12 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+from collections import Counter, OrderedDict
 import datetime
 import os
 import re
 import sys
-import urllib
-from collections import Counter, OrderedDict
 from unicodedata import normalize
+import urllib
 
 from Alfred import Tools
 
@@ -94,11 +94,13 @@ class Notes(object):
         """
         user_dir = os.path.expanduser('~')
         path = os.getenv('path_to_notes')
+        if path.startswith('~'):
+            path = path.replace('~', user_dir)
         if not(path.startswith('/')):
             path = '/' + path
         if not(path.startswith('/Users')):
             path = user_dir + path
-        if not (path.endswith('/')):
+        if not(path.endswith('/')):
             path += '/'
         return path
 

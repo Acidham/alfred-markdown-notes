@@ -31,7 +31,8 @@ _Note:_ Do not delete the variables!
     
 * **Default Date Format** (`default_date_format`): Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
 
-* **Default Template** * (`default_template`): The file that will be used as default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates)) 
+* **Default Template** * (`default_template`): The file name that will be used as default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates)) 
+    **Note**: Enter the file name ONLY without path e.g. `myTemplate.md`
 
 * **Extension** * (`ext`): The md files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
     **Note:** The files must be type text files.

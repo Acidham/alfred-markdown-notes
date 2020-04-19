@@ -45,7 +45,7 @@ if matches:
                 icon_path='icons/clipboard.png',
                 icon_type='image'
             )
-            alf.addModsToItem()
+            # alf.addModsToItem()
             alf.addItem()
 else:
     alf.setItem(

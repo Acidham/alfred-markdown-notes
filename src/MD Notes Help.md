@@ -5,7 +5,9 @@ Tags: #Draft #Alfred #Help
 
 # MD Notes Help for Alfred
 
-Markdown Notes help to manage Markdown files in a directory with powerful full text search (supports & and |), tag search or search for todos ( `- [ ]` or `* [ ]`) . It also allows to quickly create new notes based on custom templates. 
+Markdown Notes is a comprehensive note taking tool embedded into Alfred with powerful full text search (supports & and |), tag search and search capabilities for todos ( `- [ ]` or `* [ ]`) . With MD Notes you can quickly create new notes based on custom templates, e.g. meeting notes, bookmarks, project documentation, etc. 
+
+MD Notes works with any mardkown editor. 
 
 > [Typora](https://typora.io/) is set up in Alfred Workflow as preferred Markdown editor but it is possible to use another MD Editor or Text Editor if required. To use another Editor it is required to define the Editor in the worklow steps at the end of the WF. 
 
@@ -27,7 +29,8 @@ Examples:
 
 * **Default Date Format** (`default_date_format`): Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
 
-* **Default Template** * (`default_template`): The file that will be used as default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates)) 
+* **Default Template** * (`default_template`): The file name that will be used as default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates)) 
+    **Note**: Enter the file name ONLY without path e.g. `myTemplate.md`
 
 * **Extension** * (`ext`): The md files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
   **Note:** The files must be type text files.

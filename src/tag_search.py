@@ -38,7 +38,8 @@ if bool(tag_results):
             icon_path='icons/paste.png',
             icon_type='image'
         )
-        wf.addModsToItem()
+        # TODO: Remove
+        # wf.addModsToItem()
         wf.addItem()
 else:
     wf.setItem(

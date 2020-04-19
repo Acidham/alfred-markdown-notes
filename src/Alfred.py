@@ -9,7 +9,7 @@ from plistlib import readPlist, writePlist
 
 """
 Alfred Script Filter generator class
-Version: 0.985
+Version: 1.0
 """
 
 
@@ -44,6 +44,7 @@ class Items(object):
 
         Note: addItem needs to be called after setItem, addMod, setIcon
         """
+        self.addModsToItem()
         self.items.append(self.item)
         self.item = {}
         self.mods = {}
@@ -176,7 +177,9 @@ class Items(object):
         """
         Adds mod to an item
         """
-        self.setKv("mods", self.mods)
+        if bool(self.mods):
+            self.setKv("mods", self.mods)
+        self.mods = dict()
 
     def updateItem(self, id, key, value):
         """
@@ -215,6 +218,9 @@ class Tools(object):
 
         object (obj): Object class
     """
+    @staticmethod
+    def log(message):
+        sys.stderr.write('{0}\n'.format(message))
 
     @staticmethod
     def getEnv(var):
@@ -364,6 +370,13 @@ class Tools(object):
         for k, v in environment.iteritems():
             env_dict.update({k: v})
         return env_dict
+
+    @staticmethod
+    def getDataDir():
+        data_dir = os.getenv('alfred_workflow_data')
+        if not(os.path.isdir(data_dir)):
+            os.mkdir(data_dir)
+        return data_dir
 
 
 class Plist:
