@@ -1,6 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import os
+from urllib import pathname2url
+
 from Alfred import Items, Tools
 from MyNotes import Search
 
@@ -11,6 +14,7 @@ query = Tools.getEnv("path_query2")
 md_notes = Search()
 # Get NoteTitle for specific note
 note_title = md_notes.getNoteTitle(note_path)
+file_name = pathname2url(os.path.basename(note_path))
 # If query in notes search was empty subtitle uses following string
 back_query = "<EMPTY>" if not query else query
 
@@ -26,7 +30,7 @@ ACTIONS = [
     {
         "title": "Markdown Link",
         "subtitle": u"Copy MD Link for \"{0}\" to the Clipboard".format(note_title),
-        "arg": u"{0}|[{1}]({2})".format("link", note_title, note_path),
+        "arg": u"{0}|[{1}]({2})".format("link", note_title, file_name),
         "icon": "icons/link.png",
         "visible": True
     },

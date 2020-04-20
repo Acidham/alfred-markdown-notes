@@ -18,7 +18,7 @@ def getAssetsFolder():
     """
     my_notes = Search()
     notes_path = my_notes.getNotesPath()
-    assets_path = notes_path + ASSETS_FOLDER
+    assets_path = os.path.join(notes_path, ASSETS_FOLDER)
     if not(os.path.exists(assets_path)):
         os.mkdir(assets_path)
     return assets_path
@@ -44,7 +44,7 @@ def copyFile(source, target):
         file_name = os.path.basename(source)
     else:
         raise ValueError
-    return ASSETS_FOLDER + "/" + file_name
+    return os.path.join(ASSETS_FOLDER, file_name)
 
 
 source_file = sys.argv[1]

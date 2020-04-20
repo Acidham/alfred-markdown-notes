@@ -12,12 +12,11 @@ import urllib
 import evernote.edam.type.ttypes as Types
 import evernote.edam.userstore.constants as UserStoreConstants
 import markdown2
+import MyNotes
+from Alfred import Tools as Tools
 from evernote.api.client import EvernoteClient
 from evernote.edam.error.ttypes import (EDAMErrorCode, EDAMNotFoundException,
                                         EDAMSystemException, EDAMUserException)
-
-import MyNotes
-from Alfred import Tools as Tools
 
 
 class EvernoteUpload(object):
@@ -107,7 +106,7 @@ class EvernoteUpload(object):
         file_hash_dict = dict()
         res = list()
         for f in file_list_in_md:
-            file_path = self.notes_path + self._url_decode(f)
+            file_path = os.path.join(self.notes_path, self._url_decode(f))
             with open(file_path, 'rb') as the_file:
                 image = the_file.read()
             md5 = hashlib.md5()

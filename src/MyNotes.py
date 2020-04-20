@@ -1,12 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from collections import Counter, OrderedDict
 import datetime
 import os
 import re
 import sys
-from unicodedata import normalize
 import urllib
+from collections import Counter, OrderedDict
+from unicodedata import normalize
 
 from Alfred import Tools
 
@@ -97,11 +97,21 @@ class Notes(object):
         if path.startswith('~'):
             path = path.replace('~', user_dir)
         if not(path.startswith('/')):
-            path = '/' + path
+            # TODO: Remove 1 line
+            # path = '/' + path
+            path = os.path.join("/", path)
         if not(path.startswith('/Users')):
-            path = user_dir + path
+            # TODO: Remove 1 line
+            # path = user_dir + path
+            path = os.path.join(user_dir, path)
+        # TODO: REMOVE when path works
+        """
         if not(path.endswith('/')):
             path += '/'
+        """
+        if not(os.path.exists(path)):
+            sys.stderr.write("ERROR: {} is not a valid notes directory. Add a valid path for path_to_notes".format(path))
+            sys.exit(0)
         return path
 
     @staticmethod
@@ -348,7 +358,7 @@ class Search(Notes):
 
             item (str): meta data name
 
-        Returns: 
+        Returns:
 
             item str(): Metadata of the file
         """
@@ -391,7 +401,9 @@ class Search(Notes):
         if err == 0:
             seq = list()
             for f in file_list:
-                f_path = self.strJoin(self.path, f)
+                # TODO: Delete
+                # f_path = self.strJoin(self.path, f)
+                f_path = os.path.join(self.path, f)
                 not (f.startswith('.')) and f.endswith(self.extension) and seq.append({
                     'filename': f,
                     'path': f_path,
@@ -577,7 +589,6 @@ class NewNote(Notes):
         self.content = content
         self.note_title = note_title
         self.note_path = self.getTargetFilePath(self.normalize_filename(note_title))
-        # TODO: use only name instead of full path
         self.template_path = self.getTemplate(template_path)
 
     def getTargetFilePath(self, file_name):
@@ -590,11 +601,14 @@ class NewNote(Notes):
             str: markdown file path
         """
         file_name = file_name.rstrip().lstrip()
-        file_path = Tools.strJoin(self.path, file_name, self.extension)
+        # TODO: Delete
+        # file_path = Tools.strJoin(self.path, file_name, self.extension)
+        file_path = os.path.join(self.path, "{0}{1}".format(file_name, self.extension))
         if os.path.isfile(file_path):
-            new_file_name = Tools.strJoin(
-                file_name, ' ', self.getTodayDate('%d-%m-%Y %H-%M-%S'))
-            file_path = Tools.strJoin(self.path, new_file_name, self.extension)
+            new_file_name = Tools.strJoin(file_name, ' ', self.getTodayDate('%d-%m-%Y %H-%M-%S'))
+            # TODO: Delete
+            # file_path = Tools.strJoin(self.path, new_file_name, self.extension)
+            file_path = os.path.join(self.path, "{0}{1}".format(new_file_name, self.extension))
         return file_path
 
     def getDefaultTemplate(self):
@@ -614,7 +628,9 @@ class NewNote(Notes):
         """
         notes_path = self.path
         default_template = self.getDefaultTemplate()
-        return Tools.strJoin(notes_path, default_template) if template_path == str() else template_path
+        # TODO: delete
+        # return Tools.strJoin(notes_path, default_template) if template_path == str() else template_path
+        return os.path.join(notes_path, default_template) if template_path == str() else template_path
 
     def readTemplate(self, **kwargs):
         """
@@ -628,7 +644,7 @@ class NewNote(Notes):
             str: Content
         """
         if '#' not in self.template_tag or self.template_tag == str():
-            template_tag = '#Template'
+            self.template_tag = '#Template'
         if os.path.exists(self.template_path):
             with open(self.template_path, "r") as f:
                 content = f.read()

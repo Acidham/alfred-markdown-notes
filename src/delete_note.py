@@ -54,7 +54,7 @@ def getAssetsLinks(parent_path, p):
     with open(p, 'r') as f:
         content = f.read()
     matches = re.findall(r'\[.*\]\((.*)\)', content)
-    return [parent_path + m for m in matches if is_in_notes(m)]
+    return [os.path.join(parent_path, m) for m in matches if is_in_notes(m)]
 
 
 mn = Search()
@@ -82,8 +82,7 @@ for query in files_to_delete:
         remove_ext = len(ext)
         assets_path = Tools.strJoin(file_path[:-remove_ext], ".assets")
         assets_path_legacy = Tools.strJoin(file_path[:-remove_ext])
-        is_asset_deleted = rmDir(assets_path) or rmDir(
-            assets_path_legacy) or is_assetfile_deleted
+        is_asset_deleted = rmDir(assets_path) or rmDir(assets_path_legacy) or is_assetfile_deleted
 
         # Finally delete the MD File
         is_file_deleted = rmFile(file_path)

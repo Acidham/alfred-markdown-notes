@@ -19,7 +19,7 @@ my_notes = MyNotes.Search()
 
 # Load env variables
 ext = my_notes.getNotesExtension()
-p = my_notes.getNotesPath()
+# p = my_notes.getNotesPath()
 query = Tools.getArgv(1)
 default_template = Tools.getEnv('default_template')
 template_tag = get_template_tag()

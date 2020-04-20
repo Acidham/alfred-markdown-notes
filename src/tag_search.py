@@ -10,7 +10,7 @@ md = Search()
 
 # Get environment variables
 ext = md.getNotesExtension()
-p = md.getNotesPath()
+# p = md.getNotesPath()
 query = Tools.getArgv(1)
 
 if query is str():
@@ -25,7 +25,7 @@ wf = Items()
 if bool(tag_results):
     for tag, counter in tag_results.items():
         wf.setItem(
-            title='%s' % tag,
+            title='{0}'.format(tag),
             subtitle=u"{0} Hit(s), (\u2318 to paste tag into frontmost app)".format(counter),
             valid=True,
             arg='#{0}'.format(tag)
@@ -38,8 +38,6 @@ if bool(tag_results):
             icon_path='icons/paste.png',
             icon_type='image'
         )
-        # TODO: Remove
-        # wf.addModsToItem()
         wf.addItem()
 else:
     wf.setItem(

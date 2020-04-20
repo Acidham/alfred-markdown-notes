@@ -122,6 +122,8 @@ if url:
     file_name = parseFilename(markdown.getTitle())
     if file_name == str():
         file_name = Tools.strJoin('WebClip from ', today_time)
-    fPath = mn.strJoin(p, file_name, ext)
+    # TODO: Remove
+    # fPath = mn.strJoin(p, file_name, ext)
+    fPath = os.path.join(p, "{0}{1}".format(file_name, ext))
     writeMarkdown(md, fPath)
     sys.stdout.write(fPath)

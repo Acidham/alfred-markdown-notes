@@ -2938,7 +2938,7 @@ sys.stdout.write(output)</string>
 		<string>path_to_notes</string>
 	</array>
 	<key>version</key>
-	<string>2.3.5</string>
+	<string>2.3.6</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>

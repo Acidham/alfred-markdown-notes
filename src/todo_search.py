@@ -12,7 +12,7 @@ md_search = MyNotes.Search()
 
 # Load environment variables
 ext = md_search.getNotesExtension()
-p = md_search.getNotesPath()
+# p = md_search.getNotesPath()
 query = Tools.getArgv(1)
 todos = md_search.todoSearch(query)
 
