@@ -17,48 +17,51 @@ To get MD Notes to work properly it is required to define some environment varia
 
 ### Variables
 
-Variables marked with * are required for running MD Notes properly, the others are optional and can be set to empty.
-
-_Note:_ Do not delete the variables!
+Variables marked with * are required for running MD Notes properly, the others are optional and can be ignored.
 
 * **Path to Notes** (`path_to_notes`): The path where MD Notes will be stored.
-    The path can be absolut or relative but has to be a user directory!   
-    Examples:
-    * `/Users/yourname/Dropbox/Notes` →  works
-    * `yourname/Dropbox/Notes` → works
-    * `/yourname/Dropbox/Notes` →  works
-    * `/Volumes/usb` →  will not work!
-    
+  The path can be absolute or relative but has to be a user directory!   
+  Examples:
+
+  * `/Users/yourname/Dropbox/Notes` →  works
+  * `yourname/Dropbox/Notes` → works
+  * `/yourname/Dropbox/Notes` →  works
+  * `/Volumes/usb` →  will not work!
+
 * **Default Date Format** (`default_date_format`): Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
 
-* **Default Template** * (`default_template`): The file name that will be used as default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates))   
-    **Note**: Enter the file name ONLY without path e.g. `myTemplate.md`
+* **Default Template** * (`default_template`): The file name that will be used as the default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates))   
+  **Note**: Enter the file name ONLY without path e.g. `myTemplate.md`
 
-* **Extension** * (`ext`): The md files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
-    **Note:** The files must be type text files.
-    
-* **Search in Tags in YMF only** (`search_yaml_tags_only`)
-  
-    Tags can be used in YAML front matter (`Tags: #mytag`) or within the MD note. 
-    
-    1. When set to `True` tag search only search with YMF.
-    2. When set to `False` tags will be searched the whole MD note.  
-    
+* **Extension** * (`ext`): The MD files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
+  **Note:** The files must be type text files.
+
+* **Search in Tags in YMF only** * (`search_yaml_tags_only`)
+
+  Tags can be used in the YAML front matter (`Tags: #mytag`) or within the MD note. 
+
+  1. When set to `True` tag search only search with YMF.
+  2. When set to `False` tags will be searched the whole MD note.  
+
 * **Exact Match** (`exact_match`): Defines if the search should match the exact search term (`True`) or the string (`False`) in markdown notes. 
 
-    **Note:** When exact match is set to `True` it is possible to enhance the search term with wildcards
+  **Note:** When exact match is set to `True` it is possible to enhance the search term with wildcards
 
-* **URL scheme** (`url_scheme`): Some web application, like Todoist, are using a web interface where, due to OS resctrictions, file paths cannot be opened. To work around this an URL scheme can be configured to open the note in markdown editor or viewer, e.g. Marked or iA Writer. Add URL Scheme like `x-writer://create?file=` and after `file=` will be enhanced with the MD Note path when executed. 
+* **Todo sort order** (todo_newest_oldest): Sort order when using Todo Search ( `mdt`). 
+  `True` newest todos will be shown on top of the search results
+  `False` oldest todos will be shown on top of the search results
+
+* **URL scheme** (`url_scheme`): (OPTIONAL) I figured out that some web app like Todoist is using web interface where, due to OS restrictions, file paths cannot be opened. To work around this URL scheme can be configured to open the note in markdown editor or viewer, e.g. Marked or iA Writer. Add URL Scheme like `x-writer://create?file=` and after `file=` will be enhanced with the MD Note path when executed. 
 
 * **Template Tag** (`template_tag`): The template tag defines which `#Tagname`) defines a Template. Once you created a template just add template tag name to the MD Note and it will be recognized when you create a new MD Note from Template (see [Create new MD Notes from Template](#Create%20new%20MD%20Notes%20from%20Template))
 
 * **Bookmark Tag** (`bookmark_tag`): Name of the tag which marks Notes containing URL/Bookmarks.
 
-* **Evernote Auth Token** (`evernote_auth_token`): The AuthToken for your Evernote Account. Please ensure to get non Sandbox token: [Authenticating with the Evernote Cloud API using Dev Tokens](https://dev.evernote.com/doc/articles/dev_tokens.php)
+* **Evernote Auth Token** (`evernote_auth_token`) (OPTIONAL): The AuthToken for your Evernote Account. Please ensure to get non Sandbox token: [Authenticating with the Evernote Cloud API using Dev Tokens](https://dev.evernote.com/doc/articles/dev_tokens.php)
 
 ### Optional Python Packages
 
-For exporting to evernote `markdown2`and `evernote` package is required plus Evernote and the API Key.
+For exporting to Evernote `markdown2`and `evernote` package is required plus Evernote and the API Key.
 
 [https://github.com/trentm/python-markdown2](https://github.com/trentm/python-markdown2)
 
@@ -96,18 +99,16 @@ The search runs with exact match and with partial match by using wildcards `*` b
 
 With the Alfred search results from `mds` and `mdt` you can perform additional actions to the note:
 
-* Pressing `Shift`opens Quicklook with the file. 
-  *Tip*: To quicklook formatted markdown files you can install [QLMarkdown](https://github.com/toland/qlmarkdown) 
+* Pressing `Shift`you can quicklook the file. 
+  *Tip*: To quicklook markdown files formatted you can install [QLMarkdown](https://github.com/toland/qlmarkdown) 
 * With Pressing `CMD` you can open the action menu. The following actions are available:
   * **Markdown Link**: Copy markdown link of the note to the clipboard for pasting into another app or markdown file
   * **Delete Note**: Delete the file and all associated assets such as images or other file types. 
   * **Evernote**: Export Note to Evernote including images and tags
-  	**Note:**: Only available when `evernote_auth_token` was set
   * **Marked 2**: Opens the Note in Marked 2 
-      **Note:** The Markdown Editor can be changed in Alfred Preferences → Workflow
+    **Note:** The Markdown Editor can be changed in Alfred Preferences → Workflow
   * **URL Scheme**: Generate MD link for URL Scheme and copy to the clipboard e.g. `[My Notes](x-writer://open?path=/Users/joe/Documents/Notes/doc.md)`
-  	**Note:**: Only available when `url_scheme` was set
-* It is possible to perform addtional actions to one or more Notes by proceeding with File Actions (press `TAB` or `ALT+TAB` on a note or multiple notes): 
+* It is possible to perform additional actions to one or more Notes by proceeding with File Actions (press `TAB` or `ALT+TAB` on a note or multiple notes): 
   * **Delete MD Notes**: Same as `CTRL` modifier key but also works on multiple files
   * **MD Link to Note**: Generates relative Link to a markdown document for referencing Notes in other Notes e.g. `[My Notes](mynote.md)`
   * **Create Markdown Index**: Selected Markdown files will be linked into a new Index file e.g. to collect links to all invoices for an insurance
@@ -116,7 +117,7 @@ With the Alfred search results from `mds` and `mdt` you can perform additional a
 
 Type `md#` to get a list of all tags found in the Notes or search for Tags (see [Options](#Options) as well)
 
-The tag search can also be used to search for already existing Tags to paste it into a markdown note. By pressing `CMD` and `Enter` the tag will be pasted into frontmost app. 
+The tag search can also be used to search for already existing Tags to paste it into a markdown note. By pressing `CMD` and `Enter` the tag will be pasted into the frontmost app. 
 
 ### Search in Todos
 
@@ -130,7 +131,7 @@ Type `mdc` followed by a **title** to create a new MD Note with title. The defau
 
 #### Note with Title and Tags
 
-Type `mdc`followed by **title** and **tags** separated by space will create a Note with **title** and **tags**.
+Type `mdc` followed by **title** and **tags** separated by space will create a Note with **title** and **tags**.
 
 #### MD Notes from Template
 
@@ -147,6 +148,15 @@ MD Notes uses YAML Fronter when searching in Tags. Therefore it is required to a
 Tags: #mytag
 ---
 ```
+
+### Delete MD Note(s)
+
+There are various ways of deleting MD Notes. Important is to not use Alfred standard file deletion because using delete feature coming with MD notes workflow ensures that asset dependencies will also be deleted:
+
+1. **Delete via action menu**: Press `CMD+Enter` when search results will be shown
+2. **Delete via file action**: This option also allows to collect some notes via Alfred file buffer first before deleting them. 
+3. **Delete via in batch mode**. This method allows to tag specific MD notes for deletion eg. By adding `#delete` tag to the notes and mark them for deletion. Any other tag name can be used. 
+   To delete MD notes tagged with a  specific tag, just execute `mda` followed by the tag name. The search will show the total number of affected notes with a preview option. 
 
 ### Working with Templates
 
@@ -182,4 +192,4 @@ To fetch an URL use `mdf` and enter the target URL.
 
 ### Export to Evernote
 
-MD Notes can export Notes to Evernote including Images and Tags. Once Note is shown, via `mds` choose `ALT` modifier key and Alfred shows the option ot Export to Evernote. 
+MD Notes can export Notes to Evernote including Images and Tags. Once Note is shown, via `mds` choose `ALT` modifier key and Alfred shows the option ot Export to Evernote.

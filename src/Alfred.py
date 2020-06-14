@@ -53,7 +53,7 @@ class Items(object):
         """
         Add multiple key values to define an item
 
-        Note: addItem needs to be called to submit a Script Filter item 
+        Note: addItem needs to be called to submit a Script Filter item
         to the Script Filter object
 
         Args:
@@ -183,7 +183,7 @@ class Items(object):
 
     def updateItem(self, id, key, value):
         """
-        Update an Alfred script filter item key with a new value      
+        Update an Alfred script filter item key with a new value
 
         Args:
 
@@ -191,7 +191,7 @@ class Items(object):
 
             key (str): key which needs to be updated
 
-            value (str): new value 
+            value (str): new value
         """
         dict_item = self.items[id]
         kv = dict_item[key]
@@ -265,7 +265,7 @@ class Tools(object):
 
         Args:
 
-            float_time (float): Time in float 
+            float_time (float): Time in float
 
             format (str, optional): format string. Defaults to '%d.%m.%Y'.
 
@@ -331,7 +331,7 @@ class Tools(object):
         """Joins a list of strings
 
         Arguments:
-            *args (list): List which contains strings 
+            *args (list): List which contains strings
         Returns:
             str: joined str
         """
@@ -377,6 +377,13 @@ class Tools(object):
         if not(os.path.isdir(data_dir)):
             os.mkdir(data_dir)
         return data_dir
+
+    @staticmethod
+    def getCacheDir():
+        cache_dir = os.getenv("alfred_workflow_cache")
+        if not(os.path.isdir(cache_dir)):
+            os.mkdir(cache_dir)
+        return cache_dir
 
 
 class Plist:

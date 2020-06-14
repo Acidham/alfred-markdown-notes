@@ -45,7 +45,8 @@ def rmFile(path):
 
 
 def getFileQuery(q):
-    return q.split('|') if '|' in q else [q, str()]
+    ret = q.split('|') if '|' in q else [q, str()]
+    return ret
 
 
 def getAssetsLinks(parent_path, p):
@@ -57,12 +58,21 @@ def getAssetsLinks(parent_path, p):
     return [os.path.join(parent_path, m) for m in matches if is_in_notes(m)]
 
 
+def get_arguments():
+    # Get all files which needs to be deleted from input
+    ret_value = sys.argv[1:]
+    # split if files list was provided with | seprator in argv
+    if '|' in ret_value[0]:
+        ret_value = ret_value[0].split('|')
+    return ret_value
+
+
 mn = Search()
 
 # Load extentions env variables from settings
 ext = mn.getNotesExtension()
-# Get all files which needs to be deleted from input
-files_to_delete = sys.argv[1:]
+files_to_delete = get_arguments()
+
 
 return_text = str()
 for query in files_to_delete:

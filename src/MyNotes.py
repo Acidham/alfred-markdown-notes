@@ -66,6 +66,7 @@ class Notes(object):
         self.search_yaml_tags_only = True if os.getenv('search_yaml_tags_only') == 'True' else False
         self.default_date_format = os.getenv('default_date_format')
         self.exact_match = True if os.getenv('exact_match') == 'True' else False
+        self.todo_newest_oldest = True if os.getenv('todo_newest_oldest') == 'True' else False
 
     @staticmethod
     def __buildNotesExtension():
@@ -97,18 +98,9 @@ class Notes(object):
         if path.startswith('~'):
             path = path.replace('~', user_dir)
         if not(path.startswith('/')):
-            # TODO: Remove 1 line
-            # path = '/' + path
             path = os.path.join("/", path)
         if not(path.startswith('/Users')):
-            # TODO: Remove 1 line
-            # path = user_dir + path
             path = os.path.join(user_dir, path)
-        # TODO: REMOVE when path works
-        """
-        if not(path.endswith('/')):
-            path += '/'
-        """
         if not(os.path.exists(path)):
             sys.stderr.write("ERROR: {} is not a valid notes directory. Add a valid path for path_to_notes".format(path))
             sys.exit(0)
@@ -401,8 +393,6 @@ class Search(Notes):
         if err == 0:
             seq = list()
             for f in file_list:
-                # TODO: Delete
-                # f_path = self.strJoin(self.path, f)
                 f_path = os.path.join(self.path, f)
                 not (f.startswith('.')) and f.endswith(self.extension) and seq.append({
                     'filename': f,
@@ -490,7 +480,7 @@ class Search(Notes):
                         'ctime': self.getFileMeta(f['path'], 'ctime')
                     }
                     matches.append(r_dict)
-        ret_list_dict = sorted(matches, key=lambda k: k['ctime'], reverse=False)
+        ret_list_dict = sorted(matches, key=lambda k: k['ctime'], reverse=self.todo_newest_oldest)
         return ret_list_dict
 
     def _getFileContent(self, file_path):
@@ -601,13 +591,9 @@ class NewNote(Notes):
             str: markdown file path
         """
         file_name = file_name.rstrip().lstrip()
-        # TODO: Delete
-        # file_path = Tools.strJoin(self.path, file_name, self.extension)
         file_path = os.path.join(self.path, "{0}{1}".format(file_name, self.extension))
         if os.path.isfile(file_path):
             new_file_name = Tools.strJoin(file_name, ' ', self.getTodayDate('%d-%m-%Y %H-%M-%S'))
-            # TODO: Delete
-            # file_path = Tools.strJoin(self.path, new_file_name, self.extension)
             file_path = os.path.join(self.path, "{0}{1}".format(new_file_name, self.extension))
         return file_path
 
@@ -628,8 +614,6 @@ class NewNote(Notes):
         """
         notes_path = self.path
         default_template = self.getDefaultTemplate()
-        # TODO: delete
-        # return Tools.strJoin(notes_path, default_template) if template_path == str() else template_path
         return os.path.join(notes_path, default_template) if template_path == str() else template_path
 
     def readTemplate(self, **kwargs):

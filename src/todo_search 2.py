@@ -39,6 +39,8 @@ if len(todos) > 0:
             icon_path="icons/action.png",
             icon_type="image"
         )
+        # TODO: REmove
+        # wf.addModsToItem()
         wf.addItem()
 else:
     wf.setItem(
