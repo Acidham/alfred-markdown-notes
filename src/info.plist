@@ -294,7 +294,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>839D1ABB-44FF-4FE6-8B72-42E4A9E4AA04</string>
+				<string>A1994305-42C8-4C6A-BB26-0D822F6B021A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -330,19 +330,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>9AFF9D4E-AFFE-4DC2-A1EA-8E795277A5A6</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>839D1ABB-44FF-4FE6-8B72-42E4A9E4AA04</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>CB5511DF-1026-4D97-995C-7636BD756719</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -653,19 +640,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>CB5511DF-1026-4D97-995C-7636BD756719</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A1994305-42C8-4C6A-BB26-0D822F6B021A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>CCE98113-EE5F-4540-B377-3C9A9DA1AC6D</key>
 		<array>
 			<dict>
@@ -858,6 +832,24 @@
 			<string>02B9FF6D-1CCA-424C-BEF2-FF6C2F753585</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>Query: '{query}'
+Env: {allvars}</string>
+				<key>cleardebuggertext</key>
+				<true/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>18B8D12E-7DF2-4ECD-876B-4E14BE20084F</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1282,38 +1274,6 @@
 			<string>A1994305-42C8-4C6A-BB26-0D822F6B021A</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{var:path_query1}|{var:path_query2}</string>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>CB5511DF-1026-4D97-995C-7636BD756719</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>delimiter</key>
-				<string>&gt;</string>
-				<key>trimarguments</key>
-				<true/>
-				<key>variableprefix</key>
-				<string>path_query</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.split</string>
-			<key>uid</key>
-			<string>839D1ABB-44FF-4FE6-8B72-42E4A9E4AA04</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2554,6 +2514,13 @@ sys.stdout.write(output)</string>
 			<key>ypos</key>
 			<integer>2490</integer>
 		</dict>
+		<key>18B8D12E-7DF2-4ECD-876B-4E14BE20084F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>805</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
 		<key>1AB175B4-0986-4F49-A20D-4AF004DC9158</key>
 		<dict>
 			<key>xpos</key>
@@ -2731,13 +2698,6 @@ sys.stdout.write(output)</string>
 			<key>ypos</key>
 			<integer>200</integer>
 		</dict>
-		<key>839D1ABB-44FF-4FE6-8B72-42E4A9E4AA04</key>
-		<dict>
-			<key>xpos</key>
-			<integer>1365</integer>
-			<key>ypos</key>
-			<integer>280</integer>
-		</dict>
 		<key>867A6B07-A86D-464E-9AA2-F4F85D33901E</key>
 		<dict>
 			<key>note</key>
@@ -2912,13 +2872,6 @@ sys.stdout.write(output)</string>
 			<key>ypos</key>
 			<integer>1210</integer>
 		</dict>
-		<key>CB5511DF-1026-4D97-995C-7636BD756719</key>
-		<dict>
-			<key>xpos</key>
-			<integer>1445</integer>
-			<key>ypos</key>
-			<integer>280</integer>
-		</dict>
 		<key>CCE98113-EE5F-4540-B377-3C9A9DA1AC6D</key>
 		<dict>
 			<key>colorindex</key>
@@ -3073,7 +3026,7 @@ sys.stdout.write(output)</string>
 		<string>path_to_notes</string>
 	</array>
 	<key>version</key>
-	<string>2.4.0</string>
+	<string>2.4.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>

@@ -154,7 +154,7 @@ There are various ways of deleting MD Notes. Important is to not use Alfred stan
 
 1. **Delete via action menu**: Press `CMD+Enter` when search results will be shown
 2. **Delete via file action**: This option also allows to collect some notes via Alfred file buffer first before deleting them. 
-3. **Delete via in batch mode**. This method allows to tag specific MD notes for deletion eg. By adding `#delete` tag to the notes and mark them for deletion. Any other tag name can be used. 
+3. **Delete via batch mode**. This method allows to tag specific MD notes for deletion eg. By adding `#delete` tag to the notes and mark them for deletion. Any other tag name can be used. 
     To delete MD notes tagged with a  specific tag, just execute `mda` followed by the tag name. The search will show the total number of affected notes with a preview option. 
 
 ### Working with Templates

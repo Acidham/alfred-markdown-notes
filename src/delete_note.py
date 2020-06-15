@@ -23,6 +23,8 @@ def rmDir(path, ignore_errors=True):
     """
     if os.path.exists(path):
         shutil.rmtree(path, ignore_errors)
+        # TODO: For debugging only
+        sys.stderr.write("delete dir {}".format(path))
         return not (os.path.exists(path))
     else:
         return False
@@ -39,13 +41,15 @@ def rmFile(path):
     path = urllib.url2pathname(path)
     if os.path.isfile(path) and os.path.exists(path):
         os.remove(path)
+        # TODO: For debugging only
+        # sys.stderr.write("delete file {}".format(path))
         return not (os.path.exists(path))
     else:
         return False
 
 
 def getFileQuery(q):
-    ret = q.split('|') if '|' in q else [q, str()]
+    ret = q.split('>') if '>' in q else [q, str()]
     return ret
 
 
