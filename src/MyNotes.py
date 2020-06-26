@@ -276,8 +276,6 @@ class Search(Notes):
         if file_list is not None:
             for f in file_list:
                 content = self._getFileContent(f['path'])
-                # TODO: remove 1 line when unicode test successful
-                # content = normalize('NFD', content.decode('utf-8'))
                 if content != str() and (search_type == 'and' and self._match(search_terms, content, 'AND')) or (
                         search_type == 'or' and self._match(search_terms, content, 'OR')):
                     new_list.append(f)
@@ -380,13 +378,6 @@ class Search(Notes):
         try:
             file_list = os.listdir(self.path)
             # file_list = os.walk(self.path)
-            # TODO: Enhancement Implement subdir scanning
-            """
-            for root, dirs, files in os.walk(self.path, topdown=False):
-                for name in files:
-                    if name.endswith(".md"):
-                        file_list.append(name)
-            """
         except OSError as e:
             err = e.errno
             pass
@@ -430,8 +421,6 @@ class Search(Notes):
             r'#{1}(\w+)\s?', re.I) if tag == '' else re.compile(r'#{1}(' + tag + r'\w*)\s?', re.I | re.UNICODE)
         for f in sorted_file_list:
             content = self._getFileContent(f['path'])
-            # TODO: Remove 1 line after unicode test
-            # content = normalize('NFD', content.decode('utf-8'))
             if content != str():
                 if self.search_yaml_tags_only:
                     match_obj = re.search(r'\bTags:.*', content, re.IGNORECASE | re.UNICODE)
