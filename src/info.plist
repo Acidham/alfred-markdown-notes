@@ -1089,6 +1089,8 @@ Env: {allvars}</string>
 			<dict>
 				<key>argument</key>
 				<string>{var:action2}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -1316,6 +1318,8 @@ Env: {allvars}</string>
 			<dict>
 				<key>argument</key>
 				<string></string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -1371,6 +1375,8 @@ Env: {allvars}</string>
 			<dict>
 				<key>argument</key>
 				<string>{var:action2}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -1418,6 +1424,8 @@ Env: {allvars}</string>
 			<dict>
 				<key>argument</key>
 				<string>{var:action2}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -1482,6 +1490,8 @@ Env: {allvars}</string>
 			<dict>
 				<key>argument</key>
 				<string>{var:action2}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -1653,6 +1663,8 @@ Env: {allvars}</string>
 			<dict>
 				<key>argument</key>
 				<string>{var:action2}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -1732,6 +1744,8 @@ Env: {allvars}</string>
 			<dict>
 				<key>argument</key>
 				<string>{var:action2}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -2035,6 +2049,8 @@ sys.stdout.write(output)</string>
 			<dict>
 				<key>argument</key>
 				<string></string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>template_path</key>
@@ -2334,6 +2350,8 @@ sys.stdout.write(output)</string>
 			<dict>
 				<key>argument</key>
 				<string></string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>action_key_value</key>
@@ -2436,6 +2454,8 @@ sys.stdout.write(output)</string>
 			<dict>
 				<key>argument</key>
 				<string></string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>files</key>
