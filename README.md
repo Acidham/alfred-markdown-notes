@@ -62,8 +62,6 @@ Variables marked with * are required for running MD Notes properly, the others a
 
 * **Bookmark Tag** (`bookmark_tag`): Name of the tag which marks Notes containing URL/Bookmarks.
 
-* **Evernote Auth Token** (`evernote_auth_token`) (OPTIONAL): The AuthToken for your Evernote Account. Please ensure to get non Sandbox token: [Authenticating with the Evernote Cloud API using Dev Tokens](https://dev.evernote.com/doc/articles/dev_tokens.php)
-
 ### Optional: QLMarkdown
 
 To use quicklook for Markdown files there is a QLMarkdown plugin available on git: [https://github.com/toland/qlmarkdown](https://github.com/toland/qlmarkdown)
