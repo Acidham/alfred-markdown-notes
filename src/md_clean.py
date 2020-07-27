@@ -1,10 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import os
 
-from Alfred import Items as Items
-from Alfred import Tools as Tools
+from Alfred3 import Items as Items
+from Alfred3 import Tools as Tools
 from MyNotes import Search
 
 
@@ -13,19 +13,21 @@ def write_summary(md_notes_list, tag):
     Write list of md notes with tag into tmp summary.md
 
     Args:
+
         md_notes_list (list): List of Notes containg tag name
         tag (str): Name of the tag
 
     Returns:
+
         str: path to summary.md file
     """
     cache_dir = Tools.getCacheDir()
     cache_file_path = os.path.join(cache_dir, "summary.md")
     if os.path.exists(cache_file_path):
         os.remove(cache_file_path)
-    content_list = ["### MD Notes with tag: {}".format(tag)]
+    content_list = [f"### MD Notes with tag: {tag}"]
     for el in md_notes_list:
-        content_list.append("* [{0}]({1}) `{2}`".format(el['title'], el['path'], el['filename']))
+        content_list.append(f"* [{el['title']}]({el['path']}) `{el['filename']}`")
     content = "\n".join(content_list)
     with open(cache_file_path, "w") as f:
         f.write(content)
@@ -56,7 +58,7 @@ if len(search_terms) > 0:
     summary_file = write_summary(sorted_file_list, query)
     if matches > 0:
         wf.setItem(
-            title="Batch delete {0} notes with tag {1}".format(matches, query),
+            title=f"Batch delete {matches} notes with tag {query}",
             subtitle=u"\u23CE to delete ALL notes and corresponding Assets. THIS CANNOT BE UNDONE!",
             arg=arg_string
         )
@@ -72,7 +74,7 @@ if len(search_terms) > 0:
         wf.addItem()
     else:
         wf.setItem(
-            title="MD notes not found with tag: {}".format(query),
+            title=f"MD notes not found with tag: {query}",
             subtitle="Try another tag name",
             valid=False
         )

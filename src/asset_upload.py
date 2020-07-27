@@ -1,8 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
+
 import os
 import sys
-import urllib
 from shutil import copy2
+from urllib.request import pathname2url
 
 from MyNotes import Search
 
@@ -14,6 +15,7 @@ def getAssetsFolder():
     Get Assets Upload Folder from config
 
     Returns:
+
         str: Asset Folder for md Notes
     """
     my_notes = Search()
@@ -29,30 +31,34 @@ def copyFile(source, target):
     Copy file to target folder
 
     Args:
+
         source (str): Source File path
         target (str): Target folder
 
     Raises:
+
         ValueError: if source file does not exists
 
     Returns:
+
         str: path to file after copied
     """
     file_name = str()
     if os.path.isfile(source):
-        copy2(source, target)
+        copy2(source, target, follow_symlinks=True)
         file_name = os.path.basename(source)
     else:
         raise ValueError
     return os.path.join(ASSETS_FOLDER, file_name)
 
 
-source_file = sys.argv[1]
+source_file = sys.argv[1]  # File path to asset
 
 target_folder = getAssetsFolder()
 asset_file = copyFile(source_file, target_folder)
 
-file_url = urllib.pathname2url(asset_file)
-md_link = '[{0}]({1})'.format(os.path.basename(asset_file), file_url)
+file_url = pathname2url(asset_file)
+asset_file = os.path.basename(asset_file)
+md_link = f"[{asset_file}]({file_url})"
 
 sys.stdout.write(md_link)

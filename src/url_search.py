@@ -1,14 +1,14 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from Alfred import Items, Tools
+from Alfred3 import Items, Tools
 from MyNotes import Search
 
 query = Tools.getArgv(1)
 bmt = Tools.getEnv('bookmark_tag')
 bookmark_tag = bmt if bmt.startswith('#') else '#' + bmt
 
-search_terms = '{0}&{1}'.format(bookmark_tag, query) if query else bookmark_tag
+search_terms = f'{bookmark_tag}&{query}' if query else bookmark_tag
 
 notes = Search()
 search_terms, _ = notes.get_search_config(search_terms)
@@ -24,7 +24,7 @@ if matches:
             url_title = l.get('url_title')
             url = l.get('url')
             # subtitle = '%s > %s' % (url_title, url) if url_title != url else url
-            subtitle = 'NOTE: {0} URL: {1}...'.format(note_title, url[:30])
+            subtitle = f'NOTE: {note_title} URL: {url[:30]}...'
             alf.setItem(
                 title=url_title,
                 subtitle=subtitle,

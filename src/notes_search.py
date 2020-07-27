@@ -1,15 +1,14 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from Alfred import Items as Items
-from Alfred import Tools as Tools
+from Alfred3 import Items as Items
+from Alfred3 import Tools as Tools
 from MyNotes import Search
 
 # create MD search object
 md_search = Search()
 
-# Load Env variables
-query = Tools.getArgv(1)
+query = Tools.getArgv(1)  # Search Term(s)
 
 # Get Search config with AND and OR
 search_terms, search_type = md_search.get_search_config(query)

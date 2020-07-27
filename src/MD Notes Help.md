@@ -59,21 +59,6 @@ Variables marked with * are required for running MD Notes properly, the others a
 
 * **Evernote Auth Token** (`evernote_auth_token`) (OPTIONAL): The AuthToken for your Evernote Account. Please ensure to get non Sandbox token: [Authenticating with the Evernote Cloud API using Dev Tokens](https://dev.evernote.com/doc/articles/dev_tokens.php)
 
-### Optional Python Packages
-
-For exporting to Evernote `markdown2`and `evernote` package is required plus Evernote and the API Key.
-
-[https://github.com/trentm/python-markdown2](https://github.com/trentm/python-markdown2)
-
-```bash
-pip install markdown2
-```
-[https://github.com/evernote/evernote-sdk-python](https://github.com/evernote/evernote-sdk-python)
-
-```bash
-pip install evernote
-```
-
 ### Optional: QLMarkdown
 
 To use quicklook for Markdown files there is a QLMarkdown plugin available on git: [https://github.com/toland/qlmarkdown](https://github.com/toland/qlmarkdown)
@@ -108,7 +93,7 @@ With the Alfred search results from `mds` and `mdt` you can perform additional a
         **Note:** The Markdown Editor can be changed in Alfred Preferences → Workflow
     * **URL Scheme**: Generate MD link for URL Scheme and copy to the clipboard e.g. `[My Notes](x-writer://open?path=/Users/joe/Documents/Notes/doc.md)`
 * It is possible to perform additional actions to one or more Notes by proceeding with File Actions (press `TAB` or `ALT+TAB` on a note or multiple notes): 
-    * **Delete MD Notes**: Same as `CTRL` modifier key but also works on multiple files
+    * **Delete MD Notes**: Same as *Delete Note* in action menu but it also deletes multiple Notes
     * **MD Link to Note**: Generates relative Link to a markdown document for referencing Notes in other Notes e.g. `[My Notes](mynote.md)`
     * **Create Markdown Index**: Selected Markdown files will be linked into a new Index file e.g. to collect links to all invoices for an insurance
 
@@ -155,7 +140,7 @@ There are various ways of deleting MD Notes. Important is to not use Alfred stan
 1. **Delete via action menu**: Press `CMD+Enter` when search results will be shown
 2. **Delete via file action**: This option also allows to collect some notes via Alfred file buffer first before deleting them. 
 3. **Delete via batch mode**. This method allows to tag specific MD notes for deletion eg. By adding `#delete` tag to the notes and mark them for deletion. Any other tag name can be used. 
-    To delete MD notes tagged with a  specific tag, just execute `mda` followed by the tag name. The search will show the total number of affected notes with a preview option. 
+    To delete MD notes tagged with a  specific tag, just execute `mdd` followed by the tag name. The search will show the total number of affected notes with a preview option. 
 
 ### Working with Templates
 

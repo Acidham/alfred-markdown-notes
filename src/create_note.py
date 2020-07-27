@@ -1,19 +1,17 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import os
 import sys
 
-from Alfred import Tools
+from Alfred3 import Tools
 from MyNotes import NewNote
 from QuerySplitter import QuerySplitter
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
-query = Tools.getArgv(1).encode('utf-8')
-# Read template path from previous wf step in case template ws choosen
-template = Tools.getEnv('template_path')
+query = Tools.getArgv(1)  # Note title, can contain Tags → #TAG
+template = Tools.getEnv('template_path')  # Read template path from previous wf step in case template ws choosen
 if query.isspace():
-    query = "My Note {today}".format(today=NewNote.getTodayDate(fmt='%d-%m-%Y %H-%M-%S'))
+    today = NewNote.getTodayDate(fmt='%d-%m-%Y %H-%M-%S')
+    query = f"My Note {today}"
 qs = QuerySplitter(query)
 
 if query:

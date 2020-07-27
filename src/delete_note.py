@@ -1,44 +1,47 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 import os
 import re
 import shutil
 import sys
-import urllib
+from urllib.request import url2pathname
 
-from Alfred import Tools as Tools
+from Alfred3 import Tools as Tools
 from MyNotes import Search
 
 
-def rmDir(path, ignore_errors=True):
+def rmDir(path: str, ignore_errors: bool = True) -> bool:
     """
     Remove directory and it's content
 
     Args:
+
         path (string): path to specific markdown notes
         ignore_errors (bool, optional): Ignore errors. Defaults to True.
 
     Returns:
+
         bool: True in case removal was successful otherwise False
     """
     if os.path.exists(path):
         shutil.rmtree(path, ignore_errors)
         # TODO: For debugging only
-        sys.stderr.write("delete dir {}".format(path))
+        sys.stderr.write(f"delete dir {path}")
         return not (os.path.exists(path))
     else:
         return False
 
 
-def rmFile(path):
+def rmFile(path: str) -> bool:
     """
 
     Remove file of a given path if
 
     Returns:
+
         bool: True if successful other False
     """
-    path = urllib.url2pathname(path)
+    path = url2pathname(path)
     if os.path.isfile(path) and os.path.exists(path):
         os.remove(path)
         # TODO: For debugging only
@@ -48,12 +51,12 @@ def rmFile(path):
         return False
 
 
-def getFileQuery(q):
+def getFileQuery(q: str) -> list:
     ret = q.split('>') if '>' in q else [q, str()]
     return ret
 
 
-def getAssetsLinks(parent_path, p):
+def getAssetsLinks(parent_path: str, p: str) -> list:
     def is_in_notes(f_path):
         return not (str(f_path).startswith('..')) and not (str(f_path).startswith('/'))
     with open(p, 'r') as f:
@@ -62,7 +65,7 @@ def getAssetsLinks(parent_path, p):
     return [os.path.join(parent_path, m) for m in matches if is_in_notes(m)]
 
 
-def get_arguments():
+def get_arguments() -> list:
     # Get all files which needs to be deleted from input
     ret_value = sys.argv[1:]
     # split if files list was provided with | seprator in argv
@@ -108,8 +111,7 @@ for query in files_to_delete:
             return_text += '\n- Assets DELETED' if is_asset_deleted else str()
 
 if len(files_to_delete) > 1:
-    return_text = "{0} Notes and coresponding Assets deleted".format(len(
-        files_to_delete))
+    return_text = f"{len(files_to_delete)} Notes and coresponding Assets deleted"
 
 Tools.notify('MD Note deleted!', return_text)
 

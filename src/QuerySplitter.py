@@ -1,9 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 class QuerySplitter(object):
     """
     Split Query into title and tags
 
     Args:
+
         object (str): Query string
     """
 

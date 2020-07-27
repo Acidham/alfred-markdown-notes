@@ -1,7 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 import os
 
-from Alfred import Items, Plist, Tools
+from Alfred3 import Items, Plist, Tools
 
 
 def get_variables():
@@ -16,9 +16,9 @@ def print_config(q):
             v_subtitle = '<EMPTY>' if v == str() else v
             wf.setItem(
                 title=k,
-                subtitle='Value: ' + v_subtitle + u' , \u21E7 for Help.',
+                subtitle=f'Value: {v_subtitle} , \u21E7 for Help.',
                 arg='selection|%s|%s' % (k, v),
-                quicklookurl='file://' + wf_dir + '/docs/' + k + ".md"
+                quicklookurl=f"file://{wf_dir}/docs/{k}.md"
             )
             icon = 'icons/check.png' if v != str() else 'icons/question.png'
             wf.setIcon(
@@ -28,18 +28,17 @@ def print_config(q):
             wf.addItem()
 
 
-def get_selection(key, query):
+def get_selection(key, query: str):
     variables = get_variables()
     if key in variables:
         v = variables[key]
         isValid = False if query == str() else True
         wf.setItem(
-            title='Change %s: %s' % (key, v),
-            subtitle=u'Add new value for "{0}" and press enter. SHIFT for Help, \u2318 to delete value'.format(
-                key),
+            title=f'Change {key}: {v}',
+            subtitle=f'Add new value for "{key}" and press enter. SHIFT for Help, \u2318 to delete value',
             arg='set|%s|%s' % (key, query),
             valid=isValid,
-            quicklookurl='file://' + wf_dir + '/docs/' + key + ".md"
+            quicklookurl=f"file://{wf_dir}/docs/{key}.md"
         )
         wf.setIcon(
             'icons/edit.png',
@@ -48,7 +47,7 @@ def get_selection(key, query):
         wf.addMod(
             key='cmd',
             subtitle='Delete Value',
-            arg='set|{0}|'.format(key)
+            arg=f'set|{key}|'
         )
         wf.addModsToItem()
         wf.addItem()
@@ -60,11 +59,12 @@ def get_selection(key, query):
         wf.addItem()
 
 
-def write_config(key, value):
+def write_config(key, value: str):
     """
     Writes config item to plist file
 
     Args:
+
         key (str): key of key-value pair
         value (str): value of key-value pair
     """

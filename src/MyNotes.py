@@ -1,14 +1,14 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import datetime
 import os
 import re
 import sys
-import urllib
 from collections import Counter, OrderedDict
 from unicodedata import normalize
+from urllib.request import pathname2url
 
-from Alfred import Tools
+from Alfred3 import Tools
 
 
 class Notes(object):
@@ -58,6 +58,9 @@ class Notes(object):
         "```"
 
     def __init__(self):
+        if not(self.is_python3()):
+            Tools.log("PYTHON VERSION:", sys.version)
+            raise ModuleNotFoundError("Python version 3.7.0 or higher required!")
         self.extension = self.__buildNotesExtension()
         self.path = self.__buildNotesPath()
         self.default_template = os.getenv('default_template')
@@ -69,7 +72,14 @@ class Notes(object):
         self.todo_newest_oldest = True if os.getenv('todo_newest_oldest') == 'True' else False
 
     @staticmethod
-    def __buildNotesExtension():
+    def is_python3():
+        is_python3 = True
+        if sys.version_info < (3, 7):
+            is_python3 = False
+        return is_python3
+
+    @staticmethod
+    def __buildNotesExtension() -> str:
         """
         Get notes extension configured in workflow preference
 
@@ -84,7 +94,7 @@ class Notes(object):
         return ext if '.' in ext else str().join(['.', ext])
 
     @staticmethod
-    def __buildNotesPath():
+    def __buildNotesPath() -> str:
         """
         Create Notes path configured in preferences
 
@@ -102,12 +112,12 @@ class Notes(object):
         if not(path.startswith('/Users')):
             path = os.path.join(user_dir, path)
         if not(os.path.exists(path)):
-            sys.stderr.write("ERROR: {} is not a valid notes directory. Add a valid path for path_to_notes".format(path))
+            sys.stderr.write(f"ERROR: {path} is not a valid notes directory. Add a valid path for path_to_notes")
             sys.exit(0)
         return path
 
     @staticmethod
-    def getTodayDate(fmt="%d.%m.%Y"):
+    def getTodayDate(fmt: str = "%d.%m.%Y") -> str:
         """
         Get today's date
 
@@ -123,14 +133,14 @@ class Notes(object):
         now = datetime.datetime.now()
         return now.strftime(fmt)
 
-    def getDefaultDate(self):
+    def getDefaultDate(self) -> str:
         """
         Read default date format from environment variable
         :return: default date format file name or default format
         """
         return "%d.%m.%Y %H.%M" if self.default_date_format == str() else self.default_date_format
 
-    def getNotesPath(self):
+    def getNotesPath(self) -> str:
         """
         Get path to notes home directory
 
@@ -141,7 +151,7 @@ class Notes(object):
         """
         return self.path
 
-    def getNotesExtension(self):
+    def getNotesExtension(self) -> str:
         """
         Get notes extension from .env
 
@@ -153,7 +163,7 @@ class Notes(object):
         return self.extension
 
     @staticmethod
-    def strJoin(*args):
+    def strJoin(*args: str) -> str:
         """
         Join multiple strings
 
@@ -169,7 +179,7 @@ class Notes(object):
         return str().join(args)
 
     @staticmethod
-    def strReplace(text, replace_map, lowercase=True):
+    def strReplace(text: str, replace_map: dict, lowercase: bool = True) -> str:
         """
         Replace in text from a replacement map
 
@@ -233,7 +243,7 @@ class Search(Notes):
             search_str = st.replace('*', str())
             # search if search term contains a whitespace
             if ' ' in st:
-                regexp = re.compile(r'({0})'.format(st), re.I)
+                regexp = re.compile(f'({st})', re.I)
                 match = True if len(re.findall(regexp, content)) > 0 else False
             # search if wildcard search in the end
             elif st.endswith('*'):
@@ -254,7 +264,7 @@ class Search(Notes):
         match = all(matches) if operator == 'AND' else any(matches)
         return match
 
-    def notes_search(self, search_terms, search_type):
+    def notes_search(self, search_terms: list, search_type: str) -> list:
         """
         Search with search terms in all markdown files
 
@@ -271,7 +281,7 @@ class Search(Notes):
 
         """
         file_list = self.getFilesListSorted()
-        search_terms = [normalize('NFD', s.decode('utf-8')) for s in search_terms]
+        #search_terms = [normalize('NFD', s.decode('utf-8')) for s in search_terms]
         new_list = list()
         if file_list is not None:
             for f in file_list:
@@ -281,7 +291,7 @@ class Search(Notes):
                     new_list.append(f)
         return new_list
 
-    def url_search(self, search_terms):
+    def url_search(self, search_terms: list) -> list:
         """
         Search Notes with bookmarks (URLs)
 
@@ -312,7 +322,7 @@ class Search(Notes):
                 note_list.append({'title': note_title, 'path': note_path, 'links': link_list})
         return note_list
 
-    def getNoteTitle(self, path):
+    def getNoteTitle(self, path: str) -> str:
         """
         Get the title of a note
 
@@ -333,12 +343,12 @@ class Search(Notes):
         return title
 
     @staticmethod
-    def _chop(theString, ext):
+    def _chop(theString: str, ext: str) -> str:
         if theString.endswith(ext):
             return theString[:-len(ext)]
         return theString
 
-    def getFileMeta(self, path, item):
+    def getFileMeta(self, path: str, item: str) -> str:
         """
         Get file meta data of given file
 
@@ -352,7 +362,7 @@ class Search(Notes):
 
             item str(): Metadata of the file
         """
-        os.stat_float_times(True)
+        # os.stat_float_times(True)
         file_stats = os.stat(path)
         switch = {
             'ctime': file_stats.st_birthtime,
@@ -361,7 +371,7 @@ class Search(Notes):
         }
         return switch[item]
 
-    def getFilesListSorted(self, reverse=True):
+    def getFilesListSorted(self, reverse: bool = True) -> list:
         """
         Get list of files in directory as dict
 
@@ -396,7 +406,7 @@ class Search(Notes):
             sorted_file_list = sorted(seq, key=lambda k: k['mtime'], reverse=reverse)
             return sorted_file_list
 
-    def tagSearch(self, tag, sort_by='tag', reverse=False):
+    def tagSearch(self, tag, sort_by: str = 'tag', reverse: bool = False) -> list:
         """
         Search for notes with tag
 
@@ -414,7 +424,7 @@ class Search(Notes):
 
         """
         i = {'tag': 0, 'count': 1}
-        tag = normalize('NFD', tag.decode('utf-8'))
+        # tag = normalize('NFD', tag.decode('utf-8'))
         matches = list()
         sorted_file_list = self.getFilesListSorted()
         regex = re.compile(
@@ -438,7 +448,7 @@ class Search(Notes):
             sorted(counted_matches.items(), key=lambda x: x[i[sort_by]], reverse=reverse))
         return sorted_matches
 
-    def todoSearch(self, todo):
+    def todoSearch(self, todo: str) -> list:
         """
         Search for todos in md notes
 
@@ -462,7 +472,7 @@ class Search(Notes):
                 for i in results:
                     r_dict = {
                         'path': f['path'],
-                        'todo': i,
+                        'todo': i.replace("*", ""),
                         'filename': f['filename'],
                         'title': f['title'],
                         'mtime': self.getFileMeta(f['path'], 'mtime'),
@@ -472,26 +482,24 @@ class Search(Notes):
         ret_list_dict = sorted(matches, key=lambda k: k['ctime'], reverse=self.todo_newest_oldest)
         return ret_list_dict
 
-    def _getFileContent(self, file_path):
+    def _getFileContent(self, file_path: str) -> str:
         if str(file_path).endswith(self.extension):
             with open(file_path, 'r') as c:
                 content = c.read()
         else:
             content = str()
-        return normalize('NFD', content.decode('utf-8'))
+        return content
 
-    def isNoteTagged(self, file_path, tag):
+    def isNoteTagged(self, file_path: str, tag: str) -> bool:
         """
         Is the note tagged with tag?
 
         Args:
 
             file_path (str): path to note
-
             tag (str): tag to search for
 
         Returns:
-
             boolean: True if note is tagged otherwise false
         """
         match = False
@@ -505,16 +513,14 @@ class Search(Notes):
         return match
 
     @staticmethod
-    def get_search_config(q):
+    def get_search_config(q: str) -> tuple:
         """
         Returns search config tuple
 
         Args:
-
             q (string): Search Query e.g. Searchterm1&Searchtem2
 
         Returns:
-
             tuple: Search Terms and operator
         """
         if '&' in q:
@@ -531,19 +537,17 @@ class Search(Notes):
             s_type = 'or'
         return s_terms, s_type
 
-    def getUrlScheme(self, f):
+    def getUrlScheme(self, f: str) -> str:
         """
         Gets the URL Scheme setup in Alfred Preferences
 
         Args:
-
             f(str): md file to add at the end of url scheme
 
         Returns:
-
             str: URL scheme
         """
-        return self.strJoin(self.url_scheme, urllib.pathname2url(f))
+        return self.strJoin(self.url_scheme, pathname2url(f))
 
 
 class NewNote(Notes):
@@ -553,11 +557,8 @@ class NewNote(Notes):
     Args:
 
         note_title (str): Title of the Note
-
         template_path (str): Path to the template used
-
         tags (str): Tag line with format: #tag1 #tag2
-
         content (str): Addtional content after Headline
 
     """
@@ -570,50 +571,53 @@ class NewNote(Notes):
         self.note_path = self.getTargetFilePath(self.normalize_filename(note_title))
         self.template_path = self.getTemplate(template_path)
 
-    def getTargetFilePath(self, file_name):
+    def getTargetFilePath(self, file_name: str) -> str:
         """
-
         construct markdown file path
-
 
         Returns:
             str: markdown file path
         """
         file_name = file_name.rstrip().lstrip()
-        file_path = os.path.join(self.path, "{0}{1}".format(file_name, self.extension))
+        file_path = os.path.join(self.path, f"{file_name}{self.extension}")
         if os.path.isfile(file_path):
             new_file_name = Tools.strJoin(file_name, ' ', self.getTodayDate('%d-%m-%Y %H-%M-%S'))
-            file_path = os.path.join(self.path, "{0}{1}".format(new_file_name, self.extension))
+            file_path = os.path.join(self.path, f"{new_file_name}{self.extension}")
         return file_path
 
-    def getDefaultTemplate(self):
+    def getDefaultTemplate(self) -> str:
         """
         Read default template setting from environment variable
-        :return: default template file name
+
+        Returns:
+
+            str: default template file name
         """
         return 'template.md' if self.default_template == str() else self.default_template
 
-    def getTemplate(self, template_path):
+    def getTemplate(self, template_path: str) -> str:
         """
-
         Get template path from previous wf step, reads env variable
 
         Returns:
+
             str: path to template.md
         """
         notes_path = self.path
         default_template = self.getDefaultTemplate()
         return os.path.join(notes_path, default_template) if template_path == str() else template_path
 
-    def readTemplate(self, **kwargs):
+    def readTemplate(self, **kwargs: str) -> str:
         """
         Read template mardkown file and fill placeholder defined in template
         with data provides as kwargs
 
         Args:
+
             file_path (str): Path to Template file
 
         Returns:
+
             str: Content
         """
         if '#' not in self.template_tag or self.template_tag == str():
@@ -624,28 +628,30 @@ class NewNote(Notes):
         else:
             content = self.FALLBACK_CONTENT
         content = content.replace(self.template_tag, '')
-        for k, v in kwargs.iteritems():
+        for k, v in kwargs.items():
             content = content.replace('{' + k + '}', v)
-        tag_line = 'Tags: {0}'.format(self.tags)
+        tag_line = f'Tags: {self.tags}'
         if self.tags:
             content = content.replace('Tags: ', tag_line)
         return content
 
-    def normalize_filename(self, f):
+    def normalize_filename(self, f: str) -> str:
         """
         Replace special characters in filename of md file
 
         Returns:
+
             str: filename
         """
         self.CHAR_REPLACEMENT_MAP.update(self.UMLAUT_REPL_MAP)
         return self.strReplace(f, self.CHAR_REPLACEMENT_MAP, lowercase=False)
 
-    def create_note(self):
+    def create_note(self) -> str:
         """
         Creates the markdown note
 
         Returns:
+
             str: full path to notes
         """
         try:
@@ -656,5 +662,5 @@ class NewNote(Notes):
                 file_content = file_content + '\n' + self.content if self.content else file_content
                 f.write(file_content)
             return self.note_path
-        except Exception as e:
+        except IOError as e:
             sys.stderr.write(e)

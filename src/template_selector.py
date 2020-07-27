@@ -1,11 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import MyNotes
-from Alfred import Items, Tools
+from Alfred3 import Items, Tools
 
 
-def get_template_tag():
+def get_template_tag() -> str:
     tt = Tools.getEnv('template_tag')
     if '#' not in tt or tt == str():
         tt = '#Template'
@@ -19,7 +19,6 @@ my_notes = MyNotes.Search()
 
 # Load env variables
 ext = my_notes.getNotesExtension()
-# p = my_notes.getNotesPath()
 query = Tools.getArgv(1)
 default_template = Tools.getEnv('default_template')
 template_tag = get_template_tag()
@@ -36,7 +35,7 @@ for md_file in template_files:
             suffix = SUFFIX
         wf.setItem(
             title=md_file['filename'] + suffix,
-            subtitle="Create new file based on \"{0}\"".format(md_file['filename']),
+            subtitle=f"Create new file based on \"{md_file['filename']}\"",
             arg=Tools.strJoin(md_file['path']),
             type='file'
         )

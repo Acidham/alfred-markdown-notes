@@ -1,8 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from Alfred import Items as Items
-from Alfred import Tools as Tools
+from Alfred3 import Items as Items
+from Alfred3 import Tools as Tools
 from MyNotes import Search
 
 # create MD search object
@@ -10,8 +10,7 @@ md = Search()
 
 # Get environment variables
 ext = md.getNotesExtension()
-# p = md.getNotesPath()
-query = Tools.getArgv(1)
+query = Tools.getArgv(1)  # Tag name
 
 if query is str():
     # Tag Search and sort based on tag name
@@ -26,14 +25,14 @@ if bool(tag_results):
     for tag, counter in tag_results.items():
         wf.setItem(
             title='{0}'.format(tag),
-            subtitle=u"{0} Hit(s), (\u2318 to paste tag into frontmost app)".format(counter),
+            subtitle=f"{counter} Hit(s), (\u2318 to paste tag into frontmost app)",
             valid=True,
-            arg='#{0}'.format(tag)
+            arg=f'#{tag}'
         )
         wf.setIcon('icons/hashtag.png', 'image')
         wf.addMod(
             key='cmd',
-            arg='#{0} '.format(tag),
+            arg=f'#{tag} ',
             subtitle='Paste Tag into frontmost app',
             icon_path='icons/paste.png',
             icon_type='image'
