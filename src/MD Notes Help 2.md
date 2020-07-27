@@ -1,20 +1,15 @@
-# Alfred Markdown Notes
+---
+Created: 03.02.2019
+Tags: #Draft #Alfred #Help
+---
 
-Markdown Notes is a comprehensive note taking tool embedded into Aflred with powerful full text search (supports & and |), tag search and search capabilities for todos ( `- [ ]` or `* [ ]`) . With MD Notes you can quickly create new notes based on custom templates, e.g. meeting notes, bookmarks, project documentation, etc. 
+# MD Notes Help for Alfred
 
-MD Notes works with any mardkown editor. 
+Markdown Notes is a comprehensive note-taking tool embedded into Alfred with powerful full-text search (supports & and |), tag search and search capabilities for todos ( `- [ ]` or `* [ ]`) . With MD Notes you can quickly create new notes based on custom templates, e.g. meeting notes, bookmarks, project documentation, etc. 
+
+MD Notes works with any markdown editor. 
 
 > [Typora](https://typora.io/) is set up in Alfred Workflow as preferred Markdown editor but it is possible to use another MD Editor or Text Editor if required. To use another Editor it is required to define the Editor in the worklow steps at the end of the WF. 
-
-## Installation
-
-1. Download [Alfred Markdown Notes](https://github.com/Acidham/alfred-markdown-notes/releases/latest)
-2. Double click downloaded file to install in Alfred
-
-## Requirements
-
-1. [Alfred Powerpack](https://www.alfredapp.com/powerpack/)
-2. Python 3.7
 
 ## Configuration
 
@@ -36,25 +31,25 @@ Variables marked with * are required for running MD Notes properly, the others a
 * **Default Date Format** (`default_date_format`): Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
 
 * **Default Template** * (`default_template`): The file name that will be used as the default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates))   
-  **Note**: Enter the file name ONLY without path e.g. `myTemplate.md`
+    **Note**: Enter the file name ONLY without path e.g. `myTemplate.md`
 
 * **Extension** * (`ext`): The MD files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
   **Note:** The files must be type text files.
-
+  
 * **Search in Tags in YMF only** * (`search_yaml_tags_only`)
-
+  
   Tags can be used in the YAML front matter (`Tags: #mytag`) or within the MD note. 
-
+  
   1. When set to `True` tag search only search with YMF.
   2. When set to `False` tags will be searched the whole MD note.  
-
+  
 * **Exact Match** (`exact_match`): Defines if the search should match the exact search term (`True`) or the string (`False`) in markdown notes. 
 
   **Note:** When exact match is set to `True` it is possible to enhance the search term with wildcards
 
 * **Todo sort order** (todo_newest_oldest): Sort order when using Todo Search ( `mdt`). 
-  `True` newest todos will be shown on top of the search results
-  `False` oldest todos will be shown on top of the search results
+    `True` newest todos will be shown on top of the search results
+    `False` oldest todos will be shown on top of the search results
 
 * **URL scheme** (`url_scheme`): (OPTIONAL) I figured out that some web app like Todoist is using web interface where, due to OS restrictions, file paths cannot be opened. To work around this URL scheme can be configured to open the note in markdown editor or viewer, e.g. Marked or iA Writer. Add URL Scheme like `x-writer://create?file=` and after `file=` will be enhanced with the MD Note path when executed. 
 
@@ -63,6 +58,21 @@ Variables marked with * are required for running MD Notes properly, the others a
 * **Bookmark Tag** (`bookmark_tag`): Name of the tag which marks Notes containing URL/Bookmarks.
 
 * **Evernote Auth Token** (`evernote_auth_token`) (OPTIONAL): The AuthToken for your Evernote Account. Please ensure to get non Sandbox token: [Authenticating with the Evernote Cloud API using Dev Tokens](https://dev.evernote.com/doc/articles/dev_tokens.php)
+
+### Optional Python Packages
+
+For exporting to Evernote `markdown2`and `evernote` package is required plus Evernote and the API Key.
+
+[https://github.com/trentm/python-markdown2](https://github.com/trentm/python-markdown2)
+
+```bash
+pip install markdown2
+```
+[https://github.com/evernote/evernote-sdk-python](https://github.com/evernote/evernote-sdk-python)
+
+```bash
+pip install evernote
+```
 
 ### Optional: QLMarkdown
 
@@ -89,18 +99,18 @@ The search runs with exact match and with partial match by using wildcards `*` b
 With the Alfred search results from `mds` and `mdt` you can perform additional actions to the note:
 
 * Pressing `Shift`you can quicklook the file. 
-  *Tip*: To quicklook markdown files formatted you can install [QLMarkdown](https://github.com/toland/qlmarkdown) 
+    *Tip*: To quicklook markdown files formatted you can install [QLMarkdown](https://github.com/toland/qlmarkdown) 
 * With Pressing `CMD` you can open the action menu. The following actions are available:
-  * **Markdown Link**: Copy markdown link of the note to the clipboard for pasting into another app or markdown file
-  * **Delete Note**: Delete the file and all associated assets such as images or other file types. 
-  * **Evernote**: Export Note to Evernote including images and tags
-  * **Marked 2**: Opens the Note in Marked 2 
-    **Note:** The Markdown Editor can be changed in Alfred Preferences → Workflow
-  * **URL Scheme**: Generate MD link for URL Scheme and copy to the clipboard e.g. `[My Notes](x-writer://open?path=/Users/joe/Documents/Notes/doc.md)`
+    * **Markdown Link**: Copy markdown link of the note to the clipboard for pasting into another app or markdown file
+    * **Delete Note**: Delete the file and all associated assets such as images or other file types. 
+    * **Evernote**: Export Note to Evernote including images and tags
+    * **Marked 2**: Opens the Note in Marked 2 
+        **Note:** The Markdown Editor can be changed in Alfred Preferences → Workflow
+    * **URL Scheme**: Generate MD link for URL Scheme and copy to the clipboard e.g. `[My Notes](x-writer://open?path=/Users/joe/Documents/Notes/doc.md)`
 * It is possible to perform additional actions to one or more Notes by proceeding with File Actions (press `TAB` or `ALT+TAB` on a note or multiple notes): 
-  * **Delete MD Notes**: Same as *Delete Note* in action menu but it also deletes multiple Notes
-  * **MD Link to Note**: Generates relative Link to a markdown document for referencing Notes in other Notes e.g. `[My Notes](mynote.md)`
-  * **Create Markdown Index**: Selected Markdown files will be linked into a new Index file e.g. to collect links to all invoices for an insurance
+    * **Delete MD Notes**: Same as `CTRL` modifier key but also works on multiple files
+    * **MD Link to Note**: Generates relative Link to a markdown document for referencing Notes in other Notes e.g. `[My Notes](mynote.md)`
+    * **Create Markdown Index**: Selected Markdown files will be linked into a new Index file e.g. to collect links to all invoices for an insurance
 
 ### Tag Search
 
@@ -144,8 +154,8 @@ There are various ways of deleting MD Notes. Important is to not use Alfred stan
 
 1. **Delete via action menu**: Press `CMD+Enter` when search results will be shown
 2. **Delete via file action**: This option also allows to collect some notes via Alfred file buffer first before deleting them. 
-3. **Delete via in batch mode**. This method allows to tag specific MD notes for deletion eg. By adding `#delete` tag to the notes and mark them for deletion. Any other tag name can be used. 
-   To delete MD notes tagged with a  specific tag, just execute `mdd` followed by the tag name. The search will show the total number of affected notes with a preview option. 
+3. **Delete via batch mode**. This method allows to tag specific MD notes for deletion eg. By adding `#delete` tag to the notes and mark them for deletion. Any other tag name can be used. 
+    To delete MD notes tagged with a  specific tag, just execute `mda` followed by the tag name. The search will show the total number of affected notes with a preview option. 
 
 ### Working with Templates
 
