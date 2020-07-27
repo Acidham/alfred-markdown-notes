@@ -1,3 +1,0 @@
-green: #88a317
-red: E93F33
-standard: #37b6ff
