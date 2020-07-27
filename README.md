@@ -178,7 +178,3 @@ In case the page cannot be fetched MD Notes create a note and add the URL into t
 To fetch an URL use `mdf` and enter the target URL.
 
 **Note:** To import HTML content [Pandoc](https://pandoc.org/installing.html) is required. If Pandoc is not installed the note will only contain the URL to the Page.
-
-### Export to Evernote
-
-MD Notes can export Notes to Evernote including Images and Tags. Once Note is shown, via `mds` choose `ALT` modifier key and Alfred shows the option ot Export to Evernote.
