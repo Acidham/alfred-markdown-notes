@@ -91,7 +91,6 @@ With the Alfred search results from `mds` and `mdt` you can perform additional a
 * With Pressing `CMD` you can open the action menu. The following actions are available:
   * **Markdown Link**: Copy markdown link of the note to the clipboard for pasting into another app or markdown file
   * **Delete Note**: Delete the file and all associated assets such as images or other file types. 
-  * **Evernote**: Export Note to Evernote including images and tags
   * **Marked 2**: Opens the Note in Marked 2 
     **Note:** The Markdown Editor can be changed in Alfred Preferences → Workflow
   * **URL Scheme**: Generate MD link for URL Scheme and copy to the clipboard e.g. `[My Notes](x-writer://open?path=/Users/joe/Documents/Notes/doc.md)`
