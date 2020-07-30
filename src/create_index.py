@@ -31,5 +31,5 @@ query = Tools.getArgv(1)  # Title of the Note
 qs = QuerySplitter(query)
 
 MyNote = NewNote(qs.title, tags=qs.tags, content=get_mdfiles_list_content())
-md_path = MyNote.create_note()
+md_path = MyNote.createNote()
 sys.stdout.write(md_path)

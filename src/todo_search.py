@@ -24,7 +24,7 @@ if len(todos) > 0:
         md_title = i['title'] if i['title'] != str() else Tools.chop(i['filename'], ext)
         wf.setItem(
             title=i['todo'],
-            subtitle=f"{K.ARROW_RIGHT} {md_title} (Created: {Tools.getDateStr(i['ctime'])})",
+            subtitle=f"{K.ARROW_RIGHT} {md_title} (Created: {Tools.getDateStr(i['ctime'])}, Modified: {Tools.getDateStr(i['mtime'])})",
             arg=i['path'],
             valid=True,
             type='file'

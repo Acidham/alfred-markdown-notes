@@ -22,7 +22,7 @@ class Notes(object):
         '\n': ' '
     }
 
-    #TODO: Dlete
+    #TODO: Delete
     """
     # UMLAUT_REPL_MAP = {
         '\xc3\xa4': 'ae',
@@ -464,7 +464,6 @@ class Search(Notes):
         Returns:
 
             list(dict): returns matches as list with dict
-
         """
         matches = list()
         sorted_file_list = self.getFilesListSorted()
@@ -484,7 +483,7 @@ class Search(Notes):
                         'ctime': self.getFileMeta(f['path'], 'ctime')
                     }
                     matches.append(r_dict)
-        ret_list_dict = sorted(matches, key=lambda k: k['ctime'], reverse=self.todo_newest_oldest)
+        ret_list_dict = sorted(matches, key=lambda k: k['mtime'], reverse=self.todo_newest_oldest)
         return ret_list_dict
 
     def _getFileContent(self, file_path: str) -> str:
@@ -587,27 +586,21 @@ class NewNote(Notes):
         self.tags = tags
         self.content = content
         self.note_title = note_title
-        self.note_path = self.getTargetFilePath(self.normalize_filename(note_title))
+        self.note_path = self.getTargetFilePath(self.__normalize_filename(note_title))
         self.template_path = self.getTemplate(template_path)
 
-    # TODO: Implement filename formatter
     def getFilenameFormat(self):
-        frmt_env = Tools.getEnv('filename_format')  # {%Y%m%d}-{title}
+        """
+        Get fileformat from WF env
+
+        Returns:
+
+            str: fileformat or fallback
+        """
+        frmt_env = Tools.getEnv('filename_format')
         if frmt_env is None or frmt_env.strip() == "":
             frmt_env = '{title}'
         return frmt_env
-
-    def applyFilenameFormat(self, title: str):
-        frmt = self.filename_format
-        res = re.findall(r"\{[\.\-:%a-zA-Z]*\}", frmt)
-        for r in res:
-            if "%" in r:
-                date_f = r.replace('{', "").replace('}', "")
-                dte = self.getTodayDate(date_f)
-                frmt = frmt.replace(r, dte)
-            elif '{title}' in res:
-                frmt = frmt.replace(r, title)
-        return frmt
 
     def getTargetFilePath(self, file_name: str) -> str:
         """
@@ -617,10 +610,21 @@ class NewNote(Notes):
 
             str: markdown file path
         """
+        def applyFilenameFormat(title: str):
+            """Appliies configured Fileformat to filename"""
+            frmt = self.filename_format
+            res = re.findall(r"\{[\.\-:%a-zA-Z]*\}", frmt)
+            for r in res:
+                if "%" in r:
+                    date_f = r.replace('{', "").replace('}', "")
+                    dte = self.getTodayDate(date_f)
+                    frmt = frmt.replace(r, dte)
+                elif '{title}' in res:
+                    frmt = frmt.replace(r, title)
+            return frmt
+
         file_name = file_name.rstrip().lstrip()
-        # TODO: Implement Filename formatting
-        file_name = self.applyFilenameFormat(file_name)
-        #fa = re.findall(r"{.*}", self.filename_format)
+        file_name = applyFilenameFormat(file_name)
         file_path = os.path.join(self.path, f"{file_name}{self.extension}")
         if os.path.isfile(file_path):
             new_file_name = Tools.strJoin(file_name, ' ', self.getTodayDate('%d-%m-%Y %H-%M-%S'))
@@ -677,7 +681,7 @@ class NewNote(Notes):
             content = content.replace('Tags: ', tag_line)
         return content
 
-    def normalize_filename(self, f: str) -> str:
+    def __normalize_filename(self, f: str) -> str:
         """
         Replace special characters in filename of md file
 
@@ -689,7 +693,7 @@ class NewNote(Notes):
         # self.CHAR_REPLACEMENT_MAP.update(self.UMLAUT_REPL_MAP)
         return self.strReplace(f, self.CHAR_REPLACEMENT_MAP, lowercase=False)
 
-    def create_note(self) -> str:
+    def createNote(self) -> str:
         """
         Creates the markdown note
 
