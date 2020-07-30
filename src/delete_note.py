@@ -25,8 +25,7 @@ def rmDir(path: str, ignore_errors: bool = True) -> bool:
     """
     if os.path.exists(path):
         shutil.rmtree(path, ignore_errors)
-        # TODO: For debugging only
-        sys.stderr.write(f"delete dir {path}")
+        Tools.log(f"DELETED DIR: {path}")
         return not (os.path.exists(path))
     else:
         return False
@@ -44,8 +43,6 @@ def rmFile(path: str) -> bool:
     path = url2pathname(path)
     if os.path.isfile(path) and os.path.exists(path):
         os.remove(path)
-        # TODO: For debugging only
-        # sys.stderr.write("delete file {}".format(path))
         return not (os.path.exists(path))
     else:
         return False

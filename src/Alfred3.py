@@ -9,7 +9,7 @@ from plistlib import readPlist, writePlist
 
 """
 Alfred Script Filter generator class
-Version: 3.1
+Version: 3.2
 Python 3 required!
 """
 
@@ -19,6 +19,7 @@ class Items(object):
     Alfred WF Items object to generate Script Filter object
 
     Returns:
+
         object: WF  object
     """
 
@@ -37,7 +38,6 @@ class Items(object):
         Args:
 
             key (str): Name of the Key
-
             value (str): Value of the Key
         """
         self.item.update({key: value})
@@ -118,7 +118,6 @@ class Items(object):
         Args:
 
             m_path (str): Path to the icon
-
             m_type (str, optional): "icon"|"fileicon". Defaults to "".
         """
         self.setKv("icon", self.__define_icon(m_path, m_type))
@@ -158,15 +157,10 @@ class Items(object):
         Args:
 
             key (str): "alt"|"cmd"|"shift"|"fn"|"ctrl
-
             arg (str): Value of Mod arg
-
             subtitle (str): Subtitle
-
             valid (bool, optional): Arg valid or not. Defaults to True.
-
             icon_path (str, optional): Path to the icon relative to WF dir. Defaults to "".
-
             icon_type (str, optional): "image"|"fileicon". Defaults to "".
 
         Raises:
@@ -200,9 +194,7 @@ class Items(object):
         Args:
 
             id (int): list indes
-
             key (str): key which needs to be updated
-
             value (str): new value
         """
         dict_item = self.items[id]
@@ -233,6 +225,9 @@ class Tools(object):
 
     @staticmethod
     def log(*message) -> None:
+        """
+        Log message to stderr
+        """
         sys.stderr.write(f'{" ".join(message)}\n')
 
     @staticmethod
@@ -250,6 +245,25 @@ class Tools(object):
             (str): Env value or string if not available
         """
         return os.getenv(var) if os.getenv(var) is not None else default
+
+    @staticmethod
+    def getEnvBool(var: str, default: bool = False) -> bool:
+        """
+        Reads boolean env variable provided as text
+
+        Args:
+
+            var (str): Name of the env variable
+            default (bool, optional): Default if not found. Defaults to False.
+
+        Returns:
+
+            bool: True or False as bool
+        """
+        if os.getenv(var).lower() == "true":
+            return True
+        else:
+            return default
 
     @staticmethod
     def getArgv(i: int, default=str()) -> str:
@@ -318,20 +332,24 @@ class Tools(object):
         Sort List with Tubles based on a given element in Tuple
 
         Args:
+
             list_tuple (list(tuble)): Sort List with Tubles based on a given element in Tuple
             el (int): which element
             reverse (bool, optional): Reverse order. Defaults to True.
 
         Returns:
+
             list(tuble) -- sorted list with tubles
         """
         return sorted(list_tuple, key=lambda tup: tup[el], reverse=reverse)
 
     @staticmethod
     def notify(title: str, text: str) -> None:
-        """Send Notification to mac Notification Center
+        """
+        Send Notification to mac Notification Center
 
         Arguments:
+
             title (str): Title String
             text (str): The message
         """
@@ -346,8 +364,11 @@ class Tools(object):
         """Joins a list of strings
 
         Arguments:
+
             *args (list): List which contains strings
+
         Returns:
+
             str: joined str
         """
         return str().join(args)
@@ -360,7 +381,6 @@ class Tools(object):
         Args:
 
             theString (str): The String to cut
-
             ext (str): String which needs to be removed
 
         Returns:
@@ -427,7 +447,6 @@ class Plist:
 
             variable (str): Name of the variable
 
-
         Returns:
 
             str: Value of variable with name
@@ -445,7 +464,6 @@ class Plist:
         Args:
 
             variable (str): Name of Plist Variable
-
             value (str): Value of Plist Variable
 
         """
@@ -473,3 +491,10 @@ class Plist:
         Save changes to Plist
         """
         writePlist(self.info, "info.plist")
+
+
+class Keys(object):
+    CMD = u'\u2318'
+    SHIFT = u'\u21E7'
+    ENTER = u'\u23CE'
+    ARROW_RIGHT = u'\u2192'

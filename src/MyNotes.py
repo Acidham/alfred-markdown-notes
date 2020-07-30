@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 import datetime
 import os
 import re
@@ -21,7 +22,9 @@ class Notes(object):
         '\n': ' '
     }
 
-    UMLAUT_REPL_MAP = {
+    #TODO: Dlete
+    """
+    # UMLAUT_REPL_MAP = {
         '\xc3\xa4': 'ae',
         '\xc3\xb6': 'oe',
         '\xc3\xbc': 'ue',
@@ -35,6 +38,7 @@ class Notes(object):
         u'ü': 'ue',
         '\xcc\x88': 'e'
     }
+    """
 
     # Replacement map for Filename when new file created
     CHAR_REPLACEMENT_MAP = {
@@ -58,7 +62,7 @@ class Notes(object):
         "```"
 
     def __init__(self):
-        if not(self.is_python3()):
+        if not(self.isPython3()):
             Tools.log("PYTHON VERSION:", sys.version)
             raise ModuleNotFoundError("Python version 3.7.0 or higher required!")
         self.extension = self.__buildNotesExtension()
@@ -66,13 +70,20 @@ class Notes(object):
         self.default_template = os.getenv('default_template')
         self.template_tag = os.getenv('template_tag')
         self.url_scheme = os.getenv('url_scheme')
-        self.search_yaml_tags_only = True if os.getenv('search_yaml_tags_only') == 'True' else False
+        self.search_yaml_tags_only = Tools.getEnvBool('search_yaml_tags_only')
         self.default_date_format = os.getenv('default_date_format')
-        self.exact_match = True if os.getenv('exact_match') == 'True' else False
-        self.todo_newest_oldest = True if os.getenv('todo_newest_oldest') == 'True' else False
+        self.exact_match = Tools.getEnvBool('exact_match')
+        self.todo_newest_oldest = Tools.getEnvBool('todo_newest_oldest')
 
     @staticmethod
-    def is_python3():
+    def isPython3() -> bool:
+        """
+        Check if script is executed with Python 3.7 or higher
+
+        Returns:
+
+            bool: True if Python3 else false
+        """
         is_python3 = True
         if sys.version_info < (3, 7):
             is_python3 = False
@@ -136,7 +147,10 @@ class Notes(object):
     def getDefaultDate(self) -> str:
         """
         Read default date format from environment variable
-        :return: default date format file name or default format
+
+        Returns:
+
+            str: default date format file name or default format
         """
         return "%d.%m.%Y %H.%M" if self.default_date_format == str() else self.default_date_format
 
@@ -186,9 +200,7 @@ class Notes(object):
         Args:
 
             text (str): The string which needs to be processed
-
             replace_map (dict): dict with search:replace
-
 
         Returns:
 
@@ -220,11 +232,8 @@ class Search(Notes):
         Args:
 
             search_terms (list): Search terms
-
             content (str): Text to search
-
             operator (str): 'OR' or 'AND'
-
 
         Returns:
 
@@ -255,8 +264,10 @@ class Search(Notes):
                 match = True if len(match_list) > 0 else False
             # search if exact match is true
             elif self.exact_match:
-                match_list = [x for x in word_list if search_str == x]
-                match = True if len(match_list) > 0 else False
+                # TODO: Remove 2 lines
+                #match_list = [x for x in word_list if search_str == x]
+                #match = True if len(match_list) > 0 else False
+                match = True if search_str in word_list else False
             # search with exact match is false
             else:
                 match = True if search_str in str(word_list) else False
@@ -271,9 +282,7 @@ class Search(Notes):
         Args:
 
             search_terms (list): Search terms in a list
-
             search_type (str): OR or AND search
-
 
         Returns:
 
@@ -355,7 +364,6 @@ class Search(Notes):
         Args:
 
             path (str): file path
-
             item (str): meta data name
 
         Returns:
@@ -413,9 +421,7 @@ class Search(Notes):
         Args:
 
             tag (str): tag to search for in a note
-
             sort_by (str, optional): Sort results by. Defaults to 'tag'.
-
             reverse (bool, optional): Sort reverse. Defaults to False.
 
         Returns:
@@ -424,7 +430,6 @@ class Search(Notes):
 
         """
         i = {'tag': 0, 'count': 1}
-        # tag = normalize('NFD', tag.decode('utf-8'))
         matches = list()
         sorted_file_list = self.getFilesListSorted()
         regex = re.compile(
@@ -483,6 +488,17 @@ class Search(Notes):
         return ret_list_dict
 
     def _getFileContent(self, file_path: str) -> str:
+        """
+        Read file content from md/txt file
+
+        Args:
+
+            file_path (str): Path to file to read
+
+        Returns:
+
+            str: content
+        """
         if str(file_path).endswith(self.extension):
             with open(file_path, 'r') as c:
                 content = c.read()
@@ -518,9 +534,11 @@ class Search(Notes):
         Returns search config tuple
 
         Args:
+
             q (string): Search Query e.g. Searchterm1&Searchtem2
 
         Returns:
+
             tuple: Search Terms and operator
         """
         if '&' in q:
@@ -576,6 +594,7 @@ class NewNote(Notes):
         construct markdown file path
 
         Returns:
+
             str: markdown file path
         """
         file_name = file_name.rstrip().lstrip()
@@ -643,7 +662,8 @@ class NewNote(Notes):
 
             str: filename
         """
-        self.CHAR_REPLACEMENT_MAP.update(self.UMLAUT_REPL_MAP)
+        # TODO: Delete 1 line
+        # self.CHAR_REPLACEMENT_MAP.update(self.UMLAUT_REPL_MAP)
         return self.strReplace(f, self.CHAR_REPLACEMENT_MAP, lowercase=False)
 
     def create_note(self) -> str:
@@ -659,7 +679,7 @@ class NewNote(Notes):
                 default_date = self.getDefaultDate()
                 file_content = self.readTemplate(
                     date=self.getTodayDate(default_date), title=self.note_title)
-                file_content = file_content + '\n' + self.content if self.content else file_content
+                file_content = f"{file_content}\n{self.content}" if self.content else file_content
                 f.write(file_content)
             return self.note_path
         except IOError as e:

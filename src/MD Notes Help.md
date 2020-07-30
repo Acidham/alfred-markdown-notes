@@ -57,7 +57,6 @@ Variables marked with * are required for running MD Notes properly, the others a
 
 * **Bookmark Tag** (`bookmark_tag`): Name of the tag which marks Notes containing URL/Bookmarks.
 
-* **Evernote Auth Token** (`evernote_auth_token`) (OPTIONAL): The AuthToken for your Evernote Account. Please ensure to get non Sandbox token: [Authenticating with the Evernote Cloud API using Dev Tokens](https://dev.evernote.com/doc/articles/dev_tokens.php)
 
 ### Optional: QLMarkdown
 
@@ -88,7 +87,6 @@ With the Alfred search results from `mds` and `mdt` you can perform additional a
 * With Pressing `CMD` you can open the action menu. The following actions are available:
     * **Markdown Link**: Copy markdown link of the note to the clipboard for pasting into another app or markdown file
     * **Delete Note**: Delete the file and all associated assets such as images or other file types. 
-    * **Evernote**: Export Note to Evernote including images and tags
     * **Marked 2**: Opens the Note in Marked 2 
         **Note:** The Markdown Editor can be changed in Alfred Preferences → Workflow
     * **URL Scheme**: Generate MD link for URL Scheme and copy to the clipboard e.g. `[My Notes](x-writer://open?path=/Users/joe/Documents/Notes/doc.md)`
@@ -173,7 +171,3 @@ In case the page cannot be fetched MD Notes create a note and add the URL into t
 To fetch an URL use `mdf` and enter the target URL.
 
 **Note:** To import HTML content [Pandoc](https://pandoc.org/installing.html) is required. If Pandoc is not installed the note will only contain the URL to the Page.
-
-### Export to Evernote
-
-MD Notes can export Notes to Evernote including Images and Tags. Once Note is shown, via `mds` choose `ALT` modifier key and Alfred shows the option ot Export to Evernote.
