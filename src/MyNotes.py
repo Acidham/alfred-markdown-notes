@@ -583,11 +583,31 @@ class NewNote(Notes):
 
     def __init__(self, note_title, template_path=str(), tags=str(), content=str()):
         super(NewNote, self).__init__()
+        self.filename_format = self.getFilenameFormat()
         self.tags = tags
         self.content = content
         self.note_title = note_title
         self.note_path = self.getTargetFilePath(self.normalize_filename(note_title))
         self.template_path = self.getTemplate(template_path)
+
+    # TODO: Implement filename formatter
+    def getFilenameFormat(self):
+        frmt_env = Tools.getEnv('filename_format')  # {%Y%m%d}-{title}
+        if frmt_env is None or frmt_env.strip() == "":
+            frmt_env = '{title}'
+        return frmt_env
+
+    def applyFilenameFormat(self, title: str):
+        frmt = self.filename_format
+        res = re.findall(r"\{[\.\-:%a-zA-Z]*\}", frmt)
+        for r in res:
+            if "%" in r:
+                date_f = r.replace('{', "").replace('}', "")
+                dte = self.getTodayDate(date_f)
+                frmt = frmt.replace(r, dte)
+            elif '{title}' in res:
+                frmt = frmt.replace(r, title)
+        return frmt
 
     def getTargetFilePath(self, file_name: str) -> str:
         """
@@ -598,6 +618,9 @@ class NewNote(Notes):
             str: markdown file path
         """
         file_name = file_name.rstrip().lstrip()
+        # TODO: Implement Filename formatting
+        file_name = self.applyFilenameFormat(file_name)
+        #fa = re.findall(r"{.*}", self.filename_format)
         file_path = os.path.join(self.path, f"{file_name}{self.extension}")
         if os.path.isfile(file_path):
             new_file_name = Tools.strJoin(file_name, ' ', self.getTodayDate('%d-%m-%Y %H-%M-%S'))

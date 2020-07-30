@@ -2850,6 +2850,8 @@ sys.stdout.write(output)</string>
 		<string>True</string>
 		<key>ext</key>
 		<string>.md</string>
+		<key>filename_format</key>
+		<string>{title}</string>
 		<key>path_to_notes</key>
 		<string></string>
 		<key>search_yaml_tags_only</key>
@@ -2866,7 +2868,7 @@ sys.stdout.write(output)</string>
 		<string>path_to_notes</string>
 	</array>
 	<key>version</key>
-	<string>3.0.1</string>
+	<string>3.0.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>
