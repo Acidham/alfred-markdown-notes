@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import os
+import sys
+from unicodedata import normalize
+
 from Alfred3 import Items as Items
 from Alfred3 import Keys as K
 from Alfred3 import Tools as Tools
@@ -12,7 +16,7 @@ SHIFT = u'\u21E7'
 # create MD search object
 md_search = Search()
 
-query = Tools.getArgv(1)  # Search Term(s)
+query = normalize('NFC', Tools.getArgv(1))
 
 # Get Search config with AND and OR
 search_terms, search_type = md_search.get_search_config(query)

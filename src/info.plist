@@ -1045,7 +1045,10 @@ Env: {allvars}</string>
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>python notes_search.py "{query}"</string>
+				<string>export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
+python3 notes_search.py "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1078,9 +1081,11 @@ Env: {allvars}</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>0</integer>
+				<integer>17</integer>
 				<key>hotmod</key>
-				<integer>0</integer>
+				<integer>1310720</integer>
+				<key>hotstring</key>
+				<string>T</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -2868,7 +2873,7 @@ sys.stdout.write(output)</string>
 		<string>path_to_notes</string>
 	</array>
 	<key>version</key>
-	<string>3.0.4</string>
+	<string>3.0.5</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>
