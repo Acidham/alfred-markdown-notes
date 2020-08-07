@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from unicodedata import normalize
+
 from Alfred3 import Items as Items
 from Alfred3 import Keys as K
 from Alfred3 import Tools as Tools
@@ -11,7 +13,7 @@ md = Search()
 
 # Get environment variables
 ext = md.getNotesExtension()
-query = Tools.getArgv(1)  # Tag name
+query = normalize('NFC', Tools.getArgv(1))  # Tag name
 
 if query is str():
     # Tag Search and sort based on tag name

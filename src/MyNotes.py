@@ -29,24 +29,6 @@ class Notes(object):
         '!': ' '
     }
 
-    #TODO: Delete
-    """
-    # UMLAUT_REPL_MAP = {
-        '\xc3\xa4': 'ae',
-        '\xc3\xb6': 'oe',
-        '\xc3\xbc': 'ue',
-        '\xc3\x84': 'Ae',
-        '\xc3\x96': 'Oe',
-        '\xc3\x9c': 'Ue',
-        '\xc3\x9f': 'ss',
-        '\xc3\xa5': 'as',  # å
-        u'ö': 'ae',
-        u'ö': 'oe',
-        u'ü': 'ue',
-        '\xcc\x88': 'e'
-    }
-    """
-
     # Replacement map for Filename when new file created
     CHAR_REPLACEMENT_MAP = {
         '/': '-',
@@ -271,9 +253,6 @@ class Search(Notes):
                 match = True if len(match_list) > 0 else False
             # search if exact match is true
             elif self.exact_match:
-                # TODO: Remove 2 lines
-                #match_list = [x for x in word_list if search_str == x]
-                #match = True if len(match_list) > 0 else False
                 match = True if search_str in word_list else False
             # search with exact match is false
             else:
@@ -696,8 +675,6 @@ class NewNote(Notes):
 
             str: filename
         """
-        # TODO: Delete 1 line
-        # self.CHAR_REPLACEMENT_MAP.update(self.UMLAUT_REPL_MAP)
         return self.strReplace(f, self.CHAR_REPLACEMENT_MAP, lowercase=False)
 
     def createNote(self) -> str:

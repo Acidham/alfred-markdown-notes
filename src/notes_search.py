@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
-import os
-import sys
 from unicodedata import normalize
 
 from Alfred3 import Items as Items
