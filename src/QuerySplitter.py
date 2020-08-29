@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 class QuerySplitter(object):
     """
     Split Query into title and tags
