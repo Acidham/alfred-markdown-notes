@@ -19,7 +19,7 @@ To get MD Notes to work properly it is required to define some environment varia
 
 Variables marked with * are required for running MD Notes properly, the others are optional and can be ignored.
 
-* **Path to Notes** (`path_to_notes`): The path where MD Notes will be stored.
+* **Path to Notes** * (`path_to_notes`): The path where MD Notes will be stored.
   The path can be absolute or relative but has to be a user directory!   
   Examples:
 
