@@ -24,11 +24,23 @@ class Items(object):
     """
 
     def __init__(self):
+        """
+        Initialize the object
+
+        Args:
+            self: (todo): write your description
+        """
         self.item = {}
         self.items = []
         self.mods = {}
 
     def getItemsLengths(self) -> int:
+        """
+        Returns the total number of items in this node.
+
+        Args:
+            self: (todo): write your description
+        """
         return len(self.items)
 
     def setKv(self, key: str, value: str) -> None:
@@ -305,6 +317,12 @@ class Tools(object):
 
     @staticmethod
     def getDateEpoch(float_time: float) -> str:
+        """
+        Returns a datetime object with the given.
+
+        Args:
+            float_time: (todo): write your description
+        """
         return time.strftime("%d.%m.%Y", time.gmtime(float_time / 1000))
 
     @staticmethod
@@ -408,6 +426,11 @@ class Tools(object):
 
     @staticmethod
     def getDataDir() -> str:
+        """
+        Get the data directory.
+
+        Args:
+        """
         data_dir = os.getenv("alfred_workflow_data")
         if not (os.path.isdir(data_dir)):
             os.mkdir(data_dir)
@@ -415,6 +438,11 @@ class Tools(object):
 
     @staticmethod
     def getCacheDir() -> str:
+        """
+        Returns a cache directory.
+
+        Args:
+        """
         cache_dir = os.getenv("alfred_workflow_cache")
         if not(os.path.isdir(cache_dir)):
             os.mkdir(cache_dir)
@@ -433,10 +461,22 @@ class Plist:
     """
 
     def __init__(self):
+        """
+        Initialize the data
+
+        Args:
+            self: (todo): write your description
+        """
         # Read info.plist into a standard Python dictionary
         self.info = readPlist("info.plist")
 
     def getConfig(self) -> str:
+        """
+        Returns the configuration.
+
+        Args:
+            self: (todo): write your description
+        """
         return self.info["variables"]
 
     def getVariable(self, variable: str) -> str:

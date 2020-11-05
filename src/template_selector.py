@@ -6,6 +6,11 @@ from Alfred3 import Items, Tools
 
 
 def get_template_tag() -> str:
+    """
+    Return the template tag.
+
+    Args:
+    """
     tt = Tools.getEnv('template_tag')
     if '#' not in tt or tt == str():
         tt = '#Template'

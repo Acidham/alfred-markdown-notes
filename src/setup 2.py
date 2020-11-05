@@ -6,11 +6,22 @@ from Alfred3 import Keys as K
 
 
 def get_variables():
+    """
+    Return a list of variables.
+
+    Args:
+    """
     config = Plist()
     return config.getConfig()
 
 
 def print_config(q):
+    """
+    Print config
+
+    Args:
+        q: (str): write your description
+    """
     variables = get_variables()
     for k, v in variables.items():
         if q == str() or q in k:
@@ -30,6 +41,13 @@ def print_config(q):
 
 
 def get_selection(key, query: str):
+    """
+    Obtain a selection
+
+    Args:
+        key: (str): write your description
+        query: (str): write your description
+    """
     variables = get_variables()
     if key in variables:
         v = variables[key]
