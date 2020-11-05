@@ -9,12 +9,26 @@ class QuerySplitter(object):
     """
 
     def __init__(self, query):
+        """
+        Initialize the query.
+
+        Args:
+            self: (str): write your description
+            query: (str): write your description
+        """
         self.title = str()
         self.tag_list = list()
         self.tags = str()
         self._split(query)
 
     def _split(self, query):
+        """
+        Splits a list.
+
+        Args:
+            self: (todo): write your description
+            query: (str): write your description
+        """
         term_list = query.split(' ')
         title_list = list()
         self.tag_list = list()

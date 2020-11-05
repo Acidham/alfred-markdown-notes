@@ -51,6 +51,12 @@ class Notes(object):
         "```"
 
     def __init__(self):
+        """
+        Initialize the template.
+
+        Args:
+            self: (todo): write your description
+        """
         if not(self.isPython3()):
             Tools.log("PYTHON VERSION:", sys.version)
             raise ModuleNotFoundError("Python version 3.7.0 or higher required!")
@@ -212,6 +218,12 @@ class Search(Notes):
     """
 
     def __init__(self):
+        """
+        Initialize the search.
+
+        Args:
+            self: (todo): write your description
+        """
         super(Search, self).__init__()
 
     def _match(self, search_terms, content, operator):
@@ -339,6 +351,13 @@ class Search(Notes):
 
     @staticmethod
     def _chop(theString: str, ext: str) -> str:
+        """
+        Returns a string representation of the given string.
+
+        Args:
+            theString: (str): write your description
+            ext: (str): write your description
+        """
         if theString.endswith(ext):
             return theString[:-len(ext)]
         return theString
@@ -567,6 +586,19 @@ class NewNote(Notes):
     """
 
     def __init__(self, note_title, template_path=str(), tags=str(), content=str()):
+        """
+        Initialize the notebook.
+
+        Args:
+            self: (todo): write your description
+            note_title: (todo): write your description
+            template_path: (str): write your description
+            str: (todo): write your description
+            tags: (str): write your description
+            str: (todo): write your description
+            content: (str): write your description
+            str: (todo): write your description
+        """
         super(NewNote, self).__init__()
         self.filename_format = self.getFilenameFormat()
         self.tags = tags

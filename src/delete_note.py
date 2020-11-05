@@ -49,12 +49,31 @@ def rmFile(path: str) -> bool:
 
 
 def getFileQuery(q: str) -> list:
+    """
+    Returns a query string from the given query string.
+
+    Args:
+        q: (str): write your description
+    """
     ret = q.split('>') if '>' in q else [q, str()]
     return ret
 
 
 def getAssetsLinks(parent_path: str, p: str) -> list:
+    """
+    Return list of a list path.
+
+    Args:
+        parent_path: (str): write your description
+        p: (todo): write your description
+    """
     def is_in_notes(f_path):
+        """
+        Return true if a notes is in a notes notes.
+
+        Args:
+            f_path: (str): write your description
+        """
         return not (str(f_path).startswith('..')) and not (str(f_path).startswith('/'))
     with open(p, 'r') as f:
         content = f.read()
@@ -63,6 +82,11 @@ def getAssetsLinks(parent_path: str, p: str) -> list:
 
 
 def get_arguments() -> list:
+    """
+    Return a list of arguments.
+
+    Args:
+    """
     # Get all files which needs to be deleted from input
     ret_value = sys.argv[1:]
     # split if files list was provided with | seprator in argv

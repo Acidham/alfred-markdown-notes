@@ -17,12 +17,25 @@ class Markdown(object):
     PANDOC = '/usr/local/bin/pandoc -f html -t markdown_mmd --strip-comments --atx-headers'
 
     def __init__(self, url):
+        """
+        Initialize url.
+
+        Args:
+            self: (todo): write your description
+            url: (str): write your description
+        """
         self.url = url
         self.html = self._fetchHtml()
         self.md = self._fetchMd()
         self.mdPageUrl = f"[{url}]({url})"
 
     def _fetchHtml(self):
+        """
+        Fetches the given url.
+
+        Args:
+            self: (todo): write your description
+        """
         try:
             r = urlopen(self.url)
             response = r.read().decode('utf-8')
@@ -32,9 +45,21 @@ class Markdown(object):
         return response
 
     def getMdUrl(self):
+        """
+        Get the md5 content
+
+        Args:
+            self: (todo): write your description
+        """
         return self.mdPageUrl
 
     def _fetchMd(self):
+        """
+        Fet
+
+        Args:
+            self: (todo): write your description
+        """
         try:
             cmd = f'{self.PANDOC} {self.url}'
             md = os.popen(cmd)
@@ -45,21 +70,51 @@ class Markdown(object):
         return resp
 
     def getMd(self):
+        """
+        : return : attrs
+
+        Args:
+            self: (todo): write your description
+        """
         return self.md
 
     def getHtml(self):
+        """
+        Return the html for this node.
+
+        Args:
+            self: (todo): write your description
+        """
         return self.html
 
     def getTitle(self):
+        """
+        Returns a string containing all the html content
+
+        Args:
+            self: (todo): write your description
+        """
         res = re.findall(
             r'<title>[\n\t\s]*(.+)[\n\t\s]*</title>', self.html, re.MULTILINE)
         return ''.join(res)
 
     def _markdownHeader(self):
+        """
+        Returns a header string.
+
+        Args:
+            self: (todo): write your description
+        """
         today = self.getTodayDate(fmt="%d.%m.%Y")
         return f"""---\nCreated: {today}\nTags: #WebClip\n---\n"""
 
     def getMarkdownContent(self):
+        """
+        Returns the content of the markdown file
+
+        Args:
+            self: (todo): write your description
+        """
         out = self._markdownHeader()
         out += self.getMd()
         out += u'\n---\n'
@@ -68,11 +123,23 @@ class Markdown(object):
 
     @staticmethod
     def getTodayDate(fmt="%d.%m.%Y"):
+        """
+        Return a string representation of the current format.
+
+        Args:
+            fmt: (todo): write your description
+        """
         now = datetime.datetime.now()
         return now.strftime(fmt)
 
 
 def parseFilename(f):
+    """
+    Parse a filename in a filename
+
+    Args:
+        f: (str): write your description
+    """
     to_replace = ['/', '\\', ':', '|']
     tmp = f.strip()
     for i in to_replace:
@@ -81,6 +148,13 @@ def parseFilename(f):
 
 
 def writeMarkdown(md_content, md_path):
+    """
+    Write markdown file
+
+    Args:
+        md_content: (str): write your description
+        md_path: (str): write your description
+    """
     with open(md_path, "w+") as f:
         f.write(md_content)
 
