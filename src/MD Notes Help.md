@@ -1,8 +1,3 @@
----
-Created: 03.02.2019
-Tags: #Draft #Alfred #Help
----
-
 # MD Notes Help for Alfred
 
 Markdown Notes is a comprehensive note-taking tool embedded into Alfred with powerful full-text search (supports & and |), tag search and search capabilities for todos ( `- [ ]` or `* [ ]`) . With MD Notes you can quickly create new notes based on custom templates, e.g. meeting notes, bookmarks, project documentation, etc. 
