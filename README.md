@@ -4,7 +4,7 @@ Markdown Notes is a comprehensive note taking tool embedded into Aflred with pow
 
 MD Notes works with any mardkown editor. 
 
-> [Typora](https://typora.io/) is set up in Alfred Workflow as preferred Markdown editor but it is possible to use another MD Editor or Text Editor if required. To use another Editor it is required to define the Editor in the worklow steps at the end of the WF. 
+> [Typora](https://typora.io/) is set up in Alfred Workflow as preferred Markdown editor but it is possible to use another MD Editor or Text Editor if required. If you want to use another Editor you to define the Editor in the worklow steps at the end of the WF (right side of the workflow viz in Alfred)
 
 ## Installation
 
@@ -14,7 +14,7 @@ MD Notes works with any mardkown editor.
 ## Requirements
 
 1. [Alfred Powerpack](https://www.alfredapp.com/powerpack/)
-2. Python 3.7
+2. Python 3
 
 ## Configuration
 
