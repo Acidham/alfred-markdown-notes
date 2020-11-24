@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-import sys
 from unicodedata import normalize
 
 from Alfred3 import Items as Items
@@ -10,9 +9,6 @@ from MyNotes import Search
 
 CMD = u'\u2318'
 SHIFT = u'\u21E7'
-
-# log Python version
-Tools.logPyVersion()
 
 # create MD search object
 md_search = Search()
