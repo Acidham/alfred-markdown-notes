@@ -56,6 +56,7 @@ class Notes(object):
             raise ModuleNotFoundError("Python version 3.7.0 or higher required!")
         self.extension = self.__buildNotesExtension()
         self.path = self.__buildNotesPath()
+        self.recursive_search = Tools.getEnvBool('recursive_search')
         self.default_template = os.getenv('default_template')
         self.template_tag = os.getenv('template_tag')
         self.url_scheme = os.getenv('url_scheme')
@@ -380,8 +381,13 @@ class Search(Notes):
         err = 0
         file_list = list()
         try:
-            file_list = os.listdir(self.path)
-            # file_list = os.walk(self.path)
+            if self.recursive_search:
+                for root, _, files in os.walk(self.path):
+                    for file in files:
+                        file_list.append(os.path.join(root, file))
+            else:
+                file_list = os.listdir(self.path)
+
         except OSError as e:
             err = e.errno
             pass

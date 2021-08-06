@@ -50,6 +50,8 @@ Variables marked with * are required for running MD Notes properly, the others a
   1. When set to `True` tag search only search with YMF.
   2. When set to `False` tags will be searched the whole MD note.  
 
+* **Recursive Search** (`recursive_search`): Defines if the search should searching `path_to_notes` and it's subfolder or just the root folder.
+
 * **Exact Match** (`exact_match`): Defines if the search should match the exact search term (`True`) or the string (`False`) in markdown notes. 
 
   **Note:** When exact match is set to `True` it is possible to enhance the search term with wildcards
