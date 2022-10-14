@@ -6,7 +6,6 @@ import os
 import re
 import sys
 from collections import Counter, OrderedDict
-from unicodedata import normalize
 from urllib.request import pathname2url
 
 from Alfred3 import Tools
@@ -506,8 +505,8 @@ class Search(Notes):
         match = False
         with open(file_path, 'r') as c:
             lines = c.readlines()[0:5]
-        for l in lines:
-            match_obj = re.search(r'Tags:.*' + tag, l, re.IGNORECASE)
+        for line in lines:
+            match_obj = re.search(r'Tags:.*' + tag, line, re.IGNORECASE)
             if match_obj:
                 match = True
                 break
@@ -641,7 +640,7 @@ class NewNote(Notes):
 
     def readTemplate(self, **kwargs: str) -> str:
         """
-        Read template mardkown file and fill placeholder defined in template
+        Read template markdkown file and fill placeholder defined in template
         with data provides as kwargs
 
         Args:
@@ -662,7 +661,7 @@ class NewNote(Notes):
         content = content.replace(self.template_tag, '')
         for k, v in kwargs.items():
             content = content.replace('{' + k + '}', v)
-        tag_line = f'Tags: {self.tags}'
+        tag_line = f'Tags: {self.tags} '
         if self.tags:
             content = content.replace('Tags: ', tag_line)
         return content

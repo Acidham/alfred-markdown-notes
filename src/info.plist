@@ -902,24 +902,6 @@ fi</string>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>Query: '{query}'
-Env: {allvars}</string>
-				<key>cleardebuggertext</key>
-				<true/>
-				<key>processoutputs</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
-			<key>uid</key>
-			<string>18B8D12E-7DF2-4ECD-876B-4E14BE20084F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
 				<string>{var:action2}</string>
 				<key>passthroughargument</key>
 				<false/>
@@ -1011,6 +993,8 @@ Env: {allvars}</string>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1082,7 +1066,7 @@ Env: {allvars}</string>
 				<key>hotkey</key>
 				<integer>17</integer>
 				<key>hotmod</key>
-				<integer>1310720</integer>
+				<integer>1835008</integer>
 				<key>hotstring</key>
 				<string>T</string>
 				<key>leftcursor</key>
@@ -1200,6 +1184,10 @@ Env: {allvars}</string>
 			<dict>
 				<key>delimiter</key>
 				<string>|</string>
+				<key>discardemptyarguments</key>
+				<false/>
+				<key>outputas</key>
+				<integer>0</integer>
 				<key>trimarguments</key>
 				<true/>
 				<key>variableprefix</key>
@@ -1234,6 +1222,10 @@ Env: {allvars}</string>
 			<dict>
 				<key>delimiter</key>
 				<string>&gt;</string>
+				<key>discardemptyarguments</key>
+				<false/>
+				<key>outputas</key>
+				<integer>0</integer>
 				<key>trimarguments</key>
 				<true/>
 				<key>variableprefix</key>
@@ -1285,6 +1277,8 @@ Env: {allvars}</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>*snote</string>
 			</dict>
@@ -1336,6 +1330,8 @@ Env: {allvars}</string>
 				</array>
 				<key>elselabel</key>
 				<string>CreateNote</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1365,7 +1361,7 @@ Env: {allvars}</string>
 			<key>config</key>
 			<dict>
 				<key>acceptsmulti</key>
-				<true/>
+				<integer>1</integer>
 				<key>filetypes</key>
 				<array>
 					<string>net.daringfireball.markdown</string>
@@ -1403,6 +1399,8 @@ Env: {allvars}</string>
 				</array>
 				<key>elselabel</key>
 				<string>Delete</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1621,7 +1619,7 @@ Env: {allvars}</string>
 			<key>config</key>
 			<dict>
 				<key>acceptsmulti</key>
-				<false/>
+				<integer>0</integer>
 				<key>filetypes</key>
 				<array>
 					<string>net.daringfireball.markdown</string>
@@ -1679,7 +1677,7 @@ Env: {allvars}</string>
 			<key>config</key>
 			<dict>
 				<key>acceptsmulti</key>
-				<false/>
+				<integer>0</integer>
 				<key>filetypes</key>
 				<array/>
 				<key>name</key>
@@ -1718,6 +1716,8 @@ Env: {allvars}</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>*urlscheme</string>
 			</dict>
@@ -1754,6 +1754,8 @@ Env: {allvars}</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>*cnote</string>
 			</dict>
@@ -1922,12 +1924,14 @@ Env: {allvars}</string>
 			<dict>
 				<key>browser</key>
 				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -2072,6 +2076,8 @@ Env: {allvars}</string>
 				</array>
 				<key>elselabel</key>
 				<string>not successful</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2138,6 +2144,8 @@ Env: {allvars}</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>*config</string>
 			</dict>
@@ -2245,7 +2253,7 @@ Env: {allvars}</string>
 			<key>config</key>
 			<dict>
 				<key>acceptsmulti</key>
-				<true/>
+				<integer>1</integer>
 				<key>filetypes</key>
 				<array>
 					<string>net.daringfireball.markdown</string>
@@ -2324,15 +2332,203 @@ Env: {allvars}</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>https://acidham.github.io/alfred-markdown-notes/</string>
+	<string># Alfred Markdown Notes
+
+https://acidham.github.io/alfred-markdown-notes/
+
+Markdown Notes is a comprehensive note taking tool embedded into Aflred with powerful full text search (supports &amp; and |), tag search and search capabilities for todos ( `- [ ]` or `* [ ]`) . With MD Notes you can quickly create new notes based on custom templates, e.g. meeting notes, bookmarks, project documentation, etc.
+
+If you are interested in the full journey read *[Productivity at your Finger Tips](https://acidham.medium.com/productivity-at-your-finger-tips-d6ef24770e0b)*
+
+MD Notes works with any mardkown editor. 
+
+&gt; [Typora](https://typora.io/) is set up in Alfred Workflow as preferred Markdown editor but it is possible to use another MD Editor or Text Editor if required. If you want to use another Editor you to define the Editor in the worklow steps at the end of the WF (right side of the workflow viz in Alfred)
+
+## Installation
+
+1. Download [Alfred Markdown Notes](https://github.com/Acidham/alfred-markdown-notes/releases/latest)
+2. Double click downloaded file to install in Alfred
+
+## Requirements
+
+1. [Alfred Powerpack](https://www.alfredapp.com/powerpack/)
+2. Python 3
+
+## Configuration
+
+To get MD Notes to work properly it is required to define some environment variables by using the setup wizard `.mdconfig` or change the settings in Alfred Workflow Preferences: `[X]` top right corner.
+
+### Variables
+
+Variables marked with * are required for running MD Notes properly, the others are optional and can be ignored.
+
+* **Path to Notes** * (`path_to_notes`): The path where MD Notes will be stored.
+  The path can be absolute or relative but has to be a user directory!   
+  Examples:
+
+  * `/Users/yourname/Dropbox/Notes` →  works
+  * `yourname/Dropbox/Notes` → works
+  * `/yourname/Dropbox/Notes` →  works
+  * `/Volumes/usb` →  will not work!
+
+* **Default Date Format** (`default_date_format`): Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
+
+* **Default Template** * (`default_template`): The file name that will be used as the default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates))   
+  **Note**: Enter the file name ONLY without path e.g. `myTemplate.md`
+
+* **Extension** * (`ext`): The MD files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
+  **Note:** The files must be type text files.
+
+* **Search in Tags in YMF only** * (`search_yaml_tags_only`)
+
+  Tags can be used in the YAML front matter (`Tags: #mytag`) or within the MD note. 
+
+  1. When set to `True` tag search only search with YMF.
+  2. When set to `False` tags will be searched the whole MD note.  
+
+* **Exact Match** (`exact_match`): Defines if the search should match the exact search term (`True`) or the string (`False`) in markdown notes. 
+
+  **Note:** When exact match is set to `True` it is possible to enhance the search term with wildcards
+
+* **Todo sort order** (todo_newest_oldest): Sort order when using Todo Search ( `mdt`). 
+  `True` newest todos will be shown on top of the search results
+  `False` oldest todos will be shown on top of the search results
+
+* **URL scheme** (`url_scheme`): (OPTIONAL) I figured out that some web app like Todoist is using web interface where, due to OS restrictions, file paths cannot be opened. To work around this URL scheme can be configured to open the note in markdown editor or viewer, e.g. Marked or iA Writer. Add URL Scheme like `x-writer://create?file=` and after `file=` will be enhanced with the MD Note path when executed. 
+
+* **Template Tag** (`template_tag`): The template tag defines which (`#Tagname`) defines a Template. Once you created a template just add template tag name to the MD Note and it will be recognized when you create a new MD Note from Template (see [Create new MD Notes from Template](#Create%20new%20MD%20Notes%20from%20Template))
+
+* **Bookmark Tag** (`bookmark_tag`): Name of the tag which marks Notes containing URL/Bookmarks.
+
+* **Filename Format** (`filename_format`): Standard file format for new MD notes. Default is the title of the notes but in some cases it is useful to add a date format e.g. when using Zettelkasten file format. 
+    The two placeholders can be used:
+
+    * e.g. `{%d-%m-%Y}` or any other strftime format. 
+        *Be careful when using strftime format. Wrong format result in wrong file names!*
+    * `{title}`: The title of the MD Note
+    * Example: `{title}-{%d%m%Y}`
+
+### Optional: QLMarkdown
+
+To use quicklook for Markdown files there is a QLMarkdown plugin available on git: [https://github.com/toland/qlmarkdown](https://github.com/toland/qlmarkdown)
+
+## Features
+
+### Full Text Search
+
+Type `mds` keyword into Alfred and get a list of all MD files sorted by last modified date. After `mds` keyword you can type a search term and text will be searched instantly. 
+The search runs with exact match and with partial match by using wildcards `*` before or after the search term
+
+#### Syntax
+
+* `Hello Alfred` searches for exact match of the phrase
+* `Hello&amp;Alfred` search for Notes containing the two words somewhere in the text 
+* `Hello|Alfred` search for `Hello` or `Alfred` somwhere in the text
+* `Book` match exact word in the text
+* `Book*` machtes `Bookstore` and `Booking`
+* *Tip:* You can type `#Tag` in `mds` to search for Notes with specific Tag in text and using &amp; and | in the same way than with text search.
+
+#### Options
+
+With the Alfred search results from `mds` and `mdt` you can perform additional actions to the note:
+
+* Pressing `Shift`you can quicklook the file. 
+  *Tip*: To quicklook markdown files formatted you can install [QLMarkdown](https://github.com/toland/qlmarkdown) 
+* With Pressing `CMD` you can open the action menu. The following actions are available:
+  * **Markdown Link**: Copy markdown link of the note to the clipboard for pasting into another app or markdown file
+  * **Delete Note**: Delete the file and all associated assets such as images or other file types. 
+  * **Marked 2**: Opens the Note in Marked 2 
+    **Note:** The Markdown Editor can be changed in Alfred Preferences → Workflow
+  * **URL Scheme**: Generate MD link for URL Scheme and copy to the clipboard e.g. `[My Notes](x-writer://open?path=/Users/joe/Documents/Notes/doc.md)`
+* It is possible to perform additional actions to one or more Notes by proceeding with File Actions (press `TAB` or `ALT+TAB` on a note or multiple notes): 
+  * **Delete MD Notes**: Same as *Delete Note* in action menu but it also deletes multiple Notes
+  * **MD Link to Note**: Generates relative Link to a markdown document for referencing Notes in other Notes e.g. `[My Notes](mynote.md)`
+  * **Create Markdown Index**: Selected Markdown files will be linked into a new Index file e.g. to collect links to all invoices for an insurance
+
+### Tag Search
+
+Type `md#` to get a list of all tags found in the Notes or search for Tags (see [Options](#Options) as well)
+
+The tag search can also be used to search for already existing Tags to paste it into a markdown note. By pressing `CMD` and `Enter` the tag will be pasted into the frontmost app. 
+
+### Search in Todos
+
+Type `mdt` to get all Todos found in the MD Notes. The list is sorted  based on when Notes with the todo was created (older notes first). As well you can search for full-text search in todo and use the modify keys (see [Options](#Options))
+
+### Create a MD Note
+
+#### MD Note with Title
+
+Type `mdc` followed by a **title** to create a new MD Note with title. The default Templates will be used (see [Configuration](#Configuration))
+
+#### Note with Title and Tags
+
+Type `mdc` followed by **title** and **tags** separated by space will create a Note with **title** and **tags**.
+
+#### MD Notes from Template
+
+Type `mdc` and you get a list of all Templates in your folder. After a template was selected the title can be entered as described above.
+
+**Note**: Templates are Notes tagged with `#Template` or whatever you defined as the template tag. 
+
+#### YAML Fronter
+
+MD Notes uses YAML Fronter when searching in Tags. Therefore it is required to add YAML Fronter to the top of the notes, with the following format:
+
+```
+---
+Tags: #mytag
+---
+```
+
+### Delete MD Note(s)
+
+There are various ways of deleting MD Notes. Important is to not use Alfred standard file deletion because using delete feature coming with MD notes workflow ensures that asset dependencies will also be deleted:
+
+1. **Delete via action menu**: Press `CMD+Enter` when search results will be shown
+2. **Delete via file action**: This option also allows to collect some notes via Alfred file buffer first before deleting them. 
+3. **Delete via in batch mode**. This method allows to tag specific MD notes for deletion eg. By adding `#delete` tag to the notes and mark them for deletion. Any other tag name can be used. 
+   To delete MD notes tagged with a  specific tag, just execute `mdd` followed by the tag name. The search will show the total number of affected notes with a preview option. 
+
+### Working with Templates
+
+Templates are a great way to quickly create a MD Note based on a Markdown template file. The Template files are created and stored in the same way than normal notes and must contain the Template tag (see [Configuration](#Configuration)) in the YAML Fronter section (see [YAML Fronter](#YAML%20Fonter)).
+
+There are two way to create a file based on a template:
+
+* Via `mdc` → Create Note: A Note with a title will be created based on default template
+* Via `mdc` → `Template`: The Note will be created based on selected template. After the corresponding template was selected, the title can be entered.
+
+#### Using placeholder in Templates
+
+The MD Notes Templates can contain two placeholder values and will be replaced when using Templates with the command `mdc`.   
+With `mdc` it is also possible to directly create a note. In this case the default template will be used. The default template can be configured in Alfred Workflow settings (see [Configuration](#Configuration)):
+
+* `{title}`: The title will be used that you entered when creating a new note 
+* `{date}`: Today's date will be used when creating a new note
+
+### Adding a file link to a Markdown Note
+
+Images can be usually added via drag&amp;drop to the markdown editor, esp. with Typora. It is also possible to add other file-types by using `Upload Asset for MD Notes` file action in Alfred.
+
+To add a file to a Markdown Note, search for the File in Alfred and then press `Tab` to enter file actions. Search for `Upload Asset for MD Notes` and execute. The Markdown Link will be copied to the Clipboard. Just paste the MD Link to a Markdown Note.
+
+### Fetch HTML Pages
+
+MD Notes provides the possibility to fetch pages from an URL and store it in a new note. The note will be created with the containing Page title.   
+In case the page cannot be fetched MD Notes create a note and add the URL into the note.
+
+To fetch an URL use `mdf` and enter the target URL.
+
+**Note:** To import HTML content [Pandoc](https://pandoc.org/installing.html) is required. If Pandoc is not installed the note will only contain the URL to the Page.</string>
 	<key>uidata</key>
 	<dict>
 		<key>00C9EAC8-45E3-4C4C-B1CB-D9B5503ADB1F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>210</integer>
+			<real>210</real>
 			<key>ypos</key>
-			<integer>2295</integer>
+			<real>2295</real>
 		</dict>
 		<key>01B01E1C-F114-4C29-9C0C-2881FA84A5D1</key>
 		<dict>
@@ -2341,86 +2537,79 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>Shows MD Help</string>
 			<key>xpos</key>
-			<integer>425</integer>
+			<real>425</real>
 			<key>ypos</key>
-			<integer>2080</integer>
+			<real>2080</real>
 		</dict>
 		<key>01EBC50C-380F-4FA3-B537-D755B7134966</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1440</integer>
+			<real>1440</real>
 			<key>ypos</key>
-			<integer>1750</integer>
+			<real>1750</real>
 		</dict>
 		<key>02B9FF6D-1CCA-424C-BEF2-FF6C2F753585</key>
 		<dict>
 			<key>xpos</key>
-			<integer>420</integer>
+			<real>420</real>
 			<key>ypos</key>
-			<integer>75</integer>
+			<real>75</real>
 		</dict>
 		<key>02CE4D76-2078-45FE-9A13-8B1D487EEF58</key>
 		<dict>
 			<key>xpos</key>
-			<integer>350</integer>
+			<real>350</real>
 			<key>ypos</key>
-			<integer>2325</integer>
+			<real>2325</real>
 		</dict>
 		<key>0615CE75-2C53-400F-BD6E-FC6A98EE6F0A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1705</integer>
+			<real>1705</real>
 			<key>ypos</key>
-			<integer>1610</integer>
+			<real>1610</real>
 		</dict>
 		<key>1226368E-7C02-479A-958B-6147F924D9F9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>760</integer>
+			<real>760</real>
 			<key>ypos</key>
-			<integer>405</integer>
+			<real>405</real>
 		</dict>
 		<key>18A8C2F0-9E83-42B2-9FFA-04793FDE69AF</key>
 		<dict>
 			<key>xpos</key>
-			<integer>615</integer>
+			<real>615</real>
 			<key>ypos</key>
-			<integer>2490</integer>
-		</dict>
-		<key>18B8D12E-7DF2-4ECD-876B-4E14BE20084F</key>
-		<dict>
-			<key>xpos</key>
-			<integer>805</integer>
-			<key>ypos</key>
-			<integer>100</integer>
+			<real>2490</real>
 		</dict>
 		<key>294CB549-D1EE-4AC0-BF62-B19E2DAD7162</key>
 		<dict>
 			<key>xpos</key>
-			<integer>710</integer>
+			<real>710</real>
 			<key>ypos</key>
-			<integer>235</integer>
+			<real>235</real>
 		</dict>
 		<key>2F777EDC-8764-4AE9-AFC2-65D224BB01DE</key>
 		<dict>
 			<key>xpos</key>
-			<integer>650</integer>
+			<real>650</real>
 			<key>ypos</key>
-			<integer>235</integer>
+			<real>235</real>
 		</dict>
 		<key>2FA91C3B-4CED-410B-B2A6-C4BCBC9D6F41</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1295</integer>
+			<real>1295</real>
 			<key>ypos</key>
-			<integer>405</integer>
+			<real>405</real>
 		</dict>
 		<key>4053BF64-C6EB-4285-890E-290E72D132EB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>615</integer>
+			<real>615</real>
 			<key>ypos</key>
-			<integer>2075</integer>
+			<real>2075</real>
 		</dict>
 		<key>454BC87F-9E2E-4C7B-ABFA-2E7709D59244</key>
 		<dict>
@@ -2429,9 +2618,9 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>File Action to delete notes when multiple files selectes. One file also works</string>
 			<key>xpos</key>
-			<integer>210</integer>
+			<real>210</real>
 			<key>ypos</key>
-			<integer>505</integer>
+			<real>505</real>
 		</dict>
 		<key>49185B13-47A9-4B6A-9FF3-7423A9E173EB</key>
 		<dict>
@@ -2440,9 +2629,9 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>Create a note with template</string>
 			<key>xpos</key>
-			<integer>615</integer>
+			<real>615</real>
 			<key>ypos</key>
-			<integer>1630</integer>
+			<real>1630</real>
 		</dict>
 		<key>49A9F878-DBE6-4A7F-B6A0-FEFD5D77393A</key>
 		<dict>
@@ -2451,9 +2640,9 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>HTML Fetch worker</string>
 			<key>xpos</key>
-			<integer>615</integer>
+			<real>615</real>
 			<key>ypos</key>
-			<integer>1915</integer>
+			<real>1915</real>
 		</dict>
 		<key>4C847DCB-008B-4241-A1C4-35B3895092F7</key>
 		<dict>
@@ -2462,39 +2651,39 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>Upload the asset to internal target folder and copy md link to clipboard</string>
 			<key>xpos</key>
-			<integer>420</integer>
+			<real>420</real>
 			<key>ypos</key>
-			<integer>1215</integer>
+			<real>1215</real>
 		</dict>
 		<key>5739EC91-287F-41C7-8DD5-71C3772036CD</key>
 		<dict>
 			<key>xpos</key>
-			<integer>215</integer>
+			<real>215</real>
 			<key>ypos</key>
-			<integer>1390</integer>
+			<real>1390</real>
 		</dict>
 		<key>5FA571C6-6183-44C9-B18F-2D4C73A0C48F</key>
 		<dict>
 			<key>note</key>
 			<string>Shows,Select and change config</string>
 			<key>xpos</key>
-			<integer>425</integer>
+			<real>425</real>
 			<key>ypos</key>
-			<integer>2295</integer>
+			<real>2295</real>
 		</dict>
 		<key>616E1777-6C1F-406D-B16B-697EA6E8DDA0</key>
 		<dict>
 			<key>xpos</key>
-			<integer>355</integer>
+			<real>355</real>
 			<key>ypos</key>
-			<integer>1660</integer>
+			<real>1660</real>
 		</dict>
 		<key>64388804-3C22-4CB8-8A61-5E2DC6EBF4FD</key>
 		<dict>
 			<key>xpos</key>
-			<integer>215</integer>
+			<real>215</real>
 			<key>ypos</key>
-			<integer>1510</integer>
+			<real>1510</real>
 		</dict>
 		<key>661CD8F0-9481-4FCF-9A96-73A2FF1FCFD4</key>
 		<dict>
@@ -2503,41 +2692,41 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>List or search for todos</string>
 			<key>xpos</key>
-			<integer>210</integer>
+			<real>210</real>
 			<key>ypos</key>
-			<integer>905</integer>
+			<real>905</real>
 		</dict>
 		<key>735B5B72-0876-4143-887E-D8191A48154E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>1840</integer>
+			<real>1840</real>
 			<key>ypos</key>
-			<integer>370</integer>
+			<real>370</real>
 		</dict>
 		<key>73F51F35-8DE7-4E97-A18D-ADA7046EB4A7</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1295</integer>
+			<real>1295</real>
 			<key>ypos</key>
-			<integer>955</integer>
+			<real>955</real>
 		</dict>
 		<key>7EF41C6D-4E2F-4BED-B733-B3538C647263</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1295</integer>
+			<real>1295</real>
 			<key>ypos</key>
-			<integer>145</integer>
+			<real>145</real>
 		</dict>
 		<key>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</key>
 		<dict>
 			<key>note</key>
 			<string>Open in Typora</string>
 			<key>xpos</key>
-			<integer>1575</integer>
+			<real>1575</real>
 			<key>ypos</key>
-			<integer>1175</integer>
+			<real>1175</real>
 		</dict>
 		<key>8354F261-D7A0-4848-8312-9EC40100DFA6</key>
 		<dict>
@@ -2546,71 +2735,71 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>Search Note, Delete with CMD</string>
 			<key>xpos</key>
-			<integer>420</integer>
+			<real>420</real>
 			<key>ypos</key>
-			<integer>200</integer>
+			<real>200</real>
 		</dict>
 		<key>867A6B07-A86D-464E-9AA2-F4F85D33901E</key>
 		<dict>
 			<key>note</key>
 			<string>Create Markdown Index file action</string>
 			<key>xpos</key>
-			<integer>210</integer>
+			<real>210</real>
 			<key>ypos</key>
-			<integer>2490</integer>
+			<real>2490</real>
 		</dict>
 		<key>88BD02F5-4A73-4701-98D0-450B1F338238</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>210</integer>
+			<real>210</real>
 			<key>ypos</key>
-			<integer>370</integer>
+			<real>370</real>
 		</dict>
 		<key>898E9FE0-5165-4530-98E9-9497DDF6DA0D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>425</integer>
+			<real>425</real>
 			<key>ypos</key>
-			<integer>1775</integer>
+			<real>1775</real>
 		</dict>
 		<key>8BFF5D9F-F5E7-4CC8-AC7D-C3DAA406DA19</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1445</integer>
+			<real>1445</real>
 			<key>ypos</key>
-			<integer>1610</integer>
+			<real>1610</real>
 		</dict>
 		<key>8D265164-F63E-461B-B67B-BA20069C5E5F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1295</integer>
+			<real>1295</real>
 			<key>ypos</key>
-			<integer>625</integer>
+			<real>625</real>
 		</dict>
 		<key>8F8F1A2F-E9D7-4EF4-B3C9-3BE1B75DEBFB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>940</integer>
+			<real>940</real>
 			<key>ypos</key>
-			<integer>235</integer>
+			<real>235</real>
 		</dict>
 		<key>9276011F-3CDA-4F4A-A7BB-6A36B761C53A</key>
 		<dict>
 			<key>note</key>
 			<string>Copy MD link to clipboard</string>
 			<key>xpos</key>
-			<integer>1575</integer>
+			<real>1575</real>
 			<key>ypos</key>
-			<integer>755</integer>
+			<real>755</real>
 		</dict>
 		<key>93FCC3FA-C642-48CF-BE86-9C5EDAEE07D4</key>
 		<dict>
 			<key>xpos</key>
-			<integer>975</integer>
+			<real>975</real>
 			<key>ypos</key>
-			<integer>790</integer>
+			<real>790</real>
 		</dict>
 		<key>9AFF9D4E-AFFE-4DC2-A1EA-8E795277A5A6</key>
 		<dict>
@@ -2619,16 +2808,16 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>OneUpdater</string>
 			<key>xpos</key>
-			<integer>625</integer>
+			<real>625</real>
 			<key>ypos</key>
-			<integer>75</integer>
+			<real>75</real>
 		</dict>
 		<key>9CFA7349-15E0-4F12-8E6D-251360FC1EAC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1015</integer>
+			<real>1015</real>
 			<key>ypos</key>
-			<integer>165</integer>
+			<real>165</real>
 		</dict>
 		<key>A1994305-42C8-4C6A-BB26-0D822F6B021A</key>
 		<dict>
@@ -2637,16 +2826,16 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>Deletes a note from Search Note (snote)</string>
 			<key>xpos</key>
-			<integer>1580</integer>
+			<real>1580</real>
 			<key>ypos</key>
-			<integer>80</integer>
+			<real>80</real>
 		</dict>
 		<key>A35A4CC5-F476-4228-8687-881419DA8B60</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1580</integer>
+			<real>1580</real>
 			<key>ypos</key>
-			<integer>240</integer>
+			<real>240</real>
 		</dict>
 		<key>AE883F79-FCA1-448E-AF9A-D8FF94C93552</key>
 		<dict>
@@ -2655,43 +2844,43 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>Batch delete specific notes matching tag</string>
 			<key>xpos</key>
-			<integer>210</integer>
+			<real>210</real>
 			<key>ypos</key>
-			<integer>700</integer>
+			<real>700</real>
 		</dict>
 		<key>BAFF7A0F-AAD1-416B-9279-C500DEA630C3</key>
 		<dict>
 			<key>note</key>
 			<string>generates the markdown index file</string>
 			<key>xpos</key>
-			<integer>795</integer>
+			<real>795</real>
 			<key>ypos</key>
-			<integer>2490</integer>
+			<real>2490</real>
 		</dict>
 		<key>BC3595BC-FFD4-4DBA-BF99-567B48EE838F</key>
 		<dict>
 			<key>note</key>
 			<string>Open in Mardown Viewer</string>
 			<key>xpos</key>
-			<integer>1575</integer>
+			<real>1575</real>
 			<key>ypos</key>
-			<integer>925</integer>
+			<real>925</real>
 		</dict>
 		<key>BC9416FD-DA8C-4E89-BB77-2300E23FC2AB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>555</integer>
+			<real>555</real>
 			<key>ypos</key>
-			<integer>2520</integer>
+			<real>2520</real>
 		</dict>
 		<key>BF9DCBBB-0362-418D-845F-E891BBEA81FD</key>
 		<dict>
 			<key>note</key>
 			<string>split paths and write paths into string sep by |</string>
 			<key>xpos</key>
-			<integer>425</integer>
+			<real>425</real>
 			<key>ypos</key>
-			<integer>2490</integer>
+			<real>2490</real>
 		</dict>
 		<key>C277BA58-113D-4741-A306-9A1AAAE9EA61</key>
 		<dict>
@@ -2700,18 +2889,18 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>Create note, input title</string>
 			<key>xpos</key>
-			<integer>420</integer>
+			<real>420</real>
 			<key>ypos</key>
-			<integer>1630</integer>
+			<real>1630</real>
 		</dict>
 		<key>C316AE82-592A-4D24-95D1-D889B41122DB</key>
 		<dict>
 			<key>note</key>
 			<string>File Action to upload Asset and provide MD Link to it</string>
 			<key>xpos</key>
-			<integer>215</integer>
+			<real>215</real>
 			<key>ypos</key>
-			<integer>1210</integer>
+			<real>1210</real>
 		</dict>
 		<key>CCE98113-EE5F-4540-B377-3C9A9DA1AC6D</key>
 		<dict>
@@ -2720,30 +2909,30 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>Generates the MD Link</string>
 			<key>xpos</key>
-			<integer>420</integer>
+			<real>420</real>
 			<key>ypos</key>
-			<integer>1065</integer>
+			<real>1065</real>
 		</dict>
 		<key>D152D8AE-984F-47E0-9BBD-59DDE719EEDC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>20</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>200</integer>
+			<real>200</real>
 		</dict>
 		<key>D5001574-5650-42E7-84FC-A51EAA4CE8D1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1295</integer>
+			<real>1295</real>
 			<key>ypos</key>
-			<integer>275</integer>
+			<real>275</real>
 		</dict>
 		<key>DB11D78A-2543-48A3-B195-09CC58045785</key>
 		<dict>
 			<key>xpos</key>
-			<integer>770</integer>
+			<real>770</real>
 			<key>ypos</key>
-			<integer>1935</integer>
+			<real>1935</real>
 		</dict>
 		<key>E1E655F3-B8EB-4324-8B9D-25D3AC743045</key>
 		<dict>
@@ -2752,23 +2941,23 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>List all tags or search for tags</string>
 			<key>xpos</key>
-			<integer>210</integer>
+			<real>210</real>
 			<key>ypos</key>
-			<integer>200</integer>
+			<real>200</real>
 		</dict>
 		<key>E34E9B2D-0135-4046-8931-7B35A3371FAE</key>
 		<dict>
 			<key>xpos</key>
-			<integer>615</integer>
+			<real>615</real>
 			<key>ypos</key>
-			<integer>2290</integer>
+			<real>2290</real>
 		</dict>
 		<key>E3B5F19A-B7EC-4984-A3CA-D626DB05ADF5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1660</integer>
+			<real>1660</real>
 			<key>ypos</key>
-			<integer>1930</integer>
+			<real>1930</real>
 		</dict>
 		<key>E6223AE8-EC41-40DA-88AC-8476D6F73ED1</key>
 		<dict>
@@ -2777,9 +2966,9 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>MD Fetch to get HTML into MD Note</string>
 			<key>xpos</key>
-			<integer>425</integer>
+			<real>425</real>
 			<key>ypos</key>
-			<integer>1920</integer>
+			<real>1920</real>
 		</dict>
 		<key>E821ABDF-E08D-4BAE-83F0-4F24F4AB7B8C</key>
 		<dict>
@@ -2788,16 +2977,16 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>Get Url Scheme MD Link</string>
 			<key>xpos</key>
-			<integer>420</integer>
+			<real>420</real>
 			<key>ypos</key>
-			<integer>1395</integer>
+			<real>1395</real>
 		</dict>
 		<key>EAEF0CF6-8AEA-4B7D-8EAB-80FC16EDDAAC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1840</integer>
+			<real>1840</real>
 			<key>ypos</key>
-			<integer>755</integer>
+			<real>755</real>
 		</dict>
 		<key>EEAFA237-F675-43C1-9EB8-A1AE88C34E75</key>
 		<dict>
@@ -2806,9 +2995,9 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>File Action to get MD Note Link</string>
 			<key>xpos</key>
-			<integer>215</integer>
+			<real>215</real>
 			<key>ypos</key>
-			<integer>1060</integer>
+			<real>1060</real>
 		</dict>
 		<key>F8CB74BA-4C13-4621-BC60-E50650C85A9D</key>
 		<dict>
@@ -2817,56 +3006,264 @@ Env: {allvars}</string>
 			<key>note</key>
 			<string>Template Selector for new Notes</string>
 			<key>xpos</key>
-			<integer>215</integer>
+			<real>215</real>
 			<key>ypos</key>
-			<integer>1630</integer>
+			<real>1630</real>
 		</dict>
 		<key>F92C44A1-5C7A-4863-9FC1-F0188FF998E3</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1295</integer>
+			<real>1295</real>
 			<key>ypos</key>
-			<integer>790</integer>
+			<real>790</real>
 		</dict>
 		<key>F993108F-7C6F-4AF3-90D3-14A1CBAAEBBE</key>
 		<dict>
 			<key>xpos</key>
-			<integer>780</integer>
+			<real>780</real>
 			<key>ypos</key>
-			<integer>205</integer>
+			<real>205</real>
 		</dict>
 	</dict>
-	<key>variables</key>
-	<dict>
-		<key>bookmark_tag</key>
-		<string>url</string>
-		<key>default_date_format</key>
-		<string>%d.%m.%Y</string>
-		<key>default_template</key>
-		<string>Template.md</string>
-		<key>exact_match</key>
-		<string>True</string>
-		<key>ext</key>
-		<string>.md</string>
-		<key>filename_format</key>
-		<string>{title}</string>
-		<key>path_to_notes</key>
-		<string></string>
-		<key>search_yaml_tags_only</key>
-		<string>True</string>
-		<key>template_tag</key>
-		<string>#Template</string>
-		<key>todo_newest_oldest</key>
-		<string>True</string>
-		<key>url_scheme</key>
-		<string>x-marked://open/?file=</string>
-	</dict>
-	<key>variablesdontexport</key>
+	<key>userconfigurationconfig</key>
 	<array>
-		<string>path_to_notes</string>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The path where MD Notes will be stored</string>
+			<key>label</key>
+			<string>Markdown Notes Folder</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>path_to_notes</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>{title}</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Standard file format for new MD notes</string>
+			<key>label</key>
+			<string>Filename format</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>filename_format</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>.md</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The MD files are text files with a specific extension (usually `.txt`or `.md`)</string>
+			<key>label</key>
+			<string>MD Notes extension</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>ext</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Template.md</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The file name that will be used as the default Template. Before templates can be used it is required to create the template.md</string>
+			<key>label</key>
+			<string>Default template file name</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>default_template</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>url</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The tag that defines a bookmark note</string>
+			<key>label</key>
+			<string>Bookmark Tag</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>bookmark_tag</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>#Template</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The template tag defines which (#Tagname) defines a Template</string>
+			<key>label</key>
+			<string>Template tag</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>template_tag</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>%d.%m.%Y</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Defines date format when creating new notes or when using placeholders in templates</string>
+			<key>label</key>
+			<string>Date Format</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>default_date_format</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string>Defines if the search should match the exact search term</string>
+			<key>label</key>
+			<string>Exact Match</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>exact_match</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string>Tags can be used in the YAML front matter (`Tags: #mytag`) or within the MD note</string>
+			<key>label</key>
+			<string>Search in YAML tags only</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>search_yaml_tags_only</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>True</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Newest to oldest</string>
+						<string>True</string>
+					</array>
+					<array>
+						<string>Oldest to Newest</string>
+						<string>False</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Sort order when using Todo Search</string>
+			<key>label</key>
+			<string>Todo sort oder</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>todo_newest_oldest</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>x-marked://open/?file=</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>URL scheme  to open the note in markdown editor or viewer</string>
+			<key>label</key>
+			<string>URL Scheme</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>url_scheme</string>
+		</dict>
 	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>3.1.2</string>
+	<string>3.1.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>
