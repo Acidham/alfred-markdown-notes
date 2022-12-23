@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+from urllib import parse
 
 from Alfred3 import Items as Items
 from Alfred3 import Keys as K
@@ -28,7 +29,8 @@ def write_summary(md_notes_list, tag):
         os.remove(cache_file_path)
     content_list = [f"### MD Notes with tag: {tag}"]
     for el in md_notes_list:
-        content_list.append(f"* [{el['title']}]({el['path']}) `{el['filename']}`")
+        enc_path = parse.quote(el['path'])
+        content_list.append(f"* [{el['title']}]({enc_path}) `{el['filename']}`")
     content = "\n".join(content_list)
     with open(cache_file_path, "w") as f:
         f.write(content)
@@ -40,7 +42,7 @@ md_search = Search()
 
 # Load Env variables
 query = Tools.getArgv(1) if len(Tools.getArgv(1)) > 2 else ""
-if query is not "" and not(query.startswith("#")):
+if query is not "" and not query.startswith("#"):
     query = f"#{query}"
 
 

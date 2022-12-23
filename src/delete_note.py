@@ -87,10 +87,10 @@ for query in files_to_delete:
         parent = mn.getNotesPath()
         assetfile_links = getAssetsLinks(parent, file_path)
         is_assetfile_deleted = False
-        for l in assetfile_links:
+        for alink in assetfile_links:
             # Avoid Markdown file removal
-            if not(l.endswith(ext)):
-                is_assetfile_deleted = rmFile(l)
+            if not alink.endswith(ext):
+                is_assetfile_deleted = rmFile(alink)
 
         # Delete Assets Folder
         remove_ext = len(ext)

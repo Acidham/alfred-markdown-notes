@@ -24,7 +24,7 @@ def get_mdfiles_list_content() -> str:
         link_title = ns.getNoteTitle(f)
         file_name = os.path.basename(f)
         output.append(f'* [{link_title}]({pathname2url(file_name)})')
-    return("\n".join(output))
+    return '\n'.join(output)
 
 
 query = Tools.getArgv(1)  # Title of the Note
