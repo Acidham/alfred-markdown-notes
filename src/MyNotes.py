@@ -50,7 +50,7 @@ class Notes(object):
         "```"
 
     def __init__(self):
-        if not(self.isPython3()):
+        if not self.isPython3():
             Tools.log("PYTHON VERSION:", sys.version)
             raise ModuleNotFoundError("Python version 3.7.0 or higher required!")
         self.extension = self.__buildNotesExtension()
@@ -106,11 +106,11 @@ class Notes(object):
         path = os.getenv('path_to_notes')
         if path.startswith('~'):
             path = path.replace('~', user_dir)
-        if not(path.startswith('/')):
+        if not (path.startswith('/')):
             path = os.path.join("/", path)
-        if not(path.startswith('/Users')):
+        if not (path.startswith('/Users')):
             path = os.path.join(user_dir, path)
-        if not(os.path.exists(path)):
+        if not (os.path.exists(path)):
             sys.stderr.write(f"ERROR: {path} is not a valid notes directory. Add a valid path for path_to_notes")
             sys.exit(0)
         return path

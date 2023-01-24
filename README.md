@@ -20,7 +20,7 @@ MD Notes works with any mardkown editor.
 
 ## Configuration
 
-To get MD Notes to work properly it is required to define some environment variables by using the setup wizard `.mdconfig` or change the settings in Alfred Workflow Preferences: `[X]` top right corner.
+To get MD Notes to work properly you first need to configure the worklfow. Click on `Configure Workflow` in Alfred Workflow Tab. 
 
 ### Variables
 

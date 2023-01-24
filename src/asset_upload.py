@@ -21,7 +21,7 @@ def getAssetsFolder():
     my_notes = Search()
     notes_path = my_notes.getNotesPath()
     assets_path = os.path.join(notes_path, ASSETS_FOLDER)
-    if not(os.path.exists(assets_path)):
+    if not os.path.exists(assets_path):
         os.mkdir(assets_path)
     return assets_path
 

@@ -8,37 +8,11 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>00C9EAC8-45E3-4C4C-B1CB-D9B5503ADB1F</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>02CE4D76-2078-45FE-9A13-8B1D487EEF58</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>01B01E1C-F114-4C29-9C0C-2881FA84A5D1</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>4053BF64-C6EB-4285-890E-290E72D132EB</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>02CE4D76-2078-45FE-9A13-8B1D487EEF58</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>5FA571C6-6183-44C9-B18F-2D4C73A0C48F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -187,19 +161,6 @@
 				<string></string>
 				<key>vitoclose</key>
 				<false/>
-			</dict>
-		</array>
-		<key>5FA571C6-6183-44C9-B18F-2D4C73A0C48F</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E34E9B2D-0135-4046-8931-7B35A3371FAE</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<true/>
 			</dict>
 		</array>
 		<key>616E1777-6C1F-406D-B16B-697EA6E8DDA0</key>
@@ -2151,110 +2112,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>*config</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>E34E9B2D-0135-4046-8931-7B35A3371FAE</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
-				<key>triggerid</key>
-				<string>*config</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>00C9EAC8-45E3-4C4C-B1CB-D9B5503ADB1F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>keyword</key>
-				<string>.mdconfig</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>./py3.sh setup.py "$1"
-</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>setup.py</string>
-				<key>subtext</key>
-				<string>Configure MD Notes Workflow</string>
-				<key>title</key>
-				<string>Configure MD Notes</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>5FA571C6-6183-44C9-B18F-2D4C73A0C48F</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>action_key_value</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>02CE4D76-2078-45FE-9A13-8B1D487EEF58</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>acceptsmulti</key>
 				<integer>1</integer>
 				<key>filetypes</key>
@@ -2372,7 +2229,7 @@ MD Notes works with any mardkown editor.
 
 ## Configuration
 
-To get MD Notes to work properly it is required to define some environment variables by using the setup wizard `.mdconfig` or change the settings in Alfred Workflow Preferences: `[X]` top right corner.
+To get MD Notes to work properly you first need to configure the worklfow. Click on `Configure Workflow` in Alfred Workflow Tab. 
 
 ### Variables
 
@@ -2539,13 +2396,6 @@ To fetch an URL use `mdf` and enter the target URL.
 **Note:** To import HTML content [Pandoc](https://pandoc.org/installing.html) is required. If Pandoc is not installed the note will only contain the URL to the Page.</string>
 	<key>uidata</key>
 	<dict>
-		<key>00C9EAC8-45E3-4C4C-B1CB-D9B5503ADB1F</key>
-		<dict>
-			<key>xpos</key>
-			<real>210</real>
-			<key>ypos</key>
-			<real>2295</real>
-		</dict>
 		<key>01B01E1C-F114-4C29-9C0C-2881FA84A5D1</key>
 		<dict>
 			<key>colorindex</key>
@@ -2571,13 +2421,6 @@ To fetch an URL use `mdf` and enter the target URL.
 			<key>ypos</key>
 			<real>75</real>
 		</dict>
-		<key>02CE4D76-2078-45FE-9A13-8B1D487EEF58</key>
-		<dict>
-			<key>xpos</key>
-			<real>350</real>
-			<key>ypos</key>
-			<real>2325</real>
-		</dict>
 		<key>0615CE75-2C53-400F-BD6E-FC6A98EE6F0A</key>
 		<dict>
 			<key>xpos</key>
@@ -2595,9 +2438,9 @@ To fetch an URL use `mdf` and enter the target URL.
 		<key>18A8C2F0-9E83-42B2-9FFA-04793FDE69AF</key>
 		<dict>
 			<key>xpos</key>
-			<real>615</real>
+			<real>585</real>
 			<key>ypos</key>
-			<real>2490</real>
+			<real>2290</real>
 		</dict>
 		<key>294CB549-D1EE-4AC0-BF62-B19E2DAD7162</key>
 		<dict>
@@ -2678,15 +2521,6 @@ To fetch an URL use `mdf` and enter the target URL.
 			<key>ypos</key>
 			<real>1390</real>
 		</dict>
-		<key>5FA571C6-6183-44C9-B18F-2D4C73A0C48F</key>
-		<dict>
-			<key>note</key>
-			<string>Shows,Select and change config</string>
-			<key>xpos</key>
-			<real>425</real>
-			<key>ypos</key>
-			<real>2295</real>
-		</dict>
 		<key>616E1777-6C1F-406D-B16B-697EA6E8DDA0</key>
 		<dict>
 			<key>xpos</key>
@@ -2760,9 +2594,9 @@ To fetch an URL use `mdf` and enter the target URL.
 			<key>note</key>
 			<string>Create Markdown Index file action</string>
 			<key>xpos</key>
-			<real>210</real>
+			<real>180</real>
 			<key>ypos</key>
-			<real>2490</real>
+			<real>2290</real>
 		</dict>
 		<key>88BD02F5-4A73-4701-98D0-450B1F338238</key>
 		<dict>
@@ -2869,9 +2703,9 @@ To fetch an URL use `mdf` and enter the target URL.
 			<key>note</key>
 			<string>generates the markdown index file</string>
 			<key>xpos</key>
-			<real>795</real>
+			<real>765</real>
 			<key>ypos</key>
-			<real>2490</real>
+			<real>2290</real>
 		</dict>
 		<key>BC3595BC-FFD4-4DBA-BF99-567B48EE838F</key>
 		<dict>
@@ -2885,9 +2719,9 @@ To fetch an URL use `mdf` and enter the target URL.
 		<key>BC9416FD-DA8C-4E89-BB77-2300E23FC2AB</key>
 		<dict>
 			<key>xpos</key>
-			<real>505</real>
+			<real>475</real>
 			<key>ypos</key>
-			<real>2520</real>
+			<real>2320</real>
 		</dict>
 		<key>C277BA58-113D-4741-A306-9A1AAAE9EA61</key>
 		<dict>
@@ -2959,13 +2793,6 @@ To fetch an URL use `mdf` and enter the target URL.
 			<key>ypos</key>
 			<real>200</real>
 		</dict>
-		<key>E34E9B2D-0135-4046-8931-7B35A3371FAE</key>
-		<dict>
-			<key>xpos</key>
-			<real>615</real>
-			<key>ypos</key>
-			<real>2290</real>
-		</dict>
 		<key>E3B5F19A-B7EC-4984-A3CA-D626DB05ADF5</key>
 		<dict>
 			<key>xpos</key>
@@ -2998,9 +2825,9 @@ To fetch an URL use `mdf` and enter the target URL.
 		<key>E9AAB61A-3037-496F-B9A7-1D9166D62D6D</key>
 		<dict>
 			<key>xpos</key>
-			<real>435</real>
+			<real>405</real>
 			<key>ypos</key>
-			<real>2520</real>
+			<real>2320</real>
 		</dict>
 		<key>EAEF0CF6-8AEA-4B7D-8EAB-80FC16EDDAAC</key>
 		<dict>
@@ -3284,7 +3111,7 @@ To fetch an URL use `mdf` and enter the target URL.
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>3.1.4</string>
+	<string>3.2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>

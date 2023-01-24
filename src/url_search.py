@@ -20,9 +20,9 @@ if matches:
         note_title = m.get('title')
         note_path = m.get('path')
         links = m.get('links')
-        for l in links:
-            url_title = l.get('url_title')
-            url = l.get('url')
+        for link in links:
+            url_title = link.get('url_title')
+            url = link.get('url')
             subtitle = f'NOTE: {note_title} URL: {url[:30]}...'
             alf.setItem(
                 title=url_title,
