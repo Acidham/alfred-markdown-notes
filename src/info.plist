@@ -8,19 +8,6 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>01B01E1C-F114-4C29-9C0C-2881FA84A5D1</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>4053BF64-C6EB-4285-890E-290E72D132EB</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>1226368E-7C02-479A-958B-6147F924D9F9</key>
 		<array>
 			<dict>
@@ -35,7 +22,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</string>
+				<string>EE67AF7B-BDB3-4BB5-B0DA-62F1D88921B5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -115,7 +102,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</string>
+				<string>EE67AF7B-BDB3-4BB5-B0DA-62F1D88921B5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -203,7 +190,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</string>
+				<string>EE67AF7B-BDB3-4BB5-B0DA-62F1D88921B5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -216,7 +203,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>BC3595BC-FFD4-4DBA-BF99-567B48EE838F</string>
+				<string>FA2A221A-6386-4B79-950C-7C46E10196EE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -238,20 +225,8 @@
 				<false/>
 			</dict>
 		</array>
-		<key>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</key>
-		<array/>
 		<key>8354F261-D7A0-4848-8312-9EC40100DFA6</key>
 		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>9AFF9D4E-AFFE-4DC2-A1EA-8E795277A5A6</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>2F777EDC-8764-4AE9-AFC2-65D224BB01DE</string>
@@ -303,9 +278,9 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</string>
+				<string>EE67AF7B-BDB3-4BB5-B0DA-62F1D88921B5</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -359,7 +334,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</string>
+				<string>EE67AF7B-BDB3-4BB5-B0DA-62F1D88921B5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -489,7 +464,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</string>
+				<string>EE67AF7B-BDB3-4BB5-B0DA-62F1D88921B5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -593,7 +568,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</string>
+				<string>EE67AF7B-BDB3-4BB5-B0DA-62F1D88921B5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -728,6 +703,31 @@
 				<false/>
 			</dict>
 		</array>
+		<key>FA2A221A-6386-4B79-950C-7C46E10196EE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>89A9AAEB-1F2B-4009-8579-309C620C8B5E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>EE67AF7B-BDB3-4BB5-B0DA-62F1D88921B5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3B42F954-0523-4146-90A3-5E2609506CFA</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Acidham</string>
@@ -739,97 +739,6 @@
 	<string>Markdown Notes</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string># THESE VARIABLES MUST BE SET. SEE THE ONEUPDATER README FOR AN EXPLANATION OF EACH.
-readonly remote_info_plist="https://raw.githubusercontent.com/Acidham/alfred-markdown-notes/master/src/info.plist"
-readonly workflow_url="Acidham/alfred-markdown-notes"
-readonly download_type='github_release'
-readonly frequency_check='4'
-
-# FROM HERE ON, CODE SHOULD BE LEFT UNTOUCHED!
-function abort {
-  echo "${1}" &gt;&amp;2
-  exit 1
-}
-
-function url_exists {
-  curl --silent --location --output /dev/null --fail --range 0-0 "${1}"
-}
-
-function notification {
-  readonly local notificator="$(find . -type d -name 'Notificator.app')"
-  if [[ -n "${notificator}" ]]; then
-    "${notificator}/Contents/Resources/Scripts/notificator" --message "${1}" --title "${alfred_workflow_name}" --subtitle 'A new version is available'
-    return
-  fi
-
-  readonly local terminal_notifier="$(find . -type f -name 'terminal-notifier')"
-  if [[ -n "${terminal_notifier}" ]]; then
-    "${terminal_notifier}" -title "${alfred_workflow_name}" -subtitle 'A new version is available' -message "${1}"
-    return
-  fi
-
-  osascript -e "display notification \"${1}\" with title \"${alfred_workflow_name}\" subtitle \"A new version is available\""
-}
-
-# Local sanity checks
-readonly local_info_plist='info.plist'
-readonly local_version="$(/usr/libexec/PlistBuddy -c 'print version' "${local_info_plist}")"
-
-[[ -n "${local_version}" ]] || abort 'You need to set a workflow version in the configuration sheet.'
-[[ "${download_type}" =~ ^(direct|page|github_release)$ ]] || abort "'download_type' (${download_type}) needs to be one of 'direct', 'page', or 'github_release'."
-[[ "${frequency_check}" =~ ^[0-9]+$ ]] || abort "'frequency_check' (${frequency_check}) needs to be a number."
-
-# Check for updates
-if [[ $(find "${local_info_plist}" -mtime +"${frequency_check}"d) ]]; then
-  if ! url_exists "${remote_info_plist}"; then abort "'remote_info_plist' (${remote_info_plist}) appears to not be reachable."; fi # Remote sanity check
-
-  readonly tmp_file="$(mktemp)"
-  curl --silent --location --output "${tmp_file}" "${remote_info_plist}"
-  readonly remote_version="$(/usr/libexec/PlistBuddy -c 'print version' "${tmp_file}")"
-
-  if [[ "${local_version}" == "${remote_version}" ]]; then
-    touch "${local_info_plist}" # Reset timer by touching local file
-    exit 0
-  fi
-
-  if [[ "${download_type}" == 'page' ]]; then
-    notification 'Opening download page…'
-    open "${workflow_url}"
-    exit 0
-  fi
-
-  download_url="$([[ "${download_type}" == 'github_release' ]] &amp;&amp; curl --silent "https://api.github.com/repos/${workflow_url}/releases/latest" | grep 'browser_download_url' | head -1 | sed -E 's/.*browser_download_url": "(.*)"/\1/' || echo "${workflow_url}")"
-
-  if url_exists "${download_url}"; then
-    notification 'Downloading and installing…'
-    curl --silent --location --output "${HOME}/Downloads/${alfred_workflow_name}.alfredworkflow" "${download_url}"
-    open "${HOME}/Downloads/${alfred_workflow_name}.alfredworkflow"
-  else
-    abort "'workflow_url' (${download_url}) appears to not be reachable."
-  fi
-fi</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>9AFF9D4E-AFFE-4DC2-A1EA-8E795277A5A6</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -958,9 +867,9 @@ fi</string>
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
-						<string>marked</string>
+						<string>viewer</string>
 						<key>outputlabel</key>
-						<string>marked</string>
+						<string>viewer</string>
 						<key>uid</key>
 						<string>03A97A98-84AF-47FA-BD7A-F5BD9090159F</string>
 					</dict>
@@ -968,7 +877,7 @@ fi</string>
 				<key>elselabel</key>
 				<string>else</string>
 				<key>hideelse</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1573,38 +1482,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
-				<string>/Applications/Marked 2.app</string>
-				<key>sourcefile</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>BC3595BC-FFD4-4DBA-BF99-567B48EE838F</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{var:action2}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>73F51F35-8DE7-4E97-A18D-ADA7046EB4A7</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>acceptsmulti</key>
 				<integer>0</integer>
 				<key>filetypes</key>
@@ -1621,6 +1498,29 @@ fi</string>
 			<string>EEAFA237-F675-43C1-9EB8-A1AE88C34E75</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>open -a $viewer "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>89A9AAEB-1F2B-4009-8579-309C620C8B5E</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1648,17 +1548,51 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
-				<string>/Applications/Typora.app</string>
-				<key>sourcefile</key>
-				<string></string>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:viewer}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>6</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>Editor</string>
+						<key>uid</key>
+						<string>3B42F954-0523-4146-90A3-5E2609506CFA</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Viewer</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</string>
+			<string>FA2A221A-6386-4B79-950C-7C46E10196EE</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:action2}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>73F51F35-8DE7-4E97-A18D-ADA7046EB4A7</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1697,6 +1631,29 @@ fi</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>4C847DCB-008B-4241-A1C4-35B3895092F7</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>open -a $editor "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>EE67AF7B-BDB3-4BB5-B0DA-62F1D88921B5</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -2076,36 +2033,19 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string>MD Notes Help.md</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>4053BF64-C6EB-4285-890E-290E72D132EB</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>mdhelp</string>
+				<integer>0</integer>
 				<key>subtext</key>
-				<string></string>
+				<string>Enter new title optionally with tags e.g. title #tag</string>
 				<key>text</key>
-				<string>Open MD Notes Help</string>
+				<string>Enter name of the new MD file</string>
 				<key>withspace</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>01B01E1C-F114-4C29-9C0C-2881FA84A5D1</string>
+			<string>18A8C2F0-9E83-42B2-9FFA-04793FDE69AF</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2125,25 +2065,6 @@ fi</string>
 			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
 			<string>867A6B07-A86D-464E-9AA2-F4F85D33901E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>subtext</key>
-				<string>Enter new title optionally with tags e.g. title #tag</string>
-				<key>text</key>
-				<string>Enter name of the new MD file</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>18A8C2F0-9E83-42B2-9FFA-04793FDE69AF</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2231,11 +2152,9 @@ MD Notes works with any mardkown editor.
 
 To get MD Notes to work properly you first need to configure the worklfow. Click on `Configure Workflow` in Alfred Workflow Tab. 
 
-### Variables
-
 Variables marked with * are required for running MD Notes properly, the others are optional and can be ignored.
 
-* **Path to Notes** * (`path_to_notes`): The path where MD Notes will be stored.
+* **Path to Notes:** * The path where MD Notes will be stored.
   The path can be absolute or relative but has to be a user directory!   
   Examples:
 
@@ -2244,36 +2163,38 @@ Variables marked with * are required for running MD Notes properly, the others a
   * `/yourname/Dropbox/Notes` →  works
   * `/Volumes/usb` →  will not work!
 
-* **Default Date Format** (`default_date_format`): Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
+* **Editor:** Select  preferred Markdown Editor
 
-* **Default Template** * (`default_template`): The file name that will be used as the default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates))   
+* **Default Date Format:** Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
+
+* **Default Template:** * The file name that will be used as the default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates))   
   **Note**: Enter the file name ONLY without path e.g. `myTemplate.md`
 
-* **Extension** * (`ext`): The MD files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
+* **Extension:** * The MD files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
   **Note:** The files must be type text files.
 
-* **Search in Tags in YMF only** * (`search_yaml_tags_only`)
+* **Search in Tags in YMF only:** *
 
   Tags can be used in the YAML front matter (`Tags: #mytag`) or within the MD note. 
 
   1. When set to `True` tag search only search with YMF.
   2. When set to `False` tags will be searched the whole MD note.  
 
-* **Exact Match** (`exact_match`): Defines if the search should match the exact search term (`True`) or the string (`False`) in markdown notes. 
+* **Exact Match:**  Defines if the search should match the exact search term (`True`) or the string (`False`) in markdown notes. 
 
   **Note:** When exact match is set to `True` it is possible to enhance the search term with wildcards
 
-* **Todo sort order** (todo_newest_oldest): Sort order when using Todo Search ( `mdt`). 
+* **Todo sort order:**  Sort order when using Todo Search ( `mdt`). 
   `True` newest todos will be shown on top of the search results
   `False` oldest todos will be shown on top of the search results
 
-* **URL scheme** (`url_scheme`): (OPTIONAL) I figured out that some web app like Todoist is using web interface where, due to OS restrictions, file paths cannot be opened. To work around this URL scheme can be configured to open the note in markdown editor or viewer, e.g. Marked or iA Writer. Add URL Scheme like `x-writer://create?file=` and after `file=` will be enhanced with the MD Note path when executed. 
+* **URL scheme:** (OPTIONAL) I figured out that some web app like Todoist is using web interface where, due to OS restrictions, file paths cannot be opened. To work around this URL scheme can be configured to open the note in markdown editor or viewer, e.g. Marked or iA Writer. Add URL Scheme like `x-writer://create?file=` and after `file=` will be enhanced with the MD Note path when executed. 
 
-* **Template Tag** (`template_tag`): The template tag defines which (`#Tagname`) defines a Template. Once you created a template just add template tag name to the MD Note and it will be recognized when you create a new MD Note from Template (see [Create new MD Notes from Template](#Create%20new%20MD%20Notes%20from%20Template))
+* **Template Tag:** The template tag defines which (`#Tagname`) defines a Template. Once you created a template just add template tag name to the MD Note and it will be recognized when you create a new MD Note from Template (see [Create new MD Notes from Template](#Create%20new%20MD%20Notes%20from%20Template))
 
-* **Bookmark Tag** (`bookmark_tag`): Name of the tag which marks Notes containing URL/Bookmarks.
+* **Bookmark Tag:** Name of the tag which marks Notes containing URL/Bookmarks.
 
-* **Filename Format** (`filename_format`): Standard file format for new MD notes. Default is the title of the notes but in some cases it is useful to add a date format e.g. when using Zettelkasten file format. 
+* **Filename Format:** Standard file format for new MD notes. Default is the title of the notes but in some cases it is useful to add a date format e.g. when using Zettelkasten file format. 
     The two placeholders can be used:
 
     * e.g. `{%d-%m-%Y}` or any other strftime format. 
@@ -2396,17 +2317,6 @@ To fetch an URL use `mdf` and enter the target URL.
 **Note:** To import HTML content [Pandoc](https://pandoc.org/installing.html) is required. If Pandoc is not installed the note will only contain the URL to the Page.</string>
 	<key>uidata</key>
 	<dict>
-		<key>01B01E1C-F114-4C29-9C0C-2881FA84A5D1</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>9</integer>
-			<key>note</key>
-			<string>Shows MD Help</string>
-			<key>xpos</key>
-			<real>425</real>
-			<key>ypos</key>
-			<real>2080</real>
-		</dict>
 		<key>01EBC50C-380F-4FA3-B537-D755B7134966</key>
 		<dict>
 			<key>xpos</key>
@@ -2438,9 +2348,9 @@ To fetch an URL use `mdf` and enter the target URL.
 		<key>18A8C2F0-9E83-42B2-9FFA-04793FDE69AF</key>
 		<dict>
 			<key>xpos</key>
-			<real>585</real>
+			<real>580</real>
 			<key>ypos</key>
-			<real>2290</real>
+			<real>2140</real>
 		</dict>
 		<key>294CB549-D1EE-4AC0-BF62-B19E2DAD7162</key>
 		<dict>
@@ -2462,13 +2372,6 @@ To fetch an URL use `mdf` and enter the target URL.
 			<real>1295</real>
 			<key>ypos</key>
 			<real>405</real>
-		</dict>
-		<key>4053BF64-C6EB-4285-890E-290E72D132EB</key>
-		<dict>
-			<key>xpos</key>
-			<real>615</real>
-			<key>ypos</key>
-			<real>2075</real>
 		</dict>
 		<key>454BC87F-9E2E-4C7B-ABFA-2E7709D59244</key>
 		<dict>
@@ -2558,9 +2461,9 @@ To fetch an URL use `mdf` and enter the target URL.
 		<key>73F51F35-8DE7-4E97-A18D-ADA7046EB4A7</key>
 		<dict>
 			<key>xpos</key>
-			<real>1295</real>
+			<real>1225</real>
 			<key>ypos</key>
-			<real>955</real>
+			<real>1080</real>
 		</dict>
 		<key>7EF41C6D-4E2F-4BED-B733-B3538C647263</key>
 		<dict>
@@ -2568,15 +2471,6 @@ To fetch an URL use `mdf` and enter the target URL.
 			<real>1295</real>
 			<key>ypos</key>
 			<real>145</real>
-		</dict>
-		<key>8129C3CE-D221-4AF0-818F-098A0CC7D2CE</key>
-		<dict>
-			<key>note</key>
-			<string>Open in Typora</string>
-			<key>xpos</key>
-			<real>1575</real>
-			<key>ypos</key>
-			<real>1175</real>
 		</dict>
 		<key>8354F261-D7A0-4848-8312-9EC40100DFA6</key>
 		<dict>
@@ -2594,9 +2488,9 @@ To fetch an URL use `mdf` and enter the target URL.
 			<key>note</key>
 			<string>Create Markdown Index file action</string>
 			<key>xpos</key>
-			<real>180</real>
+			<real>175</real>
 			<key>ypos</key>
-			<real>2290</real>
+			<real>2140</real>
 		</dict>
 		<key>88BD02F5-4A73-4701-98D0-450B1F338238</key>
 		<dict>
@@ -2613,6 +2507,15 @@ To fetch an URL use `mdf` and enter the target URL.
 			<real>425</real>
 			<key>ypos</key>
 			<real>1775</real>
+		</dict>
+		<key>89A9AAEB-1F2B-4009-8579-309C620C8B5E</key>
+		<dict>
+			<key>note</key>
+			<string>Open Viewer</string>
+			<key>xpos</key>
+			<real>1575</real>
+			<key>ypos</key>
+			<real>1065</real>
 		</dict>
 		<key>8BFF5D9F-F5E7-4CC8-AC7D-C3DAA406DA19</key>
 		<dict>
@@ -2651,23 +2554,12 @@ To fetch an URL use `mdf` and enter the target URL.
 			<key>ypos</key>
 			<real>790</real>
 		</dict>
-		<key>9AFF9D4E-AFFE-4DC2-A1EA-8E795277A5A6</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>12</integer>
-			<key>note</key>
-			<string>OneUpdater</string>
-			<key>xpos</key>
-			<real>625</real>
-			<key>ypos</key>
-			<real>75</real>
-		</dict>
 		<key>9CFA7349-15E0-4F12-8E6D-251360FC1EAC</key>
 		<dict>
 			<key>xpos</key>
-			<real>1015</real>
+			<real>1030</real>
 			<key>ypos</key>
-			<real>165</real>
+			<real>180</real>
 		</dict>
 		<key>A1994305-42C8-4C6A-BB26-0D822F6B021A</key>
 		<dict>
@@ -2703,25 +2595,16 @@ To fetch an URL use `mdf` and enter the target URL.
 			<key>note</key>
 			<string>generates the markdown index file</string>
 			<key>xpos</key>
-			<real>765</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>2290</real>
-		</dict>
-		<key>BC3595BC-FFD4-4DBA-BF99-567B48EE838F</key>
-		<dict>
-			<key>note</key>
-			<string>Open in Mardown Viewer</string>
-			<key>xpos</key>
-			<real>1575</real>
-			<key>ypos</key>
-			<real>925</real>
+			<real>2140</real>
 		</dict>
 		<key>BC9416FD-DA8C-4E89-BB77-2300E23FC2AB</key>
 		<dict>
 			<key>xpos</key>
-			<real>475</real>
+			<real>470</real>
 			<key>ypos</key>
-			<real>2320</real>
+			<real>2170</real>
 		</dict>
 		<key>C277BA58-113D-4741-A306-9A1AAAE9EA61</key>
 		<dict>
@@ -2756,6 +2639,8 @@ To fetch an URL use `mdf` and enter the target URL.
 		</dict>
 		<key>D152D8AE-984F-47E0-9BBD-59DDE719EEDC</key>
 		<dict>
+			<key>note</key>
+			<string>Search in MD Tags</string>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
@@ -2825,9 +2710,9 @@ To fetch an URL use `mdf` and enter the target URL.
 		<key>E9AAB61A-3037-496F-B9A7-1D9166D62D6D</key>
 		<dict>
 			<key>xpos</key>
-			<real>405</real>
+			<real>400</real>
 			<key>ypos</key>
-			<real>2320</real>
+			<real>2170</real>
 		</dict>
 		<key>EAEF0CF6-8AEA-4B7D-8EAB-80FC16EDDAAC</key>
 		<dict>
@@ -2835,6 +2720,15 @@ To fetch an URL use `mdf` and enter the target URL.
 			<real>1840</real>
 			<key>ypos</key>
 			<real>755</real>
+		</dict>
+		<key>EE67AF7B-BDB3-4BB5-B0DA-62F1D88921B5</key>
+		<dict>
+			<key>note</key>
+			<string>Open md file with prefrred editor</string>
+			<key>xpos</key>
+			<real>1580</real>
+			<key>ypos</key>
+			<real>1315</real>
 		</dict>
 		<key>EEAFA237-F675-43C1-9EB8-A1AE88C34E75</key>
 		<dict>
@@ -2872,6 +2766,13 @@ To fetch an URL use `mdf` and enter the target URL.
 			<key>ypos</key>
 			<real>205</real>
 		</dict>
+		<key>FA2A221A-6386-4B79-950C-7C46E10196EE</key>
+		<dict>
+			<key>xpos</key>
+			<real>1385</real>
+			<key>ypos</key>
+			<real>1070</real>
+		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array>
@@ -2895,6 +2796,48 @@ To fetch an URL use `mdf` and enter the target URL.
 			<string>filepicker</string>
 			<key>variable</key>
 			<string>path_to_notes</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>TextEdit.app</string>
+				<key>filtermode</key>
+				<integer>2</integer>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Path to preferred markdown editor</string>
+			<key>label</key>
+			<string>MD Editor</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>editor</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>filtermode</key>
+				<integer>2</integer>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string>Optional markdown viewer otherwise MD Editor will be used</string>
+			<key>label</key>
+			<string>MD Viewer</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>viewer</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3111,7 +3054,7 @@ To fetch an URL use `mdf` and enter the target URL.
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>3.2.0</string>
+	<string>3.3.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>

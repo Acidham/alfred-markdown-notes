@@ -18,6 +18,9 @@ file_name = pathname2url(os.path.basename(note_path))
 # If query in notes search was empty subtitle uses following string
 back_query = "<EMPTY>" if not query else query
 
+# Get Viewer if available
+viewer = Tools.getEnv('viewer') if Tools.getEnv('viewer') else Tools.getEnv('editor')
+
 # Actions in ScriptFilter menu data
 ACTIONS = [
     {
@@ -35,9 +38,9 @@ ACTIONS = [
         "visible": True
     },
     {
-        "title": "Marked 2",
-        "subtitle": "Open Preview in Marked 2",
-        "arg": f"marked|{note_path}",
+        "title": "Viewer",
+        "subtitle": "Open Preview in MD Viewer",
+        "arg": f"viewer|{note_path}",
         "icon": "icons/marked.png",
         "visible": True
     },

@@ -23,6 +23,8 @@ Variables marked with * are required for running MD Notes properly, the others a
   * `/yourname/Dropbox/Notes` →  works
   * `/Volumes/usb` →  will not work!
 
+* **Editor** 
+
 * **Default Date Format** (`default_date_format`): Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
 
 * **Default Template** * (`default_template`): The file name that will be used as the default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates))   
