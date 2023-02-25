@@ -14,7 +14,7 @@ from MyNotes import Search
 
 class Markdown(object):
 
-    PANDOC = '/usr/local/bin/pandoc -f html -t markdown_mmd --strip-comments --atx-headers'
+    PANDOC = 'pandoc -f html -t markdown_mmd --strip-comments'
 
     def __init__(self, url):
         self.url = url
