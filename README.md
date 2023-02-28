@@ -1,5 +1,7 @@
 # Alfred Markdown Notes
 
+https://acidham.github.io/alfred-markdown-notes/
+
 Markdown Notes is a comprehensive note taking tool embedded into Aflred with powerful full text search (supports & and |), tag search and search capabilities for todos ( `- [ ]` or `* [ ]`) . With MD Notes you can quickly create new notes based on custom templates, e.g. meeting notes, bookmarks, project documentation, etc.
 
 If you are interested in the full journey read *[Productivity at your Finger Tips](https://acidham.medium.com/productivity-at-your-finger-tips-d6ef24770e0b)*
@@ -22,11 +24,9 @@ MD Notes works with any mardkown editor.
 
 To get MD Notes to work properly you first need to configure the worklfow. Click on `Configure Workflow` in Alfred Workflow Tab. 
 
-### Variables
-
 Variables marked with * are required for running MD Notes properly, the others are optional and can be ignored.
 
-* **Path to Notes** * (`path_to_notes`): The path where MD Notes will be stored.
+* **Path to Notes:** * The path where MD Notes will be stored.
   The path can be absolute or relative but has to be a user directory!   
   Examples:
 
@@ -35,36 +35,38 @@ Variables marked with * are required for running MD Notes properly, the others a
   * `/yourname/Dropbox/Notes` →  works
   * `/Volumes/usb` →  will not work!
 
-* **Default Date Format** (`default_date_format`): Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
+* **Editor:** Select  preferred Markdown Editor
 
-* **Default Template** * (`default_template`): The file name that will be used as the default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates))   
+* **Default Date Format:** Defines date format when creating new notes or when using placeholders in templates: {date} e.g. %d.%m.%Y %H.%M
+
+* **Default Template:** * The file name that will be used as the default Template. Before templates can be used it is required to create the template.md e.g. `Template.md` (see [Working with Templates](#Working%20with%20Templates))   
   **Note**: Enter the file name ONLY without path e.g. `myTemplate.md`
 
-* **Extension** * (`ext`): The MD files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
+* **Extension:** * The MD files are text files with a specific extension (usually `.txt`or `.md`) any other extension can be defined if required.   
   **Note:** The files must be type text files.
 
-* **Search in Tags in YMF only** * (`search_yaml_tags_only`)
+* **Search in Tags in YMF only:** *
 
   Tags can be used in the YAML front matter (`Tags: #mytag`) or within the MD note. 
 
   1. When set to `True` tag search only search with YMF.
   2. When set to `False` tags will be searched the whole MD note.  
 
-* **Exact Match** (`exact_match`): Defines if the search should match the exact search term (`True`) or the string (`False`) in markdown notes. 
+* **Exact Match:**  Defines if the search should match the exact search term (`True`) or the string (`False`) in markdown notes. 
 
   **Note:** When exact match is set to `True` it is possible to enhance the search term with wildcards
 
-* **Todo sort order** (todo_newest_oldest): Sort order when using Todo Search ( `mdt`). 
+* **Todo sort order:**  Sort order when using Todo Search ( `mdt`). 
   `True` newest todos will be shown on top of the search results
   `False` oldest todos will be shown on top of the search results
 
-* **URL scheme** (`url_scheme`): (OPTIONAL) I figured out that some web app like Todoist is using web interface where, due to OS restrictions, file paths cannot be opened. To work around this URL scheme can be configured to open the note in markdown editor or viewer, e.g. Marked or iA Writer. Add URL Scheme like `x-writer://create?file=` and after `file=` will be enhanced with the MD Note path when executed. 
+* **URL scheme:** (OPTIONAL) I figured out that some web app like Todoist is using web interface where, due to OS restrictions, file paths cannot be opened. To work around this URL scheme can be configured to open the note in markdown editor or viewer, e.g. Marked or iA Writer. Add URL Scheme like `x-writer://create?file=` and after `file=` will be enhanced with the MD Note path when executed. 
 
-* **Template Tag** (`template_tag`): The template tag defines which (`#Tagname`) defines a Template. Once you created a template just add template tag name to the MD Note and it will be recognized when you create a new MD Note from Template (see [Create new MD Notes from Template](#Create%20new%20MD%20Notes%20from%20Template))
+* **Template Tag:** The template tag defines which (`#Tagname`) defines a Template. Once you created a template just add template tag name to the MD Note and it will be recognized when you create a new MD Note from Template (see [Create new MD Notes from Template](#Create%20new%20MD%20Notes%20from%20Template))
 
-* **Bookmark Tag** (`bookmark_tag`): Name of the tag which marks Notes containing URL/Bookmarks.
+* **Bookmark Tag:** Name of the tag which marks Notes containing URL/Bookmarks.
 
-* **Filename Format** (`filename_format`): Standard file format for new MD notes. Default is the title of the notes but in some cases it is useful to add a date format e.g. when using Zettelkasten file format. 
+* **Filename Format:** Standard file format for new MD notes. Default is the title of the notes but in some cases it is useful to add a date format e.g. when using Zettelkasten file format. 
     The two placeholders can be used:
 
     * e.g. `{%d-%m-%Y}` or any other strftime format. 
@@ -119,9 +121,11 @@ The tag search can also be used to search for already existing Tags to paste it 
 
 Type `mdt` to get all Todos found in the MD Notes. The list is sorted  based on when Notes with the todo was created (older notes first). As well you can search for full-text search in todo and use the modify keys (see [Options](#Options))
 
-### Search in Bookmarks
+### MD Bookmarks
 
-Type `mdb` to get all Bookmkars found in the MD Notes. The list shows the links found in the MD Notes. How to allow for Boomark search you need add the tag which marks a bookmark MD note (see [Options](#Options)).
+Bookmarks/ URLs stored in MD Notes can be opened using MD Notes. If an MD Note contains the bookmark tag (see [Configuration](#Configuration) → Bookmark Tag) and one or more URLs, they  can be opened directly from Alfred directly. 
+
+Type `mdb` to find Bookmarks found in the MD Notes. The list shows the links found in the MD Notes and corresponding note.  
 
 ### Create a MD Note
 
@@ -194,4 +198,4 @@ To fetch an URL use `mdf` and enter the target URL.
 
 Depending on the MD Editor used, assets (png, pdf, etc.) can be drag and drop into the MD document. Some editors use absolute or relative paths, and some create an assets' directory automatically and copy the asset into the asset folder. The assets are stored with the MD Notes and when you delete the original asset file, it ensures that the MD note keeps a copy. 
 
-In cases where the file will be just linked in MD Editor, the Workflow provides the ability to upload the asset under the `Path to Notes`  (see [Options](file:///Users/jjung/Documents/Git/alfred-markdown-notes/README.md#Options)) with the name `_NoteAssets.` The folder will be automatically created. 
+In cases where the file will be just linked in MD Editor, the Workflow provides the ability to upload the asset under the `Path to Notes`  (see [Options](file:///Users/jjung/Documents/Git/alfred-markdown-notes/README.md#Options)) with the name `_NoteAssets.` The folder will be automatically created.

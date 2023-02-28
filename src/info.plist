@@ -2249,9 +2249,11 @@ The tag search can also be used to search for already existing Tags to paste it 
 
 Type `mdt` to get all Todos found in the MD Notes. The list is sorted  based on when Notes with the todo was created (older notes first). As well you can search for full-text search in todo and use the modify keys (see [Options](#Options))
 
-### Search in Bookmarks
+### MD Bookmarks
 
-Type `mdb` to get all Bookmkars found in the MD Notes. The list shows the links found in the MD Notes. How to allow for Boomark search you need add the tag which marks a bookmark MD note (see [Options](#Options)).
+Bookmarks/ URLs stored in MD Notes can be opened using MD Notes. If an MD Note contains the bookmark tag (see [Configuration](#Configuration) → Bookmark Tag) and one or more URLs, they  can be opened directly from Alfred directly. 
+
+Type `mdb` to find Bookmarks found in the MD Notes. The list shows the links found in the MD Notes and corresponding note.  
 
 ### Create a MD Note
 
@@ -3064,7 +3066,7 @@ In cases where the file will be just linked in MD Editor, the Workflow provides 
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>3.3.2</string>
+	<string>3.3.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/alfred-markdown-notes</string>
 </dict>
